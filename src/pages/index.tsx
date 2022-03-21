@@ -1,13 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Cooperation from "../Components/Cooperation/Cooperation";
-import Enviroment from "../Components/Enviroment/Enviroment";
-import MainLayout from "../Components/MainLayout";
-import News from "../Components/News/News";
-import Partners from "../Components/Partners/Partners";
-import Stats from "../Components/Stats/Stats";
-import Title from "../Components/Title/Title";
-import Values from "../Components/Values/Values";
+import { MainLayout } from "Components/Common/MainLayout";
+import { News } from "Components/MainPage/News";
+import { Stats } from "Components/MainPage/Stats";
+import { Title } from "Components/MainPage/Title";
+import { Values } from "Components/MainPage/ValuesByYears";
+import { Enviroment } from "Components/MainPage/Enviroment";
+import { Partners } from "Components/MainPage/Partners";
+import { Cooperation } from "Components/MainPage/Cooperation";
+import { Years } from "Components/Common/Year/Years";
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
         <News />
         <Partners />
         <Cooperation />
+        <Years />
       </MainLayout>
     </>
   );

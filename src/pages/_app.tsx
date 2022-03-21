@@ -22,6 +22,9 @@ const theme = extendTheme({
         height: "100%",
         cursor: "default",
       },
+      ".swiper-slide-active:first-child": {
+        fontSize: "96px",
+      },
     },
   },
 });
