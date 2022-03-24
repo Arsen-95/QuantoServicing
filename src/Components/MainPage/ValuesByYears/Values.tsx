@@ -1,6 +1,7 @@
 import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { YearPicker } from "Components/Common/Picker";
 import { StatsBox } from "Components/Common/StatsBox";
+import { Years } from "Components/Common/Year/Years";
 import React from "react";
 
 export const Values = () => {
@@ -8,10 +9,25 @@ export const Values = () => {
     <Box bgColor="#FAFAFA" py="75px">
       <Container>
         <Flex alignItems="center">
-          <Box flex="1">
-            <YearPicker start={2018} last={new Date().getFullYear()} />
+          <Box flex="1" display="flex" justifyContent="space-between">
+            <Years />
+            <Flex
+              flexDir="column"
+              justifyContent="space-between"
+              fontFamily="Blender Pro"
+              fontStyle="normal"
+              fontWeight="900"
+              fontSize="24px"
+              lineHeight="29px"
+              letterSpacing="-0.00240557px"
+              color="#494949"
+            >
+              <Box>ГТИ</Box>
+              <Box>ГИС</Box>
+              <Box>ПВР</Box>
+            </Flex>
           </Box>
-          <Box flex="1">
+          <Box flex="1" ml="20px">
             <Box
               fontFamily="Museo Sans Cyrl"
               fontStyle="normal"

@@ -1,9 +1,21 @@
 import { Box, Container, keyframes } from "@chakra-ui/react";
-import React from "react";
+import React, { FC, useEffect } from "react";
 import { IMAGES_PATH } from "../../../constants/settings";
-import Services from "./Services";
 
-export const Title = () => {
+type TitleProps = {
+  pt: number;
+  background: string;
+  title: string;
+  text?: string;
+};
+
+export const Title: FC<TitleProps> = ({
+  pt,
+  background,
+  title,
+  text,
+  children,
+}) => {
   const pulsate = keyframes`
         0% {transform: scale(0.1, 0.1); opacity: 0.0;}
         50% {opacity: 1.0;}
@@ -13,9 +25,8 @@ export const Title = () => {
   return (
     <Box
       as="section"
-      pt={158}
-      background={`linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C4C4C4 url(${IMAGES_PATH}/worker.png) no-repeat 50%`}
-      backgroundAttachment="fixed"
+      pt={pt}
+      background={background}
       backgroundSize="cover"
       pb="30px"
     >
@@ -41,7 +52,7 @@ export const Title = () => {
           color="#FFF"
           mb="22px"
         >
-          исследуя горизонты, расширяем возможности
+          {title}
         </Box>
         <Box
           letterSpacing="-0.00185615px"
@@ -50,12 +61,11 @@ export const Title = () => {
           color="#FFF"
           fontWeight="300"
           fontFamily="Museo Sans Cyrl"
-          mb="90px"
+          mb={children ? "90px" : "0"}
         >
-          Компания Quanto предоставляет целый ряд услуг по нефтегазовой отрасли
-          Узбекистана
+          {text}
         </Box>
-        <Services />
+        {/* {children && children} */}
       </Container>
     </Box>
   );

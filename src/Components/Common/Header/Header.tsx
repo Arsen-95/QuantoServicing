@@ -6,11 +6,11 @@ import { Navigation } from "../Navigation";
 
 export const Header = () => {
   return (
-    <Box as="header" pos="absolute" w="100%" mt="10">
+    <Box as="header" pos="absolute" w="100%" pt="9" top="0">
       <Container>
         <Flex justifyContent="space-between" alignItems="center">
           <NextLink href="/" passHref>
-            <Link>
+            <Link py="5px">
               <Image src={`${ICONS_PATH}/logo.svg`} alt="Logo" />
             </Link>
           </NextLink>

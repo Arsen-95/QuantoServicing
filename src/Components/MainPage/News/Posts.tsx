@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import PostItem from "./PostItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { FreeMode, Navigation, Pagination } from "swiper";
+import SwiperCore, {
+  FreeMode,
+  Mousewheel,
+  Navigation,
+  Pagination,
+} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Box, Flex } from "@chakra-ui/react";
@@ -33,7 +38,7 @@ const Posts = () => {
           prevEl: prev,
           nextEl: next,
         }}
-        modules={[FreeMode, Pagination, Navigation]}
+        modules={[FreeMode, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>

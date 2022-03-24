@@ -11,6 +11,7 @@ const NavItem: FC<NavProps> = ({ href, text }) => {
   return (
     <NextLink href={href} passHref>
       <Link
+        py="5px"
         _notLast={{
           mr: "25px",
         }}

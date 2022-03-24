@@ -22,8 +22,14 @@ const theme = extendTheme({
         height: "100%",
         cursor: "default",
       },
-      ".swiper-slide-active:first-child": {
+      ".years-vertical-slider .swiper-slide.swiper-slide-active": {
         fontSize: "96px",
+        lineHeight: "70px",
+        height: "120px !important",
+        transition: "all 0.3s",
+      },
+      ".swiper-slide": {
+        height: "auto",
       },
     },
   },

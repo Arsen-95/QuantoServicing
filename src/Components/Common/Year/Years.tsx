@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -11,40 +11,63 @@ import { Box } from "@chakra-ui/react";
 import Year from "./Year";
 
 export const Years = () => {
-  const current = new Date().getFullYear();
-
-  const [selected, setSelected] = useState();
+  const years = [2018, 2019, 2020, 2021];
+  const [swiperActiveIndex, setSwiperActiveIndex] = useState<number>(0);
+  const selectedYear = useMemo(() => {
+    return years[swiperActiveIndex];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [swiperActiveIndex]);
+  console.log(selectedYear);
 
   return (
-    <Box height="460px">
+    <Box h="100%">
       <Swiper
-        loop
         direction={"vertical"}
         centeredSlides={true}
         slidesPerView={5}
-        pagination={{
-          clickable: true,
-        }}
         mousewheel={true}
-        modules={[Scrollbar, Mousewheel]}
-        className="mySwiper"
+        scrollbar={{
+          hide: true,
+        }}
+        modules={[Mousewheel, Scrollbar]}
+        className="years-vertical-slider"
         style={{ height: "400px", width: "500px", overflow: "hidden" }}
+        onSlideChange={(a) => {
+          console.log(a);
+
+          setSwiperActiveIndex(a.activeIndex);
+        }}
       >
-        <SwiperSlide>
-          {<Year setSelected={setSelected}>{current}</Year>}
-        </SwiperSlide>
-        <SwiperSlide>
-          {<Year setSelected={setSelected}>{current + 1}</Year>}
-        </SwiperSlide>
-        <SwiperSlide>
-          {<Year setSelected={setSelected}>{current - 3}</Year>}
-        </SwiperSlide>
-        <SwiperSlide>
-          {<Year setSelected={setSelected}>{current - 2}</Year>}
-        </SwiperSlide>
-        <SwiperSlide>
-          {<Year setSelected={setSelected}>{current - 1}</Year>}
-        </SwiperSlide>
+        {years.map((year, index) => (
+          <>
+            <SwiperSlide key={year}>
+              {<Year years={years}>{year}</Year>}
+              {index + 1 < years.length && (
+                <>
+                  <Box
+                    mb="13px"
+                    width="7px"
+                    height="1px"
+                    bgColor="#8C949D"
+                  ></Box>
+                  <Box
+                    mb="13px"
+                    width="7px"
+                    height="1px"
+                    bgColor="#8C949D"
+                  ></Box>
+                  <Box
+                    mb="13px"
+                    width="7px"
+                    height="1px"
+                    bgColor="#8C949D"
+                  ></Box>
+                  <Box width="7px" height="1px" bgColor="#8C949D"></Box>
+                </>
+              )}
+            </SwiperSlide>
+          </>
+        ))}
       </Swiper>
     </Box>
   );

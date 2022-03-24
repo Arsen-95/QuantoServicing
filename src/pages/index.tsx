@@ -3,30 +3,35 @@ import Head from "next/head";
 import { MainLayout } from "Components/Common/MainLayout";
 import { News } from "Components/MainPage/News";
 import { Stats } from "Components/MainPage/Stats";
-import { Title } from "Components/MainPage/Title";
+import { MainTitle } from "Components/MainPage/MainTitle";
 import { Values } from "Components/MainPage/ValuesByYears";
 import { Enviroment } from "Components/MainPage/Enviroment";
 import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
-import { Years } from "Components/Common/Year/Years";
+import { Navigation } from "Components/Common/Navigation";
+import { Box } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>Quanto website</title>
-        <meta name="keywords" content="Quanto"></meta>
+        <meta name="title" content="Quanto" />
         <meta name="description" content="Quanto" />
       </Head>
       <MainLayout>
-        <Title />
+        <MainTitle />
+        {/* <Box bg="#000">
+          <Link href="/about">Test</Link>
+          <Navigation />
+        </Box> */}
         <Stats />
-        <Values />
+        {/* <Values /> */}
         <Enviroment />
         <News />
         <Partners />
         <Cooperation />
-        <Years />
       </MainLayout>
     </>
   );

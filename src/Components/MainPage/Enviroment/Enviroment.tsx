@@ -1,63 +1,51 @@
-import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { IMAGES_PATH } from "../../../constants/settings";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay } from "swiper";
+import { SlideItem } from "./SlideItem";
 
 export const Enviroment = () => {
   return (
-    <Box pt="100px" position="relative">
-      <Container>
-        <Flex>
-          <Box py="128px" flexBasis="46%">
-            <Box
-              fontFamily="Museo Sans Cyrl"
-              fontStyle="normal"
-              fontWeight="300"
-              fontSize="18px"
-              lineHeight="25px"
-              letterSpacing="-0.00089095px"
-              color="#494949"
-              mb={6}
-            >
-              Социальная ответственность
-            </Box>
-            <Box
-              as="h4"
-              letterSpacing="-2.50267px"
-              fontSize="75px"
-              lineHeight="62px"
-              fontWeight="900"
-              mb={8}
-              fontFamily="Blender Pro"
-              textTransform="uppercase"
-              color="#494949"
-            >
-              Защита окружающей среды
-            </Box>
-            <Text
-              mb={9}
-              fontFamily="Museo Sans Cyrl"
-              color="rgba(0, 0, 0, 0.75)"
-              fontSize="14"
-              lineHeight="132%"
-              maxW="268px"
-            >
-              Мы осознаем, что производственный процесс по бурению скважин и их
-              обслуживанию в целом представляет потенциальную угрозу для природы
-              и признаем свою ответственность перед обществом и будущими
-              поколениями за сохранность окружающей среды, бережное отношение к
-              флоре и фауне, рациональное использование природных ресурсов.
-            </Text>
-          </Box>
-          <Box position="absolute" right="0%" width="50%" h="695px">
-            <Image
-              src={`${IMAGES_PATH}/enviroment.png`}
-              alt="desert"
-              w="100%"
-              h="100%"
-            />
-          </Box>
-        </Flex>
-      </Container>
-    </Box>
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <SlideItem
+            title="охрана окружающей среды"
+            text="Мы осознаем, что производственный процесс в целом представляет потенциальную угрозу для окружающей среды и признаем свою ответственность перед обществом и будущими поколениями за сохранность и бережное отношение к флоре и фауне, рациональное использование природных ресурсов."
+            imageUrl="slide1.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SlideItem
+            title="социальное обеспечение работников"
+            text="Социальное обеспечение работника, включая социальное страхование, – это одно из наших обязательств."
+            imageUrl="slide2.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SlideItem
+            title="высокий уровень компетенции"
+            text="Стандарты HSE реализуются через единую систему управления производственной безопасностью (ЕСУПБ). Она позволяет обеспечивать безопасные условия труда на всех стадиях рабочего процесса."
+            imageUrl="slide3.png"
+          />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 };

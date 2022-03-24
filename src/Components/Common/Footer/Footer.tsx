@@ -17,7 +17,7 @@ export const Footer = () => {
                     src={`${ICONS_PATH}/logo.svg`}
                     alt="logo Quanto"
                     w="167px"
-                    h="18px"
+                    h="30px"
                   />
                 </Link>
               </NextLink>

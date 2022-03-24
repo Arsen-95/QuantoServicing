@@ -7,11 +7,6 @@ const Services = () => {
   return (
     <Flex>
       <Service
-        text="Прострелочно-взрывные работы"
-        picture={`${IMAGES_PATH}/Service1.png`}
-        href="#"
-      />
-      <Service
         text="Геолого-технологические исследования"
         picture={`${IMAGES_PATH}/Service2.png`}
         href="#"
@@ -22,12 +17,12 @@ const Services = () => {
         href="#"
       />
       <Service
-        text="Промыслово-геофизические исследования"
-        picture={`${IMAGES_PATH}/Service4.png`}
+        text="Прострелочно-взрывные работы"
+        picture={`${IMAGES_PATH}/Service1.png`}
         href="#"
       />
       <Service
-        text="Метрологические услуги"
+        text="Промыслово-геофизические исследования"
         picture={`${IMAGES_PATH}/Service4.png`}
         href="#"
       />
