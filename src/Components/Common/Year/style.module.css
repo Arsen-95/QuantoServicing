@@ -35,3 +35,8 @@
   height: 300px;
   background-color: red;
 }
+
+.swiper-wrapper {
+  /* transition: 1s all; */
+  transition-duration: 1s !important;
+}

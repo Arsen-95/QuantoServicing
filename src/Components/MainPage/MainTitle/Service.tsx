@@ -7,9 +7,10 @@ type ServiceProps = {
   text: string;
   picture: string;
   href: string;
+  onClick?: any;
 };
 
-const Service: FC<ServiceProps> = ({ text, picture, href }) => {
+const Service: FC<ServiceProps> = ({ text, picture, href, onClick }) => {
   const pulsate = keyframes`
   0% {transform: scale(0.1, 0.1); opacity: 0.0;}
   50% {opacity: 0.5;}
@@ -19,6 +20,7 @@ const Service: FC<ServiceProps> = ({ text, picture, href }) => {
   return (
     <NextLink href={href} passHref>
       <Link
+        onClick={onClick}
         pos="relative"
         display="block"
         p={"13px 10px"}
@@ -51,7 +53,6 @@ const Service: FC<ServiceProps> = ({ text, picture, href }) => {
           background={`url(${ICONS_PATH}/buttonArrowRIght.svg) 55% 50% no-repeat #365164`}
           _groupHover={{
             background: `url(${ICONS_PATH}/buttonArrowRIght.svg) 55% 50% no-repeat red`,
-            // animation: `${pulsate}  0.2s linear`,
           }}
           transition="all 0.3s"
         ></Box>

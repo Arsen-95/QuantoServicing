@@ -20,10 +20,11 @@ export const Input: React.FC<Props> = ({
 }) => {
   return (
     <ChakraInput
+      fontSize={["14px", "14px", "16px"]}
       value={value}
       type={type}
       borderRadius="0"
-      width="431px"
+      width={["70%", "70%", "300px", "400px"]}
       border={
         formState?.errors?.[name]?.message
           ? "1.45682px solid red"
@@ -51,7 +52,7 @@ export const InputMask: React.FC<Omit<Props, "placeholder" | "type">> = ({
       value={value}
       onChange={onChange}
       borderRadius="0"
-      width="431px"
+      width={["70%", "70%", "300px", "400px"]}
       border={
         formState?.errors?.[name]?.message
           ? "1.45682px solid red"

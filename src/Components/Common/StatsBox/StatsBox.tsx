@@ -1,14 +1,18 @@
 import { Box, GridItem, Text } from "@chakra-ui/react";
-import React, { FC, useEffect, useRef, useState } from "react";
-import { useCountUp } from "react-countup";
+import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 
 type ValueProps = {
   text: string;
   num: number;
-  height: string;
+  height: string | {};
   numSize: any;
   textSize: any;
   padding: string;
+  textWidth?: string;
+  flexBasis?: string;
+  plus?: any;
+  num2?: any;
 };
 
 export const StatsBox: FC<ValueProps> = ({
@@ -18,21 +22,15 @@ export const StatsBox: FC<ValueProps> = ({
   numSize,
   textSize,
   padding,
+  textWidth,
+  flexBasis,
+  plus,
+  num2,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState(false);
-  const { start } = useCountUp({
-    ref: ref,
-    separator: " ",
-    start: 0,
-    end: num,
-    delay: 0,
-    duration: 1,
-    startOnMount: false,
-  });
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const height = document.body.clientHeight;
     const top = parentRef.current?.getBoundingClientRect().top;
     const elementHeight = parentRef.current?.clientHeight;
@@ -41,26 +39,28 @@ export const StatsBox: FC<ValueProps> = ({
     if (diff > 0 && diff >= Number(elementHeight)) {
       setState(true);
     }
-  };
+  }, []);
 
   useEffect(() => {
+    handleScroll();
     if (window) {
       window.addEventListener("scroll", handleScroll);
     }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (state) {
-      start();
+      window.removeEventListener("scroll", handleScroll);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
+  }, [state, handleScroll]);
 
   return (
     <GridItem
+      flexBasis={flexBasis && flexBasis}
       ref={parentRef}
       p={padding}
       border="1px solid #D9D9D9"
@@ -72,25 +72,45 @@ export const StatsBox: FC<ValueProps> = ({
         fontStyle="normal"
         fontWeight="300"
         fontSize={textSize}
-        lineHeight="14px"
+        lineHeight="120%"
         letterSpacing="0.00240557px"
         color="#494949"
+        maxW={textWidth && textWidth}
       >
         {text}
       </Text>
-      <Box
-        ref={ref}
-        w="100%"
-        textAlign="center"
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        letterSpacing="-3.00267px"
-        textTransform="uppercase"
-        color="#8C949D"
-        fontSize={numSize}
-      />
+      {state && (
+        <Box
+          w="100%"
+          textAlign="center"
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          letterSpacing="-3.00267px"
+          textTransform="uppercase"
+          color="#8C949D"
+          fontSize={numSize}
+        >
+          <CountUp
+            duration={1}
+            end={num}
+            separator=" "
+            suffix={plus ? "+" : ""}
+          />
+          {num2 && (
+            <Box as="span">
+              /
+              <CountUp
+                duration={1}
+                end={num2}
+                separator=" "
+                suffix={plus ? "+" : ""}
+              />
+            </Box>
+          )}
+        </Box>
+      )}
     </GridItem>
   );
 };

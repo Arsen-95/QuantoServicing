@@ -22,6 +22,7 @@ export const Years = () => {
   return (
     <Box h="100%">
       <Swiper
+        loop
         direction={"vertical"}
         centeredSlides={true}
         slidesPerView={5}
@@ -31,33 +32,31 @@ export const Years = () => {
         }}
         modules={[Mousewheel, Scrollbar]}
         className="years-vertical-slider"
-        style={{ height: "400px", width: "500px", overflow: "hidden" }}
+        style={{ height: "350px", width: "260px", overflow: "hidden" }}
         onSlideChange={(a) => {
-          console.log(a);
-
-          setSwiperActiveIndex(a.activeIndex);
+          setSwiperActiveIndex(a.realIndex);
         }}
       >
         {years.map((year, index) => (
           <>
             <SwiperSlide key={year}>
               {<Year years={years}>{year}</Year>}
-              {index + 1 < years.length && (
+              {index < years.length && (
                 <>
                   <Box
-                    mb="13px"
+                    mb="10px"
                     width="7px"
                     height="1px"
                     bgColor="#8C949D"
                   ></Box>
                   <Box
-                    mb="13px"
+                    mb="10px"
                     width="7px"
                     height="1px"
                     bgColor="#8C949D"
                   ></Box>
                   <Box
-                    mb="13px"
+                    mb="10px"
                     width="7px"
                     height="1px"
                     bgColor="#8C949D"

@@ -34,27 +34,33 @@ export const Cooperation = () => {
 
   return (
     <Box
-      py="74px"
+      id="contacts"
+      pt={["40px", "40px", "40px", "70px"]}
+      pb={["0", "0", "40px", "100px"]}
       background="#FAFAFA"
       backgroundPosition="100%"
       bgSize="50% 100%"
       pos="relative"
     >
       <Container>
-        <Flex>
-          <Box flex="1 1 auto">
+        <Flex flexDir={["column", "column", "row"]}>
+          <Box
+            flex="1 1 auto"
+            mb={["40px", "40px", "0"]}
+            textAlign={["center", "center", "left"]}
+          >
             <Text
               textTransform="uppercase"
               fontFamily="Blender Pro"
               fontStyle="normal"
               fontWeight="900"
-              fontSize={["35px", "45px", "55px", "65px", "75px"]}
+              fontSize={["35px", "45px", "50px", "65px", "75px"]}
               lineHeight="62px"
               letterSpacing="-2.50267px"
               color="#494949"
               maxW="626px"
               whiteSpace="pre-wrap"
-              mb="68px"
+              mb={["30px", "30px", "20px", "68px"]}
             >
               будьте с нами
             </Text>
@@ -145,11 +151,13 @@ export const Cooperation = () => {
                   name="message"
                   render={({ field }) => (
                     <Textarea
+                      borderRadius={0}
+                      minH="90px"
                       value={field.value}
                       onChange={field.onChange}
                       placeholder="Сообщение"
                       name="message"
-                      width="431px"
+                      width={["70%", "70%", "300px", "400px"]}
                       border={
                         formState?.errors?.message?.message
                           ? "1.45682px solid red"
@@ -190,6 +198,7 @@ export const Cooperation = () => {
                 <Link href="#">обработку персональных данных</Link>
               </Text>
               <Button
+                fontSize="20px"
                 background="#365164"
                 borderRadius="0"
                 color="#FFF"
@@ -202,7 +211,14 @@ export const Cooperation = () => {
               </Button>
             </form>
           </Box>
-          <Box flexBasis="50%">
+          <Box
+            w={["100%", "100%", "50%"]}
+            pos={["static", "static", "absolute"]}
+            right="0"
+            top="0"
+            bottom="0"
+            height={["500px", "500px", "auto"]}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6694401386562!2d69.28075444830512!3d41.29429820655181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8acc18cf03c9%3A0xdec3924705b6facd!2zMjkg0J3Rg9C60YPRgdGB0LrQsNGPINGD0LvQuNGG0LAsINCi0LDRiNC60LXQvdGCLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1647407001204!5m2!1sru!2s"
               width="100%"

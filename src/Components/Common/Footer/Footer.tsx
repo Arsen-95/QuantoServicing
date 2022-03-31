@@ -9,27 +9,25 @@ export const Footer = () => {
     <Box as="footer">
       <Box background="#365164" pos="relative">
         <Container>
-          <Flex justifyContent="space-between" alignItems="center" py="110px">
-            <Box>
-              <NextLink href="/" passHref>
-                <Link>
-                  <Image
-                    src={`${ICONS_PATH}/logo.svg`}
-                    alt="logo Quanto"
-                    w="167px"
-                    h="30px"
-                  />
-                </Link>
-              </NextLink>
-            </Box>
-            <Box textAlign="right" color="#FFF" mr="85px">
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            py={["70px", "70px", "100px"]}
+            flexDir={["column", "column", "row"]}
+          >
+            <NextLink href="/" passHref>
+              <Link py="10px" mb={["50px", "50px", "0"]}>
+                <Image src={`${ICONS_PATH}/logo.svg`} alt="Logo" />
+              </Link>
+            </NextLink>
+            <Box textAlign={["center", "center", "right"]} color="#FFF">
               <Box
                 fontFamily="Museo Sans Cyrl"
                 fontSize="18px"
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
                 fontWeight="600"
-                mb="2px"
+                mb="5px"
               >
                 Адрес
               </Box>
@@ -53,7 +51,7 @@ export const Footer = () => {
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
                 fontWeight="600"
-                mb="2px"
+                mb="5px"
               >
                 Email
               </Box>
@@ -80,7 +78,7 @@ export const Footer = () => {
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
                 fontWeight="600"
-                mb="2px"
+                mb="5px"
               >
                 Контактный телефон
               </Box>
@@ -88,7 +86,6 @@ export const Footer = () => {
                 href="tel:+99878-140-55-00"
                 as="address"
                 whiteSpace="pre-line"
-                mb={"28px"}
                 fontFamily="Arial"
                 fontStyle="italic"
                 fontWeight="400"
@@ -123,7 +120,9 @@ export const Footer = () => {
                 })
               }
             ></Box>
-            <Navigation />
+            <Box display={["none", "none", "none", "block"]}>
+              <Navigation flexDir="row" lang={false} />
+            </Box>
             <Flex
               flexDir="column"
               fontFamily="Arial"

@@ -4,23 +4,36 @@ import Companies from "./Companies";
 
 export const Partners = () => {
   return (
-    <Box background="#FAFAFA" pb="109px">
+    <Box id="partners" py={50}>
       <Container>
         <Box
           fontFamily="Blender Pro"
           fontStyle="normal"
           fontWeight="900"
-          fontSize="75px"
+          fontSize={["35px", "50px", "50px", "75px"]}
           lineHeight="62px"
           letterSpacing="-2.50267px"
           textTransform="uppercase"
           color="#494949"
-          mb="90px"
+          mb={["20px", "20px", "20px", "35px"]}
           maxW="477"
         >
-          Партнерство для вашего успеха
+          Партнеры
         </Box>
-
+        <Box
+          mb={["30px", "50px", "50px", "100px"]}
+          fontFamily="Museo Sans Cyrl"
+          fontStyle="normal"
+          fontWeight="300"
+          fontSize={["14px", "16px", "16px", "18px"]}
+          lineHeight="22px"
+          letterSpacing="-0.00089095px"
+          color="#494949"
+          maxW={["257px", "334px", "556px"]}
+        >
+          Мы являемся гарантом качества в области оказания услуг нефтегазовой
+          отрасли. Нам доверяют самое важное.
+        </Box>
         <Companies />
       </Container>
     </Box>

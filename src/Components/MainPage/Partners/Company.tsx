@@ -1,4 +1,4 @@
-import { Box, Flex, GridItem, Image } from "@chakra-ui/react";
+import { GridItem, Image } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { ICONS_PATH } from "../../../constants/settings";
 

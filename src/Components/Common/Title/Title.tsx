@@ -1,19 +1,30 @@
-import { Box, Container, keyframes } from "@chakra-ui/react";
-import React, { FC, useEffect } from "react";
-import { IMAGES_PATH } from "../../../constants/settings";
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Container,
+  keyframes,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import React, { FC } from "react";
 
 type TitleProps = {
-  pt: number;
+  pt: any;
+  pb: string | {};
   background: string;
   title: string;
   text?: string;
+  breadCrumb?: any;
 };
 
 export const Title: FC<TitleProps> = ({
   pt,
+  pb,
   background,
   title,
   text,
+  breadCrumb,
   children,
 }) => {
   const pulsate = keyframes`
@@ -28,17 +39,17 @@ export const Title: FC<TitleProps> = ({
       pt={pt}
       background={background}
       backgroundSize="cover"
-      pb="30px"
+      pb={pb}
+      position="relative"
+      h="567px"
     >
       <Container>
         <Box
           backgroundColor="#E40000"
-          // border="3px solid #E40000"
           h="14px"
           w="14px"
           animation={`${pulsate} infinite 1s linear`}
           ml="-16px"
-          borderRadius="30px"
         ></Box>
         <Box
           as="h4"
@@ -46,11 +57,11 @@ export const Title: FC<TitleProps> = ({
           fontFamily="Blender Pro"
           fontSize="75px"
           lineHeight="62px"
-          maxW="850px"
+          maxW="923px"
           letterSpacing="-2.50267px"
           fontWeight="900"
           color="#FFF"
-          mb="22px"
+          mb={text ? "22px" : "0px"}
         >
           {title}
         </Box>
@@ -65,7 +76,33 @@ export const Title: FC<TitleProps> = ({
         >
           {text}
         </Box>
-        {/* {children && children} */}
+        {breadCrumb && (
+          <Breadcrumb position="absolute" bottom="40px">
+            {breadCrumb.map(([page, href]: any) => (
+              <BreadcrumbItem
+                color="rgba(255, 255, 255, 0.6)"
+                _last={{
+                  color: "#FFF",
+                }}
+                key="page"
+              >
+                <NextLink href={href} passHref>
+                  <BreadcrumbLink
+                    fontFamily="Museo Sans Cyrl"
+                    fontStyle="normal"
+                    fontWeight="400"
+                    fontSize="14px"
+                    lineHeight="134.5%"
+                    letterSpacing="-0.00240557px"
+                  >
+                    {page}
+                  </BreadcrumbLink>
+                </NextLink>
+              </BreadcrumbItem>
+            ))}
+          </Breadcrumb>
+        )}
+        {children && children}
       </Container>
     </Box>
   );

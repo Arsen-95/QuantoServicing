@@ -1,0 +1,4 @@
+.map path:hover {
+  fill: #99c3e0;
+  transition: 200ms all;
+}

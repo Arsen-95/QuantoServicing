@@ -30,7 +30,7 @@ const Fonts = () => {
       font-family: 'Museo Sans Cyrl';
       src: url('/fonts/Museo-Sans-Cyrl/museosanscyrl-500.ttf');
       src: local('museosanscyrl-500'), local('museosanscyrl-normal'),
-          url('/fonts/Museo-Sans-Cyrl/museosanscyrl-300.ttf') format('truetype');
+          url('/fonts/Museo-Sans-Cyrl/museosanscyrl-500.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
       font-display: swap;

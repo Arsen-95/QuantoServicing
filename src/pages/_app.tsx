@@ -1,11 +1,12 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Fonts from "../styles/Fonts";
+import "../styles/styles.css";
 
 const theme = extendTheme({
   fonts: {
-    // body: "Cera Pro",
-    // heading: "Cera Pro",
+    body: "Museo Sans Cyrl",
+    heading: "Cera Pro",
   },
   components: {
     Container: {
@@ -24,12 +25,27 @@ const theme = extendTheme({
       },
       ".years-vertical-slider .swiper-slide.swiper-slide-active": {
         fontSize: "96px",
-        lineHeight: "70px",
+        lineHeight: "75px",
         height: "120px !important",
         transition: "all 0.3s",
+        color: "#365164 !important",
       },
       ".swiper-slide": {
+        fontSize: "20px",
         height: "auto",
+        color: "#8C949D",
+        transition: "all 0.7s !important",
+      },
+      ".swiper-wrapper": {},
+      "@media (max-width: 767px)": {
+        ".years-vertical-slider .swiper-slide.swiper-slide-active": {
+          fontSize: "44px",
+        },
+      },
+      "@media (max-width: 991px)": {
+        ".years-vertical-slider .swiper-slide.swiper-slide-active": {
+          fontSize: "60px",
+        },
       },
     },
   },

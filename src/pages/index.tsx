@@ -1,35 +1,37 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import { memo } from "react";
 import { MainLayout } from "Components/Common/MainLayout";
-import { News } from "Components/MainPage/News";
 import { Stats } from "Components/MainPage/Stats";
 import { MainTitle } from "Components/MainPage/MainTitle";
 import { Values } from "Components/MainPage/ValuesByYears";
 import { Enviroment } from "Components/MainPage/Enviroment";
 import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
-import { Navigation } from "Components/Common/Navigation";
-import { Box } from "@chakra-ui/react";
-import Link from "next/link";
+import { HeadTags } from "Components/Common/HeadTags";
+import { MainNews } from "Components/MainPage/MainNews";
+import axios from "axios";
 
 const Home: NextPage = () => {
+  const request = axios(
+    "https://quanto-servicing.herokuapp.com/ru/api/about_company/"
+  );
+  setTimeout(() => {
+    console.log(request);
+  }, 2000);
+
   return (
     <>
-      <Head>
-        <title>Quanto website</title>
-        <meta name="title" content="Quanto" />
-        <meta name="description" content="Quanto" />
-      </Head>
+      <HeadTags
+        siteTitle="Quanto Website"
+        titleContent="Quanto Servicing"
+        descriptionContent="Quanto oil and gas"
+      />
       <MainLayout>
         <MainTitle />
-        {/* <Box bg="#000">
-          <Link href="/about">Test</Link>
-          <Navigation />
-        </Box> */}
         <Stats />
-        {/* <Values /> */}
+        <Values />
         <Enviroment />
-        <News />
+        <MainNews />
         <Partners />
         <Cooperation />
       </MainLayout>
@@ -37,4 +39,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

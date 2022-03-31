@@ -1,13 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef } from "react";
 
-const Year: FC<any> = ({ children, years }) => {
+const Year: FC<any> = ({ children }) => {
   const ref = useRef<any>();
 
   // useEffect(() => {
-  //   ref.current.parentElement?.classList.contains("swiper-slide-active") &&
-  //     setSelected(ref?.current?.innerText);
-  //   console.log(ref?.current?.innerHTML);
+  // ref.current.parentElement?.classList.contains("swiper-slide-active") ? ref?.current.style.color = "red"
+  //   console.log(ref);
   // }, []);
 
   return (
@@ -17,9 +16,8 @@ const Year: FC<any> = ({ children, years }) => {
         fontFamily="Blender Pro"
         fontStyle="normal"
         fontWeight="900"
-        letter-spacing="-0.00267285px"
+        letterSpacing="-0.00267285px"
         text-transform="uppercase"
-        color="#8C949D"
         mb="5px"
       >
         {children}
