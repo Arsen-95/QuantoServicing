@@ -13,6 +13,7 @@ export const Stats = () => {
         >
           <Box flex="1 1 50%">
             <Text
+              as="h5"
               textTransform="uppercase"
               fontFamily="Blender Pro"
               fontSize={["56px", "60px", "66px", "70px", "76px"]}

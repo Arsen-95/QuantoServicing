@@ -11,7 +11,7 @@ const theme = extendTheme({
   components: {
     Container: {
       baseStyle: {
-        px: 5,
+        px: 10,
         margin: "0 auto",
         maxW: "1320px",
       },
@@ -46,6 +46,9 @@ const theme = extendTheme({
         ".years-vertical-slider .swiper-slide.swiper-slide-active": {
           fontSize: "60px",
         },
+      },
+      h5: {
+        fontFamily: "Blender Pro",
       },
     },
   },

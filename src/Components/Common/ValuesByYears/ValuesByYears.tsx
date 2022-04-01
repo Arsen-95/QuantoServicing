@@ -8,6 +8,8 @@ export const ValuesByYears: FC<any> = ({ children }) => {
     <Box pt="50px" pb="80px">
       <Container>
         <Box
+          as="h5"
+          fontFamily="Blender Pro"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"

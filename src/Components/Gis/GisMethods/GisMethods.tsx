@@ -16,6 +16,7 @@ export const GisMethods = () => {
     <Box py="100px">
       <Container>
         <Box
+          as="h5"
           maxW="282px"
           fontWeight="600"
           fontSize="40px"
@@ -34,7 +35,7 @@ export const GisMethods = () => {
                 <b>КС</b> - метод кажущегося сопротивления; <br />
                 <b>ПС</b> - метод самопроизвольной поляризации; <br />
                 <b>ИК</b> - метод индукционного каротажа; <br />
-                <b>ИК</b> - метод пятизондового индукционного каротажа;
+                <b>ИК</b> - метод пятизондового индукционного каротажа; <br />
                 <b>БК</b> - метод бокового каротажа; <br />
                 <b>БКЗ</b> - метод бокового каротажного зондирования; <br />
                 <b>5БК</b> - метод многозондового бокового каротажа; <br />
@@ -42,6 +43,7 @@ export const GisMethods = () => {
                 жидкости в скважине
               </>
             }
+            picture="method1.png"
           />
           <Method
             methodName="Методы радиоактивного каротажа"
@@ -57,6 +59,7 @@ export const GisMethods = () => {
                 <b>ГГКц</b> - метод гамма-гамма цементометрия
               </>
             }
+            picture="method2.png"
           />
           <Method
             methodName="Методы акустического каротажа"
@@ -68,6 +71,7 @@ export const GisMethods = () => {
                 качества цементирования
               </>
             }
+            picture="method3.png"
           />
           <Method
             methodName="Механические и др. методы каротажа"
@@ -83,6 +87,7 @@ export const GisMethods = () => {
                 локатора перфорационных отверстий
               </>
             }
+            picture="method4.png"
           />
         </Flex>
       </Container>

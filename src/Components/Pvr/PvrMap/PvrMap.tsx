@@ -35,6 +35,7 @@ export const PvrMap = () => {
     <Box background="#FAFAFA" pt="125px" pb="50px">
       <Container>
         <Box
+          as="h5"
           fontWeight="600"
           fontSize="40px"
           lineHeight="105%"
@@ -128,20 +129,20 @@ const regionsPaths = [
 
 const MapIcon = () => {
   const data = {
-    "Tashkent city": 16,
-    Tashkent: 3,
-    Bukhoro: 123,
-    Sirdaryo: 6,
-    Jizzakh: 11,
-    Namangan: 20,
-    Ferghana: 44,
-    Andijon: 50,
-    Karakalpakstan: 500,
-    Samarkand: 200,
-    Navoi: 21,
-    Khorezm: 30,
-    Surkhandarya: 9,
-    Kashkadarya: 8,
+    "Tashkent city": ["Ташкент"],
+    Tashkent: ["Ташкентская область", 0],
+    Bukhoro: ["Бухарская область", "70 заявок"],
+    Sirdaryo: ["Сирдарьинская область", 0],
+    Jizzakh: ["Жизакская обаслть", 0],
+    Namangan: ["Наманганская область", "2 заявки"],
+    Ferghana: ["Ферганская область", "2 заявки"],
+    Andijon: ["Андижанская область", 0],
+    Karakalpakstan: ["Каракалпакстан", "37 заявок"],
+    Samarkand: ["Самаркандская область", 0],
+    Navoi: ["Навоийская область", "9 заявок"],
+    Khorezm: ["Хорезмская область", 0],
+    Surkhandarya: ["Сурхандарьинская область", "12 заявок"],
+    Kashkadarya: ["Кашкадарьинская область", "27 заявок"],
   };
 
   return (
@@ -159,19 +160,28 @@ const MapIcon = () => {
       width="1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {regionsPaths.map((region) => (
-        <Tooltip
-          placement="left"
-          hasArrow
-          bg="#1D7CBE"
-          key={region.id}
-          label={`${data[region.name as keyof typeof data]} заявок`}
-          borderRadius="5px"
-          p="10px"
-        >
-          <path d={region.d} id={region.id} name={region.name} />
-        </Tooltip>
-      ))}
+      {regionsPaths.map((region: any) => {
+        const [regionName, value] = data[region.name as keyof typeof data];
+        return (
+          <Tooltip
+            placement="left"
+            hasArrow
+            bg="#1D7CBE"
+            key={region.id}
+            label={value && `${regionName} \n ${value}`}
+            borderRadius="5px"
+            p="10px"
+            whiteSpace="pre-line"
+          >
+            <path
+              d={region.d}
+              id={region.id}
+              name={region.name}
+              className={value ? cs.filled : "none"}
+            />
+          </Tooltip>
+        );
+      })}
 
       <circle cx="673.4" cy="626" id="0"></circle>
       <circle cx="637.6" cy="506" id="1"></circle>

@@ -7,8 +7,7 @@ export const AboutCompany = () => {
     <Box as="section" py="100px" background="#FAFAFA">
       <Container>
         <Box
-          as="h4"
-          fontFamily="Museo Sans Cyrl"
+          as="h5"
           fontStyle="normal"
           fontWeight="600"
           fontSize="40px"

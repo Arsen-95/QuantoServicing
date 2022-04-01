@@ -68,7 +68,7 @@ export const Values = () => {
               <StatsBox
                 padding="8px"
                 text="Количество завершенных скважин, шт"
-                num={35}
+                num={65}
                 numSize={["20px", "24px", "26px", "32px", "36px"]}
                 textSize="12px"
                 height={["150px", "150px", "145px", "150px"]}
@@ -105,7 +105,7 @@ export const Values = () => {
               <StatsBox
                 padding="8px"
                 text="Количество отработанных заявок, шт"
-                num={345}
+                num={175}
                 numSize={["20px", "24px", "26px", "32px", "36px"]}
                 textSize="12px"
                 height={["150px", "150px", "145px", "150px"]}
@@ -113,7 +113,7 @@ export const Values = () => {
               <StatsBox
                 padding="8px"
                 text="Исследованные интервалы, м"
-                num={275000}
+                num={140000}
                 numSize={["20px", "24px", "26px", "32px", "36px"]}
                 textSize="12px"
                 height={["150px", "150px", "145px", "150px"]}
@@ -121,8 +121,8 @@ export const Values = () => {
               <StatsBox
                 padding="8px"
                 text="Открытый/закрытый ствол, шт"
-                num={292}
-                num2={53}
+                num={107}
+                num2={68}
                 numSize={["20px", "24px", "26px", "32px", "36px"]}
                 textSize="12px"
                 height={["150px", "150px", "145px", "150px"]}

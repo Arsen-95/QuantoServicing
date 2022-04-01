@@ -1,4 +1,4 @@
-import { GridItem, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { ICONS_PATH } from "../../../constants/settings";
 
@@ -9,9 +9,9 @@ type CompanyProps = {
 
 const Company: FC<CompanyProps> = ({ picture, alt }) => {
   return (
-    <GridItem>
+    <Box display="flex" justifyContent="center" alignItems="center" py="10px">
       <Image src={`${ICONS_PATH}/${picture}`} alt={alt} />
-    </GridItem>
+    </Box>
   );
 };
 

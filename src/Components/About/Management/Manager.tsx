@@ -1,35 +1,69 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Link } from "@chakra-ui/react";
 import React, { FC } from "react";
 
-const Manager: FC<any> = ({ name, position }) => {
+type ManagerProps = {
+  name: string;
+  position: string;
+  email: string;
+  number: number;
+};
+
+const Manager: FC<ManagerProps> = ({ name, position, number, email }) => {
   return (
-    <Box py="67px" border="1px solid #494949" w="100%">
+    <>
+      <Flex py="44px" w="100%" alignItems="center">
+        <Box
+          mr="46px"
+          fontStyle="normal"
+          fontWeight="600"
+          fontSize="78px"
+          lineHeight="99.5%"
+          textAlign="center"
+          letterSpacing="-0.04em"
+          color="rgba(0, 0, 0, 0.75)"
+        >
+          {number}
+        </Box>
+        <Box>
+          <Box
+            fontWeight="300"
+            fontSize="10.7633px"
+            lineHeight="13px"
+            letterSpacing="-0.00199167px"
+            color="#494949"
+            mb="10px"
+          >
+            {position}
+          </Box>
+          <Box
+            fontStyle="normal"
+            fontWeight="600"
+            fontSize="16px"
+            lineHeight="99.5%"
+            letterSpacing="-0.04em"
+            mb="10px"
+            whiteSpace="pre-line"
+          >
+            {name.split(" ").join(`\n`)}
+          </Box>
+          <Box
+            fontStyle="normal"
+            fontWeight="300"
+            fontSize="10.7633px"
+            lineHeight="13px"
+            letterSpacing="-0.00199167px"
+            color="#494949"
+          >
+            <Link href={`mailto:${email}`}>{email}</Link>
+          </Box>
+        </Box>
+      </Flex>
       <Box
-        fontFamily="Museo Sans Cyrl"
-        fontStyle="normal"
-        fontWeight="600"
-        fontSize="16px"
-        lineHeight="99.5%"
-        textAlign="center"
-        letterSpacing="-0.04em"
-        color="rgba(0, 0, 0, 0.75)"
-        mb={3}
-      >
-        {name}
-      </Box>
-      <Box
-        fontFamily="Museo Sans Cyrl"
-        fontStyle="normal"
-        fontWeight="300"
-        fontSize="10.7633px"
-        lineHeight="13px"
-        textAlign="center"
-        letterSpacing="-0.00199167px"
-        color="#494949"
-      >
-        {position}
-      </Box>
-    </Box>
+        h="1px"
+        maxW="660px"
+        bg="linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 80.15%)"
+      ></Box>
+    </>
   );
 };
 

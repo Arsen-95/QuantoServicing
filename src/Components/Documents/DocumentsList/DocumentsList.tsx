@@ -7,14 +7,14 @@ export const DocumentsList = () => {
     <Box py="100px" bg="#EDEFF0">
       <Container>
         <Box
-          fontFamily="Blender Pro"
+          as="h5"
           fontStyle="normal"
           fontWeight="900"
-          fontSize="24px"
+          fontSize="40px"
           lineHeight="30px"
           letterSpacing="-0.00240557px"
           color="rgba(0, 0, 0, 0.75)"
-          mb={1}
+          mb={5}
         >
           Файлы
         </Box>

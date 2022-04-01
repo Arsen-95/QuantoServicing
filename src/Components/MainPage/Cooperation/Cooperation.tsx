@@ -50,8 +50,8 @@ export const Cooperation = () => {
             textAlign={["center", "center", "left"]}
           >
             <Text
+              as="h5"
               textTransform="uppercase"
-              fontFamily="Blender Pro"
               fontStyle="normal"
               fontWeight="900"
               fontSize={["35px", "45px", "50px", "65px", "75px"]}

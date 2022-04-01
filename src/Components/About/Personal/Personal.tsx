@@ -7,7 +7,7 @@ export const Personal = () => {
     <Box pb="100px" pt="50px">
       <Container>
         <Box
-          fontFamily="Museo Sans Cyrl"
+          as="h5"
           fontStyle="normal"
           fontWeight="600"
           fontSize="40px"

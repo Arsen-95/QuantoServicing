@@ -1,26 +1,14 @@
-import { Box, Flex } from "@chakra-ui/react";
-import React, { FC, useEffect, useRef, useState } from "react";
+import { Box } from "@chakra-ui/react";
+import React, { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper";
-import { ICONS_PATH } from "constants/settings";
 import CustomSliderItem from "./CustomSliderItem";
 
 export const CustomSlider: FC<any> = ({ sliderData }) => {
-  // const prevRef = useRef<any>(null);
-  // const nextRef = useRef<any>(null);
-
-  // const [prev, setPrev] = useState("");
-  // const [next, setNext] = useState("");
-
-  // useEffect(() => {
-  //   setPrev(prevRef.current);
-  //   setNext(nextRef.current);
-  // }, []);
-
   return (
     <Box position="relative">
       <Swiper
@@ -35,7 +23,7 @@ export const CustomSlider: FC<any> = ({ sliderData }) => {
         }}
         modules={[Autoplay, EffectFade]}
         autoplay={{
-          delay: 2500,
+          delay: 8000,
           disableOnInteraction: false,
         }}
         className="mySwiper"

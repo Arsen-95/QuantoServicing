@@ -6,6 +6,7 @@ import React from "react";
 import { PvrValues } from "Components/Pvr/PvrValues";
 import { PvrMap } from "Components/Pvr/PvrMap";
 import { PvrDocs } from "Components/Pvr/PvrDocs";
+import { PvrVariants } from "Components/Pvr/PvrVariants";
 
 const index = () => {
   return (
@@ -18,6 +19,7 @@ const index = () => {
       <MainLayout>
         <PvrTitle />
         <PvrDescription />
+        <PvrVariants />
         <PvrValues />
         <PvrMap />
         <PvrDocs />

@@ -20,7 +20,7 @@ const index = () => {
         <GtiDescription />
         <GtiValues />
         <GtiSlider />
-        <GtiMap />
+        {/* <GtiMap /> */}
       </MainLayout>
     </>
   );
