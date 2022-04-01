@@ -7,7 +7,7 @@ type NavProps = {
   text: string;
   fontSize?: string;
   onClick?: any;
-  color: any;
+  color?: any;
 };
 
 const NavItem: FC<NavProps> = ({
