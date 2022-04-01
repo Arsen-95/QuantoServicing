@@ -38,6 +38,7 @@ export const Title: FC<TitleProps> = ({
       as="section"
       pt={pt}
       background={background}
+      bgPos="bottom"
       backgroundSize="cover"
       pb={pb}
       position="relative"

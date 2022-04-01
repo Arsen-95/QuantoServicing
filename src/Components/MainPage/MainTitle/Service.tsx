@@ -50,9 +50,9 @@ const Service: FC<ServiceProps> = ({ text, picture, href, onClick }) => {
           right="13px"
           pos="absolute"
           borderRadius="50%"
-          background={`url(${ICONS_PATH}/buttonArrowRIght.svg) 55% 50% no-repeat #365164`}
+          background={`url(${ICONS_PATH}/buttonArrowRight.svg) 55% 50% no-repeat #365164`}
           _groupHover={{
-            background: `url(${ICONS_PATH}/buttonArrowRIght.svg) 55% 50% no-repeat red`,
+            background: `url(${ICONS_PATH}/buttonArrowRight.svg) 55% 50% no-repeat red`,
           }}
           transition="all 0.3s"
         ></Box>

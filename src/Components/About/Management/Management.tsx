@@ -36,25 +36,25 @@ export const Management = () => {
         <Manager
           name="Худайбергенов Хамза Серсенбаевич"
           position="Заместитель директора"
-          email="nabiev.p@quantoservicing.com"
+          email="hudaybergenov.h@quantoservicing.com"
           number={2}
         />
         <Manager
           name="Мамаджанов Тимур Алишерович"
           position="Главный инженер"
-          email="nabiev.p@quantoservicing.com"
+          email="mamadjanov.t@quantoservicing.com"
           number={3}
         />
         <Manager
           name="Турдыбаев Абдувасик АБдувалиевич"
           position="Главный геолог"
-          email="nabiev.p@quantoservicing.com"
+          email="turdibayev.a@quantoservicing.com"
           number={4}
         />
         <Manager
           name="Чернова Татьяна Витальевна"
           position="Главный бухгалтер"
-          email="nabiev.p@quantoservicing.com"
+          email="chernova.t@quantoservicing.com"
           number={5}
         />
       </Container>

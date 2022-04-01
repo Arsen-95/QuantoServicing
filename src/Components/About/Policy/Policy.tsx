@@ -36,8 +36,8 @@ export const Policy = () => {
         </Text>
         <Flex gap={6}>
           <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
+          <DownloadFile fileName="Политика безопасности" fileSize={10.5} />
+          <DownloadFile fileName="Техническая политика" fileSize={10.5} />
         </Flex>
       </Container>
     </Box>

@@ -30,8 +30,8 @@ export const Personal = () => {
           opacity="0.7"
           mb="50px"
         >
-          Мы предоставляем вам информацию по колличеству персонала по всем
-          услугам:
+          Компания Quanto Servicing предоставляет информацию по количеству
+          персонала:
         </Box>
         <Flex
           // templateColumns="repeat(3, 2fr)"

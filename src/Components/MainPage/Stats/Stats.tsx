@@ -34,7 +34,7 @@ export const Stats = () => {
               fontFamily="Museo Sans Cyrl"
               mb={["40px", "40px", "40px", "0"]}
             >
-              * В период с 2019 по 2022 года
+              * В период с 2019 по 2022 год
             </Text>
           </Box>
           <Box justifySelf="right" position="relative" flex="1 1 50%">
@@ -42,15 +42,15 @@ export const Stats = () => {
               <StatsBox
                 numSize={["52px", "70px", "86px", "76px", "96px"]}
                 textSize={["12px", "14px", "16px", "16px", "18px"]}
-                text="Пробурено (метров)"
-                num={2560}
+                text={`Кол-во заявок по услугам \nза всю историю (шт)`}
+                num={4382}
                 height={["160px", "230px", "280px", "230px", "294px"]}
                 padding="15px"
               />
               <StatsBox
                 numSize={["52px", "70px", "86px", "76px", "96px"]}
                 textSize={["12px", "14px", "16px", "16px", "18px"]}
-                text="Баланс времени по всем скважинам (часов)"
+                text={`Общее кол-во заявок \nпо ГТИ (шт)`}
                 num={3596}
                 height={["160px", "230px", "280px", "230px", "294px"]}
                 padding="15px"
@@ -58,16 +58,16 @@ export const Stats = () => {
               <StatsBox
                 numSize={["52px", "70px", "86px", "76px", "96px"]}
                 textSize={["12px", "14px", "16px", "16px", "18px"]}
-                text="Число оказанных услуг"
-                num={448}
+                text={`Общее кол-во заявок \nпо ПВР (шт)`}
+                num={246}
                 height={["160px", "230px", "280px", "230px", "294px"]}
                 padding="15px"
               />
               <StatsBox
                 numSize={["52px", "70px", "86px", "76px", "96px"]}
                 textSize={["12px", "14px", "16px", "16px", "18px"]}
-                text="Числ завершенных по строительству скважин"
-                num={35}
+                text={`Общее кол-во заявок \nпо ГИС (шт)`}
+                num={540}
                 height={["160px", "230px", "280px", "230px", "294px"]}
                 padding="15px"
               />

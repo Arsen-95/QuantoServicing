@@ -13,6 +13,8 @@ type ValueProps = {
   flexBasis?: string;
   plus?: any;
   num2?: any;
+  others?: any;
+  visibility?: any;
 };
 
 export const StatsBox: FC<ValueProps> = ({
@@ -24,20 +26,24 @@ export const StatsBox: FC<ValueProps> = ({
   padding,
   textWidth,
   flexBasis,
-  plus,
-  num2,
+  plus = false,
+  num2 = undefined,
+  visibility = "visibility",
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const height = document.body.clientHeight;
-    const top = parentRef.current?.getBoundingClientRect().top;
-    const elementHeight = parentRef.current?.clientHeight;
-    const diff = height - Number(top);
+    const elem = parentRef.current;
+    if (elem) {
+      const height = document.body.clientHeight;
+      const top = parentRef.current?.getBoundingClientRect().top;
+      const elementHeight = elem.clientHeight - elem.clientHeight * 0.4;
+      const diff = height - Number(top);
 
-    if (diff > 0 && diff >= Number(elementHeight)) {
-      setState(true);
+      if (diff > 0 && diff >= Number(elementHeight)) {
+        setState(true);
+      }
     }
   }, []);
 
@@ -60,6 +66,9 @@ export const StatsBox: FC<ValueProps> = ({
 
   return (
     <GridItem
+      visibility={num > 0 ? "visible" : "hidden"}
+      opacity={num > 0 ? "1" : "0"}
+      transition="all 0.4s"
       flexBasis={flexBasis && flexBasis}
       ref={parentRef}
       p={padding}
@@ -76,6 +85,7 @@ export const StatsBox: FC<ValueProps> = ({
         letterSpacing="0.00240557px"
         color="#494949"
         maxW={textWidth && textWidth}
+        whiteSpace="pre-line"
       >
         {text}
       </Text>
@@ -93,7 +103,8 @@ export const StatsBox: FC<ValueProps> = ({
           fontSize={numSize}
         >
           <CountUp
-            duration={1}
+            decimals={num >= 1 ? 0 : 2}
+            duration={2}
             end={num}
             separator=" "
             suffix={plus ? "+" : ""}
@@ -102,7 +113,8 @@ export const StatsBox: FC<ValueProps> = ({
             <Box as="span">
               /
               <CountUp
-                duration={1}
+                decimals={num >= 1 ? 0 : 2}
+                duration={2}
                 end={num2}
                 separator=" "
                 suffix={plus ? "+" : ""}

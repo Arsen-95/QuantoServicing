@@ -5,6 +5,7 @@ import {
   BreadcrumbLink,
   Container,
   Flex,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { memo, useCallback, useLayoutEffect, useState } from "react";
 import { Footer } from "../Footer";
@@ -23,12 +24,15 @@ const images = {
   "/gti": `${IMAGES_PATH}/gtiTitle.png`,
   "/gis": `${IMAGES_PATH}/gisTitle.png`,
   "/pvr": `${IMAGES_PATH}/pvrTitle.png`,
+  "/navItem": "#FFF",
 };
 
 export const MainLayout: React.FC<any> = memo(({ background, children }) => {
   const [isSticky, setSticky] = useState(false);
   const { pathname } = useRouter();
   const scrollLimit = pathname === "/" ? 485 : 435;
+
+  const [isLargerThan1400] = useMediaQuery("(min-width: 1400px)");
 
   const handleScroll = useCallback(() => {
     const scrollTop = document.documentElement.scrollTop;
@@ -57,9 +61,13 @@ export const MainLayout: React.FC<any> = memo(({ background, children }) => {
         left="0"
         zIndex="200"
         top="0"
-        bg={`url(${images[pathname as keyof typeof images]}) no-repeat`}
-        bgSize="cover"
-        bgPos="bottom left"
+        bg={
+          images[pathname as keyof typeof images]
+            ? `url(${images[pathname as keyof typeof images]}) no-repeat`
+            : "#FFF"
+        }
+        bgSize={isLargerThan1400 ? "cover" : "auto"}
+        bgPos="bottom "
       >
         <Box transition="all 0.3s" opacity={isSticky ? 1 : 0}>
           <Header pt="20px" />

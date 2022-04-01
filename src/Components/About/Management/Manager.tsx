@@ -8,26 +8,14 @@ type ManagerProps = {
   number: number;
 };
 
-const Manager: FC<ManagerProps> = ({ name, position, number, email }) => {
+const Manager: FC<ManagerProps> = ({ name, position, email }) => {
   return (
     <>
       <Flex py="44px" w="100%" alignItems="center">
-        <Box
-          mr="46px"
-          fontStyle="normal"
-          fontWeight="600"
-          fontSize="78px"
-          lineHeight="99.5%"
-          textAlign="center"
-          letterSpacing="-0.04em"
-          color="rgba(0, 0, 0, 0.75)"
-        >
-          {number}
-        </Box>
         <Box>
           <Box
             fontWeight="300"
-            fontSize="10.7633px"
+            fontSize="18px"
             lineHeight="13px"
             letterSpacing="-0.00199167px"
             color="#494949"
@@ -38,8 +26,8 @@ const Manager: FC<ManagerProps> = ({ name, position, number, email }) => {
           <Box
             fontStyle="normal"
             fontWeight="600"
-            fontSize="16px"
-            lineHeight="99.5%"
+            fontSize="26px"
+            lineHeight="130%"
             letterSpacing="-0.04em"
             mb="10px"
             whiteSpace="pre-line"
@@ -49,7 +37,7 @@ const Manager: FC<ManagerProps> = ({ name, position, number, email }) => {
           <Box
             fontStyle="normal"
             fontWeight="300"
-            fontSize="10.7633px"
+            fontSize="18px"
             lineHeight="13px"
             letterSpacing="-0.00199167px"
             color="#494949"

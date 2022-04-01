@@ -11,7 +11,7 @@ type ItemProps = {
 export const PostItem: FC<ItemProps> = ({ text, picture }) => {
   return (
     <NextLink href="/newsItem" passHref>
-      <Link>
+      <Link _hover={{ textDecor: "none" }}>
         <Flex
           cursor="pointer"
           flexDirection="column"
