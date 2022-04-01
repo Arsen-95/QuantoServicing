@@ -7,6 +7,7 @@ export const MainNews = () => {
     <Box bgColor="#FAFAFA" pt="97px" pb="109px">
       <Container>
         <Box
+          as="h5"
           textTransform="uppercase"
           color="#494949"
           letterSpacing="-2.50267px"

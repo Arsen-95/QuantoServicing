@@ -10,8 +10,12 @@ import React, { FC } from "react";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useRouter } from "next/router";
 
 const CustomSliderItem: FC<any> = ({ title, text, imageUrl, arr }) => {
+  const { pathname } = useRouter();
+  const titleSize = pathname === "/" ? "75px" : "40px";
+
   return (
     <SwiperSlide>
       <Box pos="relative" h="720px">
@@ -19,10 +23,11 @@ const CustomSliderItem: FC<any> = ({ title, text, imageUrl, arr }) => {
           <Flex height="100%">
             <Flex flexBasis="40%" flexDir="column" justifyContent="center">
               <Box
-                fontFamily="Museo Sans Cyrl"
+                as="h5"
+                fontFamily="Blender Pro"
                 fontStyle="normal"
                 fontWeight="600"
-                fontSize="40px"
+                fontSize={titleSize}
                 lineHeight="99.5%"
                 letterSpacing="-0.04em"
                 color="#494949"

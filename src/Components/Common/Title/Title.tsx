@@ -73,11 +73,12 @@ export const Title: FC<TitleProps> = ({
           fontWeight="300"
           fontFamily="Museo Sans Cyrl"
           mb={children ? "90px" : "0"}
+          maxW="500px"
         >
           {text}
         </Box>
         {breadCrumb && (
-          <Breadcrumb position="absolute" bottom="40px">
+          <Breadcrumb position="absolute" bottom="15px">
             {breadCrumb.map(([page, href]: any) => (
               <BreadcrumbItem
                 color="rgba(255, 255, 255, 0.6)"

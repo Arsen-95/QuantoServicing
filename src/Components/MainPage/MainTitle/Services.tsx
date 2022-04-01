@@ -2,6 +2,8 @@ import {
   Box,
   Button,
   Flex,
+  Image,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -11,16 +13,41 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useCallback, useLayoutEffect, useState } from "react";
 import { IMAGES_PATH } from "../../../constants/settings";
 import Service from "./Service";
 
 const Services = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [isSticky, setSticky] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    const scrollTop = document.documentElement.scrollTop;
+    if (scrollTop >= 485) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <Flex>
+      <Flex
+        visibility={isSticky ? "hidden" : "visible"}
+        opacity={isSticky ? 0 : 1}
+        transition="all 0.2s"
+        zIndex={100}
+        pos="relative"
+      >
         <Service
           text="Геолого-технологические исследования"
           picture={`${IMAGES_PATH}/Service2.png`}
@@ -44,13 +71,21 @@ const Services = () => {
         />
       </Flex>
 
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered size={"xl"}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Промыслово-геофизические исследования</ModalHeader>
+          <Box>
+            <Image src={`${IMAGES_PATH}/soon.png`} alt="soon" />
+          </Box>
+          <ModalHeader fontSize="30px">Эта услуга скоро появится!</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Box>Этот раздел на этапе проработки</Box>
+            <Box mb="20px" fontSize="25px">
+              Свяжитесь с нами
+            </Box>
+            <Link href="tel:+99878-140-55-00" fontSize="20px">
+              +99878-140-55-00
+            </Link>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Закрыть</Button>

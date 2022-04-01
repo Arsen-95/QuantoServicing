@@ -1,4 +1,5 @@
 import { Title } from "Components/Common/Title";
+import { breadCrumbs, breadCrumbServices } from "constants/breadCrumb";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
 
@@ -10,10 +11,7 @@ export const ServiceTitle = () => {
       pb="240px"
       title="услуги"
       text="Компания Quanto Servicing предоставляет комплекс услуг для ознакомления "
-      breadCrumb={[
-        ["Главная", "/"],
-        ["Услуги", "/services"],
-      ]}
+      breadCrumb={breadCrumbs["/services"]}
     />
   );
 };

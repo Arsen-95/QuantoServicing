@@ -55,7 +55,6 @@
 
 import { CustomSlider } from "Components/Common/CustomSlider";
 import React from "react";
-import "swiper/css/effect-fade";
 
 import "swiper/css";
 import "swiper/css/effect-fade";

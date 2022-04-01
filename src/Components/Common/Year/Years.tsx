@@ -11,13 +11,12 @@ import { Box } from "@chakra-ui/react";
 import Year from "./Year";
 
 export const Years = () => {
-  const years = [2018, 2019, 2020, 2021];
+  const years = [2019, 2020, 2021];
   const [swiperActiveIndex, setSwiperActiveIndex] = useState<number>(0);
   const selectedYear = useMemo(() => {
     return years[swiperActiveIndex];
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [swiperActiveIndex]);
-  console.log(selectedYear);
 
   return (
     <Box h="100%">

@@ -1,4 +1,5 @@
 import { Title } from "Components/Common/Title";
+import { breadCrumbGti, breadCrumbs } from "constants/breadCrumb";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
 
@@ -9,12 +10,8 @@ export const GtiTitle = () => {
       pb="191px"
       pt={["178px", "147px", "147px", "211px"]}
       title="геолого-технологические исследования"
-      text="Компания Quanto Servicing предоставляет целый комплекс  услуг по Геолого-технологическим исследованиям"
-      breadCrumb={[
-        ["Главная", "/"],
-        ["Услуги", "/services"],
-        ["Геолого-технологические исследования", "/gti"],
-      ]}
+      text="Геолого-технологические исследования выполняются на месторождениях Республики Узбекистан с 2019 года "
+      breadCrumb={breadCrumbs["/gti"]}
     />
   );
 };

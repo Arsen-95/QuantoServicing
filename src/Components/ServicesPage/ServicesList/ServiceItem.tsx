@@ -1,15 +1,16 @@
 import { Box, Flex, Link } from "@chakra-ui/react";
-import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
+import { ICONS_PATH } from "constants/settings";
 import NextLink from "next/link";
 import React, { FC } from "react";
 
 type ItemProps = {
   name: string;
   picture: string;
-  href: string;
+  href?: any;
+  onClick?: any;
 };
 
-const ServiceItem: FC<ItemProps> = ({ name, picture, href }) => {
+const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
   return (
     <Flex
       whiteSpace="pre-line"
@@ -17,7 +18,7 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href }) => {
       flexDir="column"
       maxW="300px"
       pl="78px"
-      background={`url(${ICONS_PATH}/${picture}) no-repeat`}
+      background={`url(${ICONS_PATH}/${picture}) no-repeat 0 7px`}
     >
       <Box
         flex="1"
@@ -32,7 +33,7 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href }) => {
       >
         {name}
       </Box>
-      <NextLink href={href} passHref>
+      <NextLink href={href ? href : "#"} passHref>
         <Link
           maxW="112px"
           fontWeight="600"
@@ -47,6 +48,7 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href }) => {
             color: "#FFF",
           }}
           transition="all 0.2s"
+          onClick={onClick ? onClick : "none"}
         >
           Открыть
         </Link>

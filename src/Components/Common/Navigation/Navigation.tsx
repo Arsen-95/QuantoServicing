@@ -9,14 +9,14 @@ import {
 import React, { FC, useEffect, useState } from "react";
 import NavItem from "./NavItem";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { useRouter } from "next/router";
 
 type NavProps = {
   lang: boolean;
   flexDir: any;
+  color?: any;
 };
 
-export const Navigation: FC<NavProps> = ({ lang, flexDir }) => {
+export const Navigation: FC<NavProps> = ({ lang, flexDir, color }) => {
   const [selectedLang, setSelectedLang]: any = useState("РУС");
 
   const localStorageLang = (value: string) => {
@@ -32,12 +32,12 @@ export const Navigation: FC<NavProps> = ({ lang, flexDir }) => {
   return (
     <Box as="nav" display="flex" flexDir={flexDir} alignItems="center">
       <Box display={["none", "none", "none", "block"]}>
-        <NavItem href="/about" text="О КОМПАНИИ" />
-        <NavItem href="/services" text="УСЛУГИ" />
-        <NavItem href="/#partners" text="ПАРТНЕРЫ" />
-        <NavItem href="/#contacts" text="КОНТАКТЫ" />
-        <NavItem href="/news" text="НОВОСТИ" />
-        <NavItem href="/documents" text="ДОКУМЕНТАЦИЯ" />
+        <NavItem href="/about" text="О КОМПАНИИ" color={color} />
+        <NavItem href="/services" text="УСЛУГИ" color={color} />
+        <NavItem href="/#partners" text="ПАРТНЕРЫ" color={color} />
+        <NavItem href="/#contacts" text="КОНТАКТЫ" color={color} />
+        <NavItem href="/news" text="НОВОСТИ" color={color} />
+        <NavItem href="/documents" text="ДОКУМЕНТАЦИЯ" color={color} />
       </Box>
       {lang && (
         <Menu>
@@ -45,7 +45,7 @@ export const Navigation: FC<NavProps> = ({ lang, flexDir }) => {
             as={Button}
             w="75px"
             rightIcon={<ChevronDownIcon />}
-            color="#FFF"
+            color={color}
             background="transparent"
             fontSize={14}
             _active={{ background: "none" }}
@@ -57,8 +57,12 @@ export const Navigation: FC<NavProps> = ({ lang, flexDir }) => {
             {selectedLang}
           </MenuButton>
           <MenuList minW="100px">
-            <MenuItem onClick={() => localStorageLang("РУС")}>Рус</MenuItem>
-            <MenuItem onClick={() => localStorageLang("УЗ")}>УЗ</MenuItem>
+            <MenuItem color={color} onClick={() => localStorageLang("РУС")}>
+              Рус
+            </MenuItem>
+            <MenuItem color={color} onClick={() => localStorageLang("УЗ")}>
+              УЗ
+            </MenuItem>
           </MenuList>
         </Menu>
       )}

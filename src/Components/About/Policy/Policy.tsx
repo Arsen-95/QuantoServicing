@@ -7,7 +7,7 @@ export const Policy = () => {
     <Box background="#FAFAFA" py="100px">
       <Container>
         <Box
-          fontFamily="Museo Sans Cyrl"
+          as="h5"
           fontStyle="normal"
           fontWeight="600"
           fontSize="40px"

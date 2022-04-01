@@ -1,10 +1,14 @@
 import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { ICONS_PATH } from "../../../constants/settings";
 import { Navigation } from "../Navigation";
 
 export const Footer = () => {
+  const { pathname } = useRouter();
+  const color = pathname === "/newsItem" ? "#FFF" : "#FFF";
+
   return (
     <Box as="footer">
       <Box background="#365164" pos="relative">
@@ -121,7 +125,7 @@ export const Footer = () => {
               }
             ></Box>
             <Box display={["none", "none", "none", "block"]}>
-              <Navigation flexDir="row" lang={false} />
+              <Navigation flexDir="row" lang={false} color={color} />
             </Box>
             <Flex
               flexDir="column"

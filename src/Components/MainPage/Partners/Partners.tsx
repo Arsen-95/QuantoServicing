@@ -7,6 +7,7 @@ export const Partners = () => {
     <Box id="partners" py={50}>
       <Container>
         <Box
+          as="h5"
           fontFamily="Blender Pro"
           fontStyle="normal"
           fontWeight="900"

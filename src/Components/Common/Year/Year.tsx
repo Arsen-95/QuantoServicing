@@ -1,13 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useRef } from "react";
 
 const Year: FC<any> = ({ children }) => {
   const ref = useRef<any>();
-
-  // useEffect(() => {
-  // ref.current.parentElement?.classList.contains("swiper-slide-active") ? ref?.current.style.color = "red"
-  //   console.log(ref);
-  // }, []);
 
   return (
     <>

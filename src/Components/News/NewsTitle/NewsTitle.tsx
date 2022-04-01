@@ -1,4 +1,5 @@
 import { Title } from "Components/Common/Title";
+import { breadCrumbNews, breadCrumbs } from "constants/breadCrumb";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
 
@@ -9,10 +10,7 @@ export const NewsTitle = () => {
       pb="297px"
       pt="211px"
       title="Новости"
-      breadCrumb={[
-        ["Главная", "/"],
-        ["Новости", "/news"],
-      ]}
+      breadCrumb={breadCrumbs["/news"]}
     />
   );
 };

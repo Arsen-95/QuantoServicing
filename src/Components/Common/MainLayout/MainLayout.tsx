@@ -1,9 +1,18 @@
-import { Box, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Container,
+  Flex,
+} from "@chakra-ui/react";
 import { memo, useCallback, useLayoutEffect, useState } from "react";
 import { Footer } from "../Footer";
 import { Header } from "../Header";
-import { IMAGES_PATH, ICONS_PATH } from "../../../constants/settings";
+import { IMAGES_PATH } from "../../../constants/settings";
 import { useRouter } from "next/router";
+import NextLink from "next/link";
+import { breadCrumbs } from "constants/breadCrumb";
 
 const images = {
   "/": `${IMAGES_PATH}/mainTitle.png`,
@@ -13,18 +22,17 @@ const images = {
   "/documents": `${IMAGES_PATH}/documentsTitle.png`,
   "/gti": `${IMAGES_PATH}/gtiTitle.png`,
   "/gis": `${IMAGES_PATH}/gisTitle.png`,
-  "/pvr": `${IMAGES_PATH}/pvr.png`,
+  "/pvr": `${IMAGES_PATH}/pvrTitle.png`,
 };
 
 export const MainLayout: React.FC<any> = memo(({ background, children }) => {
   const [isSticky, setSticky] = useState(false);
   const { pathname } = useRouter();
-  console.log(pathname);
+  const scrollLimit = pathname === "/" ? 485 : 435;
 
-  const handleScroll = useCallback((event: any) => {
+  const handleScroll = useCallback(() => {
     const scrollTop = document.documentElement.scrollTop;
-    if (scrollTop >= 485) {
-      console.log("true");
+    if (scrollTop >= scrollLimit) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -42,18 +50,64 @@ export const MainLayout: React.FC<any> = memo(({ background, children }) => {
     <Flex flexDir={"column"} minHeight="100%">
       <Header pt="36px" />
       <Box
-        h="82px"
+        visibility={isSticky ? "visible" : "hidden"}
+        h={breadCrumbs[pathname as keyof typeof breadCrumbs] ? "132px" : "80px"}
         pos="fixed"
         right="0"
         left="0"
-        zIndex="25"
-        top={isSticky ? 0 : "-114px"}
-        bg={`linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C4C4C4 url(${
-          images[pathname as keyof typeof images]
-        }) no-repeat`}
-        bgPos="bottom"
+        zIndex="200"
+        top="0"
+        bg={`url(${images[pathname as keyof typeof images]}) no-repeat`}
+        // bgSize="cover"
+        bgPos="bottom left"
       >
-        <Header pt="20px" />
+        <Box transition="all 0.3s" opacity={isSticky ? 1 : 0}>
+          <Header pt="20px" />
+        </Box>
+
+        {breadCrumbs[pathname as keyof typeof breadCrumbs] && (
+          <Box
+            pos="absolute"
+            top={"82px"}
+            w="100%"
+            background={isSticky ? "#365164" : "none"}
+          >
+            <Container
+              m="auto"
+              transition="0.3s background"
+              opacity={isSticky ? 1 : 0}
+              h="50px"
+              pt="15px"
+            >
+              <Breadcrumb>
+                {breadCrumbs[pathname as keyof typeof breadCrumbs]?.map(
+                  ([page, href]: any) => (
+                    <BreadcrumbItem
+                      color="rgba(255, 255, 255, 0.6)"
+                      _last={{
+                        color: "#FFF",
+                      }}
+                      key="page"
+                    >
+                      <NextLink href={href} passHref>
+                        <BreadcrumbLink
+                          fontFamily="Museo Sans Cyrl"
+                          fontStyle="normal"
+                          fontWeight="400"
+                          fontSize="14px"
+                          lineHeight="134.5%"
+                          letterSpacing="-0.00240557px"
+                        >
+                          {page}
+                        </BreadcrumbLink>
+                      </NextLink>
+                    </BreadcrumbItem>
+                  )
+                )}
+              </Breadcrumb>
+            </Container>
+          </Box>
+        )}
       </Box>
       <Box
         as="main"

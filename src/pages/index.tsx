@@ -9,16 +9,8 @@ import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
-import axios from "axios";
 
 const Home: NextPage = () => {
-  const request = axios(
-    "https://quanto-servicing.herokuapp.com/ru/api/about_company/"
-  );
-  setTimeout(() => {
-    console.log(request);
-  }, 2000);
-
   return (
     <>
       <HeadTags

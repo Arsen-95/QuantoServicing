@@ -30,7 +30,7 @@ export const GisValues = () => {
         height="228px"
         numSize="64px"
         num={292}
-        num2={100}
+        num2={53}
         padding="10px"
         textWidth="225px"
       />

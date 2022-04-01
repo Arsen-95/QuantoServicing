@@ -7,6 +7,7 @@ export const PvrDocs = () => {
     <Box pt="50px" pb="150px">
       <Container>
         <Box
+          as="h5"
           fontStyle="normal"
           fontWeight="600"
           fontSize="40px"
