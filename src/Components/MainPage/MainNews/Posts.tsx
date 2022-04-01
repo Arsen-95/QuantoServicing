@@ -47,43 +47,43 @@ const Posts = () => {
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post1.png"
+            picture="post1.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post2.png"
+            picture="post2.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post3.png"
+            picture="post3.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post1.png"
+            picture="post1.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post2.png"
+            picture="post2.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post3.png"
+            picture="post3.png"
           />
         </SwiperSlide>
         <SwiperSlide>
           <PostItem
             text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="Post2.png"
+            picture="post2.png"
           />
         </SwiperSlide>
       </Swiper>

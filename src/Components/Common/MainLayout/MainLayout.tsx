@@ -58,7 +58,7 @@ export const MainLayout: React.FC<any> = memo(({ background, children }) => {
         zIndex="200"
         top="0"
         bg={`url(${images[pathname as keyof typeof images]}) no-repeat`}
-        // bgSize="cover"
+        bgSize="cover"
         bgPos="bottom left"
       >
         <Box transition="all 0.3s" opacity={isSticky ? 1 : 0}>
