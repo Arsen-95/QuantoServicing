@@ -1,4 +1,4 @@
-import { Box, keyframes } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Title } from "Components/Common/Title";
 import React from "react";
 import { IMAGES_PATH } from "../../../constants/settings";

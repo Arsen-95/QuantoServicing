@@ -33,7 +33,7 @@ const Method: FC<MethodProps> = ({ methodName, text, picture }) => {
       bg={`url(${IMAGES_PATH}/${picture}) no-repeat center right 20px`}
     >
       <Box
-        maxW="60%"
+        maxW="63%"
         fontStyle="normal"
         fontWeight="400"
         fontSize="18px"

@@ -14,6 +14,7 @@ export const Burger: FC<BurgerProps> = ({ menu, setMenu }) => {
       {menu === true ? (
         <Box display={["block", "block", "block", "none"]}>
           <IconButton
+            border="none"
             onClick={() => setMenu(!menu)}
             aria-label="Options"
             icon={<Icon as={CloseIcon} />}
@@ -29,6 +30,7 @@ export const Burger: FC<BurgerProps> = ({ menu, setMenu }) => {
       ) : (
         <Box display={["block", "block", "block", "none"]}>
           <IconButton
+            border="none"
             onClick={() => setMenu(!menu)}
             aria-label="Options"
             icon={<Icon as={BurgerIcon} />}

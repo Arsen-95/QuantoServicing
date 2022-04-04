@@ -14,9 +14,8 @@ export const Years = ({ onScroll }: any) => {
   const years = [2019, 2020, 2021];
 
   return (
-    <Flex alignItems="center" h="410px">
+    <Flex alignItems="center" h="310px">
       <Swiper
-        // loop
         direction={"vertical"}
         centeredSlides={true}
         slidesPerView={5}
@@ -26,7 +25,7 @@ export const Years = ({ onScroll }: any) => {
         }}
         modules={[Mousewheel, Scrollbar]}
         className="years-vertical-slider"
-        style={{ height: "350px", width: "260px", overflow: "hidden" }}
+        style={{ height: "350px", overflow: "hidden" }}
         onSlideChange={(a) => {
           onScroll(years[a.realIndex]);
         }}
@@ -35,7 +34,7 @@ export const Years = ({ onScroll }: any) => {
           <>
             <SwiperSlide key={year}>
               {<Year years={years}>{year}</Year>}
-              {index < years.length && (
+              {index + 1 < years.length && (
                 <>
                   <Box
                     mb="10px"

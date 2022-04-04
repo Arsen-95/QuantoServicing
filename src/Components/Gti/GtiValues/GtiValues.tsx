@@ -1,40 +1,28 @@
-import { Box, Container, Flex, Grid } from "@chakra-ui/react";
 import { StatsBox } from "Components/Common/StatsBox";
 import { ValuesByYears } from "Components/Common/ValuesByYears";
-import React from "react";
+import React, { useState } from "react";
 
 export const GtiValues = () => {
-  return (
-    <ValuesByYears>
-      <StatsBox
-        text="Количество завершенных скважин, шт"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={345}
-        plus={true}
-        padding="10px"
-        textWidth="145px"
-      />
-      <StatsBox
-        text="Наработка, сут"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={275000}
-        padding="10px"
-        textWidth="145px"
-      />
-      <StatsBox
-        text="Коэффициент эксплуатации скважины"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={292}
-        num2={100}
-        padding="10px"
-        textWidth="225px"
-      />
-    </ValuesByYears>
-  );
+  const data: Record<
+    number,
+    { text: string; num: number; num2?: number; plus?: boolean }[]
+  > = {
+    2021: [
+      { text: "Кол-во завершенных скважин (шт)", num: 35 },
+      { text: "Наработка (сут)", num: 3540 },
+      { text: "Коэффицент эксплуатации станции (д.е.)", num: 0.79 },
+    ],
+    2020: [
+      { text: "Кол-во завершенных скважин (шт)", num: 42 },
+      { text: "Наработка (сут)", num: 3385 },
+      { text: "Коэффицент эксплуатации станции (д.е.)", num: 0.77 },
+    ],
+    2019: [
+      { text: "Кол-во завершенных скважин (шт)", num: 27 },
+      { text: "Наработка, сут", num: 2632 },
+      { text: "Коэффицент эксплуатации станции, д.е.", num: 0.6 },
+    ],
+  };
+
+  return <ValuesByYears data={data} />;
 };

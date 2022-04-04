@@ -57,10 +57,10 @@ export const Navigation: FC<NavProps> = ({ lang, flexDir, color }) => {
             {selectedLang}
           </MenuButton>
           <MenuList minW="100px">
-            <MenuItem color={color} onClick={() => localStorageLang("РУС")}>
+            <MenuItem color="#000" onClick={() => localStorageLang("РУС")}>
               Рус
             </MenuItem>
-            <MenuItem color={color} onClick={() => localStorageLang("УЗ")}>
+            <MenuItem color="#000" onClick={() => localStorageLang("УЗ")}>
               УЗ
             </MenuItem>
           </MenuList>

@@ -29,6 +29,7 @@ export const Header = ({ pt }: any) => {
           <NextLink href="/" passHref>
             <Link py="5px">
               <Image
+                w="115px"
                 src={
                   pathname === "/newsItem"
                     ? `${ICONS_PATH}/logoBlack.svg`

@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  Flex,
-  ListItem,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import { IMAGES_PATH } from "constants/settings";
 import React, { FC } from "react";
 import { SwiperSlide } from "swiper/react";
@@ -12,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useRouter } from "next/router";
 
-const CustomSliderItem: FC<any> = ({ title, text, imageUrl, arr }) => {
+const CustomSliderItem: FC<any> = ({ title, text, text2, imageUrl, arr }) => {
   const { pathname } = useRouter();
   const titleSize = pathname === "/" ? "75px" : "40px";
 
@@ -35,28 +29,16 @@ const CustomSliderItem: FC<any> = ({ title, text, imageUrl, arr }) => {
               >
                 {title}
               </Box>
-              {text && <Box mb={arr && "28px"}>{text}</Box>}
-
-              {arr && (
-                <UnorderedList>
-                  {arr.map((item: any) => (
-                    <ListItem
-                      fontFamily="Museo Sans Cyrl"
-                      fontStyle="normal"
-                      fontWeight="300"
-                      fontSize="18px"
-                      lineHeight="22px"
-                      letterSpacing="-0.00240557px"
-                      color="#000000"
-                      opacity="0.7"
-                      key={item}
-                      _notLast={{ mb: "10px" }}
-                    >
-                      {item}
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              )}
+              <Box
+                whiteSpace="pre-line"
+                fontWeight="300"
+                fontSize="18px"
+                lineHeight="142%"
+                letterSpacing="-0.00240557px"
+                color="#494949"
+              >
+                {text}
+              </Box>
             </Flex>
             <Box
               position="absolute"

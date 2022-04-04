@@ -16,17 +16,17 @@ export const Stats = () => {
               as="h5"
               textTransform="uppercase"
               fontFamily="Blender Pro"
-              fontSize={["56px", "60px", "66px", "70px", "76px"]}
+              fontSize={["36px", "50px", "60px", "64px", "76px"]}
               letterSpacing="-2.50267px"
               color="#494949"
-              lineHeight="62px"
+              lineHeight={["35px", "50px", "62px"]}
               mb={["20px", "20px", "20px", "72px"]}
-              maxW="425px"
+              maxW={["220px", "330px", "425px"]}
             >
               наши Результаты говорят сами за себя
             </Text>
             <Text
-              fontSize="18px"
+              fontSize={["10px", "14px", "16px", "18px"]}
               color="#494949"
               letterSpacing="-0.00089095px"
               lineHeight="1.2"
@@ -38,37 +38,40 @@ export const Stats = () => {
             </Text>
           </Box>
           <Box justifySelf="right" position="relative" flex="1 1 50%">
-            <Grid gap="9" templateColumns="repeat(2, 1fr)">
+            <Grid
+              gap={["2", "2", "4", "6", "8"]}
+              templateColumns="repeat(2, 1fr)"
+            >
               <StatsBox
-                numSize={["52px", "70px", "86px", "76px", "96px"]}
-                textSize={["12px", "14px", "16px", "16px", "18px"]}
+                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
                 num={4382}
-                height={["160px", "230px", "280px", "230px", "294px"]}
-                padding="15px"
+                height={["150px", "210px", "280px", "230px", "294px"]}
+                padding="14px"
               />
               <StatsBox
-                numSize={["52px", "70px", "86px", "76px", "96px"]}
-                textSize={["12px", "14px", "16px", "16px", "18px"]}
+                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
                 num={3596}
-                height={["160px", "230px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />
               <StatsBox
-                numSize={["52px", "70px", "86px", "76px", "96px"]}
-                textSize={["12px", "14px", "16px", "16px", "18px"]}
+                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
                 num={246}
-                height={["160px", "230px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />
               <StatsBox
-                numSize={["52px", "70px", "86px", "76px", "96px"]}
-                textSize={["12px", "14px", "16px", "16px", "18px"]}
+                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
                 num={540}
-                height={["160px", "230px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />
             </Grid>

@@ -30,11 +30,9 @@ export const DocumentsList = () => {
         </Box>
         <Grid gap={6} templateColumns="repeat(3, 1fr)">
           <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
+          <DownloadFile fileName="Политика безопасности" fileSize={10.5} />
+          <DownloadFile fileName="Техническая политика" fileSize={10.5} />
+          <DownloadFile fileName="Лицензия на ПВР" fileSize={10.5} />
         </Grid>
       </Container>
     </Box>

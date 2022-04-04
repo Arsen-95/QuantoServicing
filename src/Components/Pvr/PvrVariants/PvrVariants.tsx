@@ -55,8 +55,8 @@ export const PvrVariants = () => {
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
-
               <PopoverBody
+                fontFamily="Museo Sans Cyrl"
                 fontWeight="300"
                 fontSize="18px"
                 lineHeight="125%"

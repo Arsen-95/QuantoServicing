@@ -3,6 +3,8 @@ import {
   Button,
   Container,
   Grid,
+  Image,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -12,6 +14,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
+import { IMAGES_PATH } from "constants/settings";
 import React from "react";
 import ServiceItem from "./ServiceItem";
 
@@ -53,13 +56,23 @@ export const ServicesList = () => {
             onClick={onOpen}
           />
         </Grid>
-        <Modal onClose={onClose} isOpen={isOpen} isCentered>
+        <Modal onClose={onClose} isOpen={isOpen} isCentered size={"xl"}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Промыслово-геофизические исследования</ModalHeader>
+            <Box>
+              <Image src={`${IMAGES_PATH}/soon.png`} alt="soon" />
+            </Box>
+            <ModalHeader fontSize="30px">
+              Эта услуга скоро появится!
+            </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Box>Этот раздел на этапе проработки</Box>
+              <Box mb="20px" fontSize="25px">
+                Свяжитесь с нами
+              </Box>
+              <Link href="tel:+99878-140-55-00" fontSize="20px">
+                +99878-140-55-00
+              </Link>
             </ModalBody>
             <ModalFooter>
               <Button onClick={onClose}>Закрыть</Button>

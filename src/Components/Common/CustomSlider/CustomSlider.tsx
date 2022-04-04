@@ -12,7 +12,6 @@ import { ICONS_PATH } from "constants/settings";
 export const CustomSlider: FC<any> = ({ sliderData }) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
-  console.log(nextRef);
 
   const [next, setNext] = useState("");
   const [prev, setPrev] = useState("");
@@ -47,6 +46,7 @@ export const CustomSlider: FC<any> = ({ sliderData }) => {
             <CustomSliderItem
               title={slider.title}
               text={slider.text}
+              text2={slider.text2}
               imageUrl={slider.imageUrl}
               arr={slider?.arr && slider.arr}
             />

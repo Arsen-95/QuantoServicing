@@ -3,37 +3,26 @@ import { ValuesByYears } from "Components/Common/ValuesByYears";
 import React from "react";
 
 export const GisValues = () => {
-  return (
-    <ValuesByYears>
-      <StatsBox
-        text="Количество выполненных заявок"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={345}
-        plus={true}
-        padding="10px"
-        textWidth="145px"
-      />
-      <StatsBox
-        text="Количество исследованных интервалов"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={275000}
-        padding="10px"
-        textWidth="145px"
-      />
-      <StatsBox
-        text="Выполненный комплекс открытый/закрытый ствол"
-        textSize="18px"
-        height="228px"
-        numSize="64px"
-        num={292}
-        num2={53}
-        padding="10px"
-        textWidth="225px"
-      />
-    </ValuesByYears>
-  );
+  const data: Record<
+    number,
+    { text: string; num: number; num2?: number; plus?: boolean }[]
+  > = {
+    2021: [
+      { text: "Кол-во отработанных заявок (шт)", num: 345 },
+      { text: "Исследованные интервалы (м)", num: 275000 },
+      { text: "Открытый/закрытый ствол (шт)", num: 292, num2: 53 },
+    ],
+    2020: [
+      { text: "Кол-во отработанных заявок (шт)", num: 175 },
+      { text: "Исследованные интервалы (м)", num: 140000 },
+      { text: "Открытый/закрытый ствол (шт)", num: 107, num2: 68 },
+    ],
+    2019: [
+      { text: "Кол-во отработанных заявок (шт)", num: 10 },
+      { text: "Исследованные интервалы (м)", num: 20000 },
+      { text: "Открытый/закрытый ствол (шт)", num: 2, num2: 8 },
+    ],
+  };
+
+  return <ValuesByYears data={data} />;
 };

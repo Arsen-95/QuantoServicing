@@ -31,20 +31,34 @@ const theme = extendTheme({
         color: "#365164 !important",
       },
       ".swiper-slide": {
-        fontSize: "20px",
+        fontSize: "24px",
         height: "auto",
         color: "#8C949D",
         transition: "all 0.7s !important",
       },
-      ".swiper-wrapper": {},
-      "@media (max-width: 767px)": {
-        ".years-vertical-slider .swiper-slide.swiper-slide-active": {
-          fontSize: "44px",
-        },
-      },
+
       "@media (max-width: 991px)": {
         ".years-vertical-slider .swiper-slide.swiper-slide-active": {
           fontSize: "60px",
+        },
+        ".swiper-slide": {
+          fontSize: "20px",
+          height: "auto",
+          color: "#8C949D",
+          transition: "all 0.7s !important",
+        },
+      },
+      "@media (max-width: 767px)": {
+        ".years-vertical-slider .swiper-slide.swiper-slide-active": {
+          fontSize: "44px",
+          lineHeight: "1.3",
+        },
+        ".swiper-slide": {
+          fontSize: "16px",
+          lineHeight: "2",
+          height: "auto",
+          color: "#8C949D",
+          transition: "all 0.7s !important",
         },
       },
       h5: {

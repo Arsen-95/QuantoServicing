@@ -1,9 +1,18 @@
 import { Box, Container, Flex, Grid } from "@chakra-ui/react";
-import { StatsBox } from "Components/Common/StatsBox";
 import { Years } from "Components/Common/Year/Years";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { StatsBox } from "../StatsBox";
 
-export const ValuesByYears: FC<any> = ({ children }) => {
+export const ValuesByYears: FC<any> = ({ data, yearsData }) => {
+  const [year, setYear] = useState(2019);
+  const yearChanger = (e: any): any => {
+    setYear(e);
+  };
+  console.log(data);
+  data[year].map((item: any) => {
+    console.log(item);
+  });
+
   return (
     <Box pt="50px" pb="80px">
       <Container>
@@ -22,10 +31,22 @@ export const ValuesByYears: FC<any> = ({ children }) => {
         </Box>
         <Flex>
           <Box flexBasis="30%" display="flex">
-            <Years />
+            <Years onScroll={yearChanger} yearsData={yearsData} />
           </Box>
           <Grid flex="1" pt="50px" templateColumns="repeat(3, 1fr)" gap="6%">
-            {children}
+            {data[year].map((item: any) => (
+              <StatsBox
+                key={`${Math.random()}`}
+                padding="8px"
+                text={item?.text}
+                num={item?.num}
+                num2={item?.num2}
+                plus={item?.plus}
+                height="228px"
+                numSize={["36px", "36px", "46px", "64px"]}
+                textSize={["12px", "14px", "16px", "18px"]}
+              />
+            ))}
           </Grid>
         </Flex>
       </Container>

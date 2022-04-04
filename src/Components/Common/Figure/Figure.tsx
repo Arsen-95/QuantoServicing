@@ -120,9 +120,9 @@ export const Figure: FC<FigureProps> = ({
                     textAlign="left"
                   >
                     <Grid
-                      h="500px"
-                      templateRows="3"
-                      templateColumns="repeat(5, 100px)"
+                      templateColumns="repeat(5, 150px)"
+                      gap="8px"
+                      mb="14px"
                     >
                       <GridBoxItem text="Диаметр перфосистемы" num="Ø73" />
                       <GridBoxItem text="Тип заряда" num="СГП" />
@@ -158,6 +158,14 @@ export const Figure: FC<FigureProps> = ({
                         num="1130"
                       />
                     </Grid>
+                    <Box
+                      fontWeight="300"
+                      fontSize="16px"
+                      lineHeight="99.5%"
+                      letterSpacing="-0.04em"
+                    >
+                      *Температура не более 24 - при температуре 150 ºС
+                    </Box>
                   </PopoverBody>
                 </PopoverContent>
               </Popover>

@@ -35,7 +35,7 @@ export const AboutCompany = () => {
           </Box>
           <Box
             minH="200px"
-            minW="64%"
+            minW="65%"
             alignItems="center"
             background={`url(${IMAGES_PATH}/quantoImage.png) no-repeat 50%`}
           ></Box>
