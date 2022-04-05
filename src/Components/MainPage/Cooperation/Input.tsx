@@ -24,7 +24,8 @@ export const Input: React.FC<Props> = ({
       value={value}
       type={type}
       borderRadius="0"
-      width={["70%", "70%", "300px", "400px"]}
+      height={["46px"]}
+      width={["90%", "80%", "300px", "400px"]}
       border={
         formState?.errors?.[name]?.message
           ? "1.45682px solid red"
@@ -52,7 +53,7 @@ export const InputMask: React.FC<Omit<Props, "placeholder" | "type">> = ({
       value={value}
       onChange={onChange}
       borderRadius="0"
-      width={["70%", "70%", "300px", "400px"]}
+      width={["90%", "80%", "300px", "400px"]}
       border={
         formState?.errors?.[name]?.message
           ? "1.45682px solid red"

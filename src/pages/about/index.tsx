@@ -19,9 +19,9 @@ const About: NextPage = () => {
       <MainLayout>
         <AboutTitle />
         <AboutCompany />
-        <Management />
+        {/* <Management /> */}
         <AboutSlider />
-        <Personal />
+        {/* <Personal /> */}
         <Policy />
       </MainLayout>
     </>

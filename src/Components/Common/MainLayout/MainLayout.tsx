@@ -78,7 +78,11 @@ export const MainLayout: React.FC<any> = memo(({ background, children }) => {
             pos="absolute"
             top={"82px"}
             w="100%"
-            background={isSticky ? "#365164" : "none"}
+            background={
+              isSticky
+                ? "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"
+                : "none"
+            }
           >
             <Container
               m="auto"

@@ -32,7 +32,7 @@ export const PvrMap = () => {
   }, [handleMouseOn]);
 
   return (
-    <Box background="#FAFAFA" pt="125px" pb="50px">
+    <Box pt="125px" pb="50px">
       <Container>
         <Box
           as="h5"

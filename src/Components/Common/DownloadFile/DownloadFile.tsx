@@ -13,7 +13,7 @@ export const DownloadFile: FC<FileProps> = ({ fileName, fileSize }) => {
       download
       pos="relative"
       flex="1"
-      maxW="411px"
+      maxW="410px"
       h="70px"
       background={`url(${ICONS_PATH}/pdfFile.svg) no-repeat 3px 50% #FFF`}
       fontFamily="Museo Sans Cyrl"

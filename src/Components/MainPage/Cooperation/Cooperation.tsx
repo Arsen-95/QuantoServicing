@@ -46,7 +46,7 @@ export const Cooperation = () => {
         <Flex flexDir={["column", "column", "row"]}>
           <Box
             flex="1 1 auto"
-            mb={["40px", "40px", "0"]}
+            mb={["50px", "50px", "0"]}
             textAlign={["center", "center", "left"]}
           >
             <Text
@@ -54,7 +54,7 @@ export const Cooperation = () => {
               textTransform="uppercase"
               fontStyle="normal"
               fontWeight="900"
-              fontSize={["35px", "45px", "50px", "65px", "75px"]}
+              fontSize={["35px", "50px", "50px", "75px"]}
               lineHeight="62px"
               letterSpacing="-2.50267px"
               color="#494949"
@@ -81,9 +81,10 @@ export const Cooperation = () => {
                 />
                 {formState?.errors?.name?.message && (
                   <Text
+                    mx={["auto", "auto", "0"]}
+                    width={["90%", "80%", "300px", "400px"]}
                     mt="20px"
                     fontSize="14px"
-                    width="431px"
                     textAlign="center"
                     color="red.500"
                     fontWeight="bold"
@@ -107,9 +108,10 @@ export const Cooperation = () => {
                 />
                 {formState?.errors?.tel?.message && (
                   <Text
+                    mx={["auto", "auto", "0"]}
+                    width={["90%", "80%", "300px", "400px"]}
                     mt="20px"
                     fontSize="14px"
-                    width="431px"
                     textAlign="center"
                     color="red.500"
                     fontWeight="bold"
@@ -126,7 +128,7 @@ export const Cooperation = () => {
                     <Input
                       value={field.value}
                       onChange={field.onChange}
-                      placeholder="email"
+                      placeholder="Email"
                       name="email"
                       formState={formState}
                     />
@@ -134,9 +136,10 @@ export const Cooperation = () => {
                 />
                 {formState?.errors?.email?.message && (
                   <Text
+                    mx={["auto", "auto", "0"]}
+                    width={["90%", "80%", "300px", "400px"]}
                     mt="20px"
                     fontSize="14px"
-                    width="431px"
                     textAlign="center"
                     color="red.500"
                     fontWeight="bold"
@@ -157,7 +160,7 @@ export const Cooperation = () => {
                       onChange={field.onChange}
                       placeholder="Сообщение"
                       name="message"
-                      width={["70%", "70%", "300px", "400px"]}
+                      width={["90%", "80%", "300px", "400px"]}
                       border={
                         formState?.errors?.message?.message
                           ? "1.45682px solid red"
@@ -172,9 +175,10 @@ export const Cooperation = () => {
                 />
                 {formState?.errors?.message?.message && (
                   <Text
+                    mx={["auto", "auto", "0"]}
+                    width={["90%", "80%", "300px", "400px"]}
                     mt="20px"
                     fontSize="14px"
-                    width="431px"
                     textAlign="center"
                     color="red.500"
                     fontWeight="bold"
@@ -184,7 +188,7 @@ export const Cooperation = () => {
                 )}
               </Box>
               <Text
-                mb="10px"
+                mb="15px"
                 opacity="0.9"
                 color="rgba(29, 29, 29, 0.5)"
                 letterSpacing="-0.00240557px"
@@ -212,6 +216,7 @@ export const Cooperation = () => {
             </form>
           </Box>
           <Box
+            display={["none", "none", "block"]}
             w={["100%", "100%", "50%"]}
             pos={["static", "static", "absolute"]}
             right="0"
@@ -229,6 +234,23 @@ export const Cooperation = () => {
           </Box>
         </Flex>
       </Container>
+      <Box
+        display={["block", "block", "none"]}
+        w={["100%", "100%", "50%"]}
+        pos={["static", "static", "absolute"]}
+        right="0"
+        top="0"
+        bottom="0"
+        height={["500px", "500px", "auto"]}
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6694401386562!2d69.28075444830512!3d41.29429820655181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8acc18cf03c9%3A0xdec3924705b6facd!2zMjkg0J3Rg9C60YPRgdGB0LrQsNGPINGD0LvQuNGG0LAsINCi0LDRiNC60LXQvdGCLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1647407001204!5m2!1sru!2s"
+          width="100%"
+          height="100%"
+          allowFullScreen={true}
+          loading="lazy"
+        ></iframe>
+      </Box>
     </Box>
   );
 };

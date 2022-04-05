@@ -54,23 +54,25 @@ export const Values = () => {
     setYear(e);
   };
 
+  const yearsData = [2019, 2020, 2021];
+
   return (
-    <Box bgColor="#FAFAFA" py="75px">
+    <Box bgColor="#FAFAFA" py={["50px", "75px"]}>
       <Container>
-        <Flex mb={["60px", "60px", "35px"]} justifyContent={["space-between"]}>
-          <Box
-            display="flex"
-            flex="1"
-            minW={["auto", "200px", "200px", "200px", "300px"]}
-          >
-            <Box display={["block", "block", "none"]} mt="-40px">
-              <Years onScroll={yearChanger} />
+        <Flex mb={["60px", "60px", "35px"]}>
+          <Flex flex="1" minW={["150px", "220px", "200px", "200px", "300px"]}>
+            <Box
+              display={["block", "block", "none"]}
+              mt="-40px"
+              pl={["0", "20"]}
+            >
+              <Years onScroll={yearChanger} yearsData={yearsData} />
             </Box>
-          </Box>
+          </Flex>
           <Box
             mt="70px"
             w="100%"
-            textAlign={["right", "right", "left"]}
+            textAlign={["center", "center", "left"]}
             display={["block", "block", "grid"]}
             gridTemplateColumns={[
               "repeat(2, 1fr)",
@@ -114,7 +116,7 @@ export const Values = () => {
             minH="100%"
             minW={["auto", "200px", "200px", "200px", "300px"]}
           >
-            <Years onScroll={yearChanger} />
+            <Years onScroll={yearChanger} yearsData={yearsData} />
           </Box>
 
           <Grid

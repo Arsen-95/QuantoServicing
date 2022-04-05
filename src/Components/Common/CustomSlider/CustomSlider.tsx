@@ -9,7 +9,7 @@ import { Autoplay, EffectFade, Navigation } from "swiper";
 import CustomSliderItem from "./CustomSliderItem";
 import { ICONS_PATH } from "constants/settings";
 
-export const CustomSlider: FC<any> = ({ sliderData }) => {
+export const CustomSlider: FC<any> = ({ sliderData, bg = "#FFF" }) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
 
@@ -22,8 +22,9 @@ export const CustomSlider: FC<any> = ({ sliderData }) => {
   }, []);
 
   return (
-    <Box position="relative">
+    <Box position="relative" bg={bg}>
       <Swiper
+        loop
         spaceBetween={30}
         navigation={{
           prevEl: prev,
@@ -46,15 +47,19 @@ export const CustomSlider: FC<any> = ({ sliderData }) => {
             <CustomSliderItem
               title={slider.title}
               text={slider.text}
-              text2={slider.text2}
               imageUrl={slider.imageUrl}
-              arr={slider?.arr && slider.arr}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <Flex pos="absolute" bottom="30px" left="40%" zIndex={10}>
+      <Flex
+        pos="absolute"
+        bottom="30px"
+        left="40%"
+        zIndex={10}
+        display={["none", "none", "none", "flex"]}
+      >
         <Box
           border="1px solid #494949"
           mr="10px"

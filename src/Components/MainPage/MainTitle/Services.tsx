@@ -50,17 +50,17 @@ const Services = () => {
       >
         <Service
           text="Геолого-технологические исследования"
-          picture={`${IMAGES_PATH}/service2.png`}
+          picture={`${IMAGES_PATH}/service1.png`}
           href="/gti"
         />
         <Service
           text="Геофизические исследования скважин"
-          picture={`${IMAGES_PATH}/service3.png`}
+          picture={`${IMAGES_PATH}/service2.png`}
           href="/gis"
         />
         <Service
           text="Прострелочно-взрывные работы"
-          picture={`${IMAGES_PATH}/service1.png`}
+          picture={`${IMAGES_PATH}/service3.png`}
           href="/pvr"
         />
         <Service

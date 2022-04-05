@@ -14,7 +14,6 @@ export const Management = () => {
           as="h5"
           fontStyle="normal"
           fontWeight="600"
-          fontSize="40px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
           color="#494949"

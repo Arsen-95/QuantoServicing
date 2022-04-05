@@ -26,9 +26,12 @@ const Posts = () => {
         freeMode={true}
         breakpoints={{
           320: {
+            slidesPerView: 1,
+          },
+          420: {
             slidesPerView: 2,
           },
-          800: {
+          700: {
             slidesPerView: 3,
           },
           1150: {
@@ -87,7 +90,12 @@ const Posts = () => {
           />
         </SwiperSlide>
       </Swiper>
-      <Flex pos="absolute" top="-76px" right="0">
+      <Flex
+        pos="absolute"
+        top={["110%", "-80px", "-80px"]}
+        right={["50%", "0"]}
+        transform={["translateX(50%)", "translateX(0)"]}
+      >
         <Box
           mr="9px"
           ref={prevRef}

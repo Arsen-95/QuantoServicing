@@ -3,18 +3,14 @@ import { Years } from "Components/Common/Year/Years";
 import React, { FC, useState } from "react";
 import { StatsBox } from "../StatsBox";
 
-export const ValuesByYears: FC<any> = ({ data, yearsData }) => {
-  const [year, setYear] = useState(2019);
+export const ValuesByYears: FC<any> = ({ data, yearsData, bg = "#FFF" }) => {
+  const [year, setYear] = useState(yearsData[0]);
   const yearChanger = (e: any): any => {
     setYear(e);
   };
-  console.log(data);
-  data[year].map((item: any) => {
-    console.log(item);
-  });
 
   return (
-    <Box pt="50px" pb="80px">
+    <Box pt="50px" pb="80px" bg={bg}>
       <Container>
         <Box
           as="h5"

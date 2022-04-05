@@ -15,7 +15,7 @@ import React from "react";
 
 export const PvrVariants = () => {
   return (
-    <Box bg="#FAFAFA" pt="95px" pb="125px">
+    <Box pt="95px" pb="125px">
       <Container>
         <Box
           as="h5"

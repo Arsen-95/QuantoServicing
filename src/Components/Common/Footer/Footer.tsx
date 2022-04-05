@@ -47,7 +47,7 @@ export const Footer = () => {
                 letterSpacing="-0.00240557px"
                 opacity="0.9"
               >
-                {`Узбекистан, Ташкент, \nМирабадский район, ул. Нукусская, 29`}
+                {`Узбекистан, Ташкент, \nМирабадский район, ул. Нукус, 29`}
               </Box>
               <Box
                 fontFamily="Museo Sans Cyrl"

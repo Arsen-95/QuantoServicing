@@ -4,7 +4,7 @@ import Companies from "./Companies";
 
 export const Partners = () => {
   return (
-    <Box id="partners" py={100}>
+    <Box id="partners" py={["40px", "100px"]}>
       <Container>
         <Box
           as="h5"

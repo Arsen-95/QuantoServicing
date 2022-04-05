@@ -11,7 +11,7 @@ export const MainTitle = () => {
       background={`url(${IMAGES_PATH}/mainTitle.png) no-repeat`}
       text="Компания Quanto предоставляет целый ряд  услуг на нефтегазовом рынке Узбекистана"
       pt="158px"
-      pb={["140px", "140px", "140px", "30px"]}
+      pb={["0px", "140px", "140px", "30px"]}
     >
       <Box display={["none", "none", "none", "block"]}>
         <Services />

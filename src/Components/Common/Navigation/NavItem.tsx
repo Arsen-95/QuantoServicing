@@ -5,7 +5,7 @@ import React, { FC } from "react";
 type NavProps = {
   href: string;
   text: string;
-  fontSize?: string;
+  fontSize?: any;
   onClick?: any;
   color?: any;
 };
@@ -26,7 +26,7 @@ const NavItem: FC<NavProps> = ({
         fontSize={fontSize}
         color={color}
         fontFamily="Museo Sans Cyrl"
-        fontWeight="600"
+        fontWeight="500"
         letterSpacing="-0.00185615px"
         onClick={onClick}
         _hover={{

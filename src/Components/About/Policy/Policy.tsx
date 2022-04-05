@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { DownloadFile } from "Components/Common/DownloadFile";
 import React from "react";
 
@@ -34,11 +34,19 @@ export const Policy = () => {
           стабильного развития компании внедрены и функционируют корпоративные
           политики
         </Text>
-        <Flex gap={6}>
+        <Grid
+          gap={6}
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+          ]}
+        >
           <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
           <DownloadFile fileName="Политика безопасности" fileSize={10.5} />
           <DownloadFile fileName="Техническая политика" fileSize={10.5} />
-        </Flex>
+        </Grid>
       </Container>
     </Box>
   );

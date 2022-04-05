@@ -11,12 +11,6 @@ type ServiceProps = {
 };
 
 const Service: FC<ServiceProps> = ({ text, picture, href, onClick }) => {
-  const pulsate = keyframes`
-  0% {transform: scale(0.1, 0.1); opacity: 0.0;}
-  50% {opacity: 0.5;}
-  100% {transform: scale(1, 1); opacity: 1.0;}
-`;
-
   return (
     <NextLink href={href} passHref>
       <Link
@@ -28,7 +22,7 @@ const Service: FC<ServiceProps> = ({ text, picture, href, onClick }) => {
         backgroundPosition="0% 72px"
         height="102px"
         width="182px"
-        fontSize="12"
+        fontSize="14px"
         lineHeight="16px"
         _notLast={{
           mr: "24px",

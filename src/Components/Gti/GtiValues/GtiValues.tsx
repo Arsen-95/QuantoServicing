@@ -24,5 +24,7 @@ export const GtiValues = () => {
     ],
   };
 
-  return <ValuesByYears data={data} />;
+  const yearsData = [2019, 2020, 2021];
+
+  return <ValuesByYears data={data} yearsData={yearsData} />;
 };

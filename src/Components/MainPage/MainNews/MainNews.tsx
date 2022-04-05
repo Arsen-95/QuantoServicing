@@ -4,7 +4,7 @@ import Posts from "./Posts";
 
 export const MainNews = () => {
   return (
-    <Box bgColor="#FAFAFA" pt="97px" pb="109px">
+    <Box bgColor="#FAFAFA" py={["50px", "100px"]} pb={["80px", 0]}>
       <Container>
         <Box
           as="h5"
@@ -23,7 +23,7 @@ export const MainNews = () => {
         <Flex mb="42px">
           <Button
             textTransform="uppercase"
-            fontSize="14px"
+            fontSize={["12px", "14px", "14px"]}
             lineHeight={1}
             mr="9px"
             color="#494949"
@@ -41,7 +41,7 @@ export const MainNews = () => {
           </Button>
           <Button
             textTransform="uppercase"
-            fontSize="14px"
+            fontSize={["12px", "14px", "14px"]}
             lineHeight={1}
             color="#494949"
             background="#F2F2F2"

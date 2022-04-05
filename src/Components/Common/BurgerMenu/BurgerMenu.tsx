@@ -9,7 +9,6 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import React, { FC } from "react";
-import { Navigation } from "../Navigation";
 import NavItem from "../Navigation/NavItem";
 
 type MenuProps = {
@@ -46,11 +45,10 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
             <NavItem
               href="/about"
               text="О компании"
-              fontSize="36px"
-              onClick={closeBurgerMenu}
+              fontSize={["26px", "36px"]}
+              color="#FFF"
             />
           </Box>
-          {/* <Divider my={5} /> */}
           <Accordion allowToggle mb={5}>
             <AccordionItem>
               <Box color="#FFFFFF">
@@ -58,10 +56,10 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
                   <Box
                     flex="1"
                     textAlign="left"
-                    fontSize="36px"
-                    fontWeight="600"
+                    fontSize={["26px", "36px"]}
                     lineHeight="43px"
                     letterSpacing="-0.00185615px"
+                    color="#FFF"
                   >
                     Услуги
                   </Box>
@@ -70,59 +68,54 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
               </Box>
               <AccordionPanel pb={4}>
                 <Flex flexDirection="column">
-                  <Box mb={5}>
-                    <NavItem
-                      href="/gti"
-                      text="Геолого-технологические исследования"
-                      fontSize="28px"
-                    />
-                  </Box>
-                  <Box mb={5}>
-                    <NavItem
-                      href="/gis"
-                      text="Геофизические исследования скважин"
-                      fontSize="28px"
-                    />
-                  </Box>
-                  <Box>
-                    <NavItem
-                      href="/pvr"
-                      text="Прострелочно-взрывные работы"
-                      fontSize="28px"
-                    />
-                  </Box>
+                  <NavItem
+                    href="/gti"
+                    text="Геолого-технологические исследования"
+                    fontSize={["22px", "28px"]}
+                    color="#FFF"
+                  />
+                  <NavItem
+                    href="/gis"
+                    text="Геофизические исследования скважин"
+                    fontSize={["22px", "28px"]}
+                    color="#FFF"
+                  />
+                  <NavItem
+                    href="/pvr"
+                    text="Прострелочно-взрывные работы"
+                    fontSize={["22px", "28px"]}
+                    color="#FFF"
+                  />
                 </Flex>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          {/* <NavItem
-            onClick={closeBurgerMenu}
-            href="/services"
-            text="Услуги"
-            fontSize="36px"
-          /> */}
-          {/* <Divider my={5} /> */}
           <NavItem
-            onClick={closeBurgerMenu}
             href="/#partners"
             text="Партнеры"
-            fontSize="36px"
+            fontSize={["26px", "36px"]}
+            color="#FFF"
           />
           <Divider my={5} />
           <NavItem
-            onClick={closeBurgerMenu}
             href="/#contacts"
             text="Контакты"
-            fontSize="36px"
+            fontSize={["26px", "36px"]}
+            color="#FFF"
           />
           <Divider my={5} />
-          <NavItem href="/news" text="Новости" fontSize="36px" />
+          <NavItem
+            href="/news"
+            text="Новости"
+            fontSize={["26px", "36px"]}
+            color="#FFF"
+          />
           <Divider my={5} />
           <NavItem
-            onClick={closeBurgerMenu}
             href="/documents"
             text="Документация"
-            fontSize="36px"
+            fontSize={["26px", "36px"]}
+            color="#FFF"
           />
         </Box>
       )}

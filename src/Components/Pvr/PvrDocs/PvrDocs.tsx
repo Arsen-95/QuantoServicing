@@ -4,7 +4,7 @@ import React from "react";
 
 export const PvrDocs = () => {
   return (
-    <Box pt="50px" pb="150px">
+    <Box pt="50px" pb="150px" background="#FAFAFA">
       <Container>
         <Box
           as="h5"

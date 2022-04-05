@@ -4,6 +4,7 @@ import React from "react";
 export const GtiSlider = () => {
   return (
     <CustomSlider
+      bg="#FAFAFA"
       sliderData={[
         {
           title: "Геологические задачи",

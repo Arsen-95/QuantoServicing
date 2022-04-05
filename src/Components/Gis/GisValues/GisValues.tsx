@@ -24,5 +24,7 @@ export const GisValues = () => {
     ],
   };
 
-  return <ValuesByYears data={data} />;
+  const yearsData = [2019, 2020, 2021];
+
+  return <ValuesByYears data={data} bg={"#FAFAFA"} yearsData={yearsData} />;
 };

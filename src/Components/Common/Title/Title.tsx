@@ -56,9 +56,10 @@ export const Title: FC<TitleProps> = ({
           as="h4"
           textTransform="uppercase"
           fontFamily="Blender Pro"
-          fontSize={["40px", "56px", "75px"]}
-          lineHeight={["45px", "56px", "62px"]}
-          maxW={["350px", "420px", "500px", "923px"]}
+          fontSize={["40px", "50px", "75px"]}
+          lineHeight={["41px", "56px", "62px"]}
+          maxW={["320px", "420px", "580px", "923px"]}
+          // maxW="90%"
           letterSpacing="-2.50267px"
           fontWeight="900"
           color="#FFF"
@@ -73,7 +74,7 @@ export const Title: FC<TitleProps> = ({
           color="#FFF"
           fontWeight="300"
           fontFamily="Museo Sans Cyrl"
-          mb={children ? "90px" : "0"}
+          mb={children ? ["0px", "0", "90px"] : "0"}
           maxW="78%"
         >
           {text}

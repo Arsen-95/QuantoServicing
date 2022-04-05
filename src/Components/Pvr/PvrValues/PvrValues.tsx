@@ -23,5 +23,7 @@ export const PvrValues = () => {
     ],
   };
 
-  return <ValuesByYears data={data} />;
+  const yearsData = [2021];
+
+  return <ValuesByYears data={data} bg={"#FAFAFA"} yearsData={yearsData} />;
 };

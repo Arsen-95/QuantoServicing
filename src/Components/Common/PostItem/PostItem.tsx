@@ -15,23 +15,24 @@ export const PostItem: FC<ItemProps> = ({ text, picture }) => {
         <Flex
           cursor="pointer"
           flexDirection="column"
-          p="20px 20px 40px 20px"
+          p={["14px", "20px 20px 40px 20px"]}
           background={`url(${IMAGES_PATH}/${picture}) no-repeat`}
           maxW="330px"
-          h="450px"
+          h={["320px", "350px", "400px", "450px"]}
         >
           <Text
             color="#FFF"
             fontFamily="Museo Sans Cyrl"
             fontWeight="300"
             fontSize="14px"
+            lineHeight="132%"
             flex="1 0 auto"
           >
             {text}
           </Text>
           <Flex justifyContent="space-between" alignItems="flex-end">
             <Box
-              fontSize="72px"
+              fontSize={["40px", "72px", "72px", "72px"]}
               lineHeight="62px"
               fontFamily="Arial"
               color="#FFF"

@@ -5,7 +5,7 @@ import { IMAGES_PATH } from "../../../constants/settings";
 
 export const Stats = () => {
   return (
-    <Box py="88px">
+    <Box py={["50px", "88px"]}>
       <Container>
         <Flex
           justifyContent="space-between"

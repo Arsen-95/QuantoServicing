@@ -10,8 +10,10 @@ import { Mousewheel, Scrollbar } from "swiper";
 import { Box, Flex } from "@chakra-ui/react";
 import Year from "./Year";
 
-export const Years = ({ onScroll }: any) => {
-  const years = [2019, 2020, 2021];
+export const Years = ({ onScroll, yearsData }: any) => {
+  const years = yearsData;
+  console.log(years);
+  console.log(yearsData);
 
   return (
     <Flex alignItems="center" h="310px">
@@ -30,7 +32,7 @@ export const Years = ({ onScroll }: any) => {
           onScroll(years[a.realIndex]);
         }}
       >
-        {years.map((year, index) => (
+        {years.map((year: number, index: number) => (
           <>
             <SwiperSlide key={year}>
               {<Year years={years}>{year}</Year>}
