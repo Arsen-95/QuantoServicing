@@ -17,8 +17,8 @@ export const PostItem: FC<ItemProps> = ({ text, picture }) => {
           flexDirection="column"
           p={["14px", "20px 20px 40px 20px"]}
           background={`url(${IMAGES_PATH}/${picture}) no-repeat`}
-          maxW="330px"
-          h={["320px", "350px", "400px", "450px"]}
+          maxW={["280px", "280px", "300px", "330px"]}
+          h={["320px", "330px", "400px", "450px"]}
         >
           <Text
             color="#FFF"

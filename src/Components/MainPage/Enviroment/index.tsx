@@ -1,1 +1,1 @@
-export * from "./Enviroment";
+export * from "./MainSlider";

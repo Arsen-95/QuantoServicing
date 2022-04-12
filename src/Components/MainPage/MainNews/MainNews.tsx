@@ -1,10 +1,13 @@
-import { Box, Button, color, Container, Flex } from "@chakra-ui/react";
+import { Box, Button, Container, Flex } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import Posts from "./Posts";
 
 export const MainNews = () => {
+  const [t] = useTranslation();
+
   return (
-    <Box bgColor="#FAFAFA" py={["50px", "100px"]} pb={["80px", 0]}>
+    <Box bgColor="#FAFAFA" py={["50px", "100px"]} pb={["90px", "100px"]}>
       <Container>
         <Box
           as="h5"
@@ -18,7 +21,7 @@ export const MainNews = () => {
           lineHeight="62px"
           mb={["20px", "20px", "20px", "50px"]}
         >
-          новости
+          {t("headers:news")}
         </Box>
         <Flex mb="42px">
           <Button

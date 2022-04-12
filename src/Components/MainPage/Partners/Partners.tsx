@@ -1,10 +1,18 @@
 import { Box, Container } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import Companies from "./Companies";
 
 export const Partners = () => {
+  const { t } = useTranslation("headers");
+
   return (
-    <Box id="partners" py={["40px", "100px"]}>
+    <Box py={["40px", "100px"]}>
+      <Box
+        id="partners"
+        position="relative"
+        top={["-100px", "-100px", "-120px", "-140px"]}
+      ></Box>
       <Container>
         <Box
           as="h5"
@@ -19,7 +27,7 @@ export const Partners = () => {
           mb={["20px", "20px", "20px", "35px"]}
           maxW="477"
         >
-          Партнеры
+          {t("headers:partners")}
         </Box>
         <Box
           mb={["30px", "50px", "50px", "100px"]}

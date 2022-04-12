@@ -1,4 +1,4 @@
-import { Box, Link, keyframes } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import { ICONS_PATH } from "constants/settings";
 import NextLink from "next/link";
 import React, { FC } from "react";

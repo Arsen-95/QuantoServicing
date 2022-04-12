@@ -7,6 +7,8 @@ import { PvrValues } from "Components/Pvr/PvrValues";
 import { PvrMap } from "Components/Pvr/PvrMap";
 import { PvrDocs } from "Components/Pvr/PvrDocs";
 import { PvrVariants } from "Components/Pvr/PvrVariants";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const index = () => {
   return (
@@ -26,6 +28,20 @@ const index = () => {
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "", [
+        "headers",
+        "navigation",
+        "titles",
+        "footer",
+        "descriptions",
+      ])),
+    },
+  };
 };
 
 export default index;

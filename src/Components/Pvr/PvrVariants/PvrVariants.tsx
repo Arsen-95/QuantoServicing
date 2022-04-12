@@ -7,13 +7,15 @@ import {
   PopoverArrow,
   PopoverBody,
   PopoverContent,
-  PopoverHeader,
   PopoverTrigger,
 } from "@chakra-ui/react";
 import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const PvrVariants = () => {
+  const { t } = useTranslation();
+
   return (
     <Box pt="95px" pb="125px">
       <Container>
@@ -29,7 +31,7 @@ export const PvrVariants = () => {
           mb="60px"
           pos="relative"
         >
-          <Box>Виды прострелочно-взрывных работ</Box>
+          <Box>{t("headers:pvrVariants")}</Box>
           <Popover trigger="hover">
             <PopoverTrigger>
               <Button

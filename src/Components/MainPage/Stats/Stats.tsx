@@ -1,9 +1,12 @@
 import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { StatsBox } from "Components/Common/StatsBox";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import { IMAGES_PATH } from "../../../constants/settings";
 
 export const Stats = () => {
+  const [t] = useTranslation();
+
   return (
     <Box py={["50px", "88px"]}>
       <Container>
@@ -23,7 +26,7 @@ export const Stats = () => {
               mb={["20px", "20px", "20px", "72px"]}
               maxW={["220px", "330px", "425px"]}
             >
-              наши Результаты говорят сами за себя
+              {t("headers:results")}
             </Text>
             <Text
               fontSize={["10px", "14px", "16px", "18px"]}
@@ -46,7 +49,7 @@ export const Stats = () => {
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
-                num={4382}
+                num="438"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="14px"
               />
@@ -54,7 +57,7 @@ export const Stats = () => {
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
-                num={3596}
+                num="359"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />
@@ -62,7 +65,7 @@ export const Stats = () => {
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
-                num={246}
+                num="246"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />
@@ -70,7 +73,7 @@ export const Stats = () => {
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
-                num={540}
+                num="540"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
               />

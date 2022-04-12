@@ -1,17 +1,11 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import Method from "./Method";
 
-const content = [
-  {
-    KC: "- метод кажущегося сопротивления;",
-    ПС: "- метод самопроизвольной поляризации;",
-    ИК: "- метод индукционного каротажа",
-    БК: "- метод бокового каротажа;",
-  },
-];
-
 export const GisMethods = () => {
+  const { t } = useTranslation();
+
   return (
     <Box py="100px">
       <Container>
@@ -25,11 +19,11 @@ export const GisMethods = () => {
           color="#494949"
           mb="70px"
         >
-          Используемые методы ГИС
+          {t("headers:gisMethods")}
         </Box>
         <Flex justifyContent="space-between">
           <Method
-            methodName={"Методы электрокаротажа"}
+            methodName={t("descriptions:methodEl")}
             text={
               <>
                 <b>КС</b> - метод кажущегося сопротивления; <br />
@@ -46,7 +40,7 @@ export const GisMethods = () => {
             picture="method1.png"
           />
           <Method
-            methodName="Методы радиоактивного каротажа"
+            methodName={t("descriptions:methodRadio")}
             text={
               <>
                 <b>ГК</b> - метод гамма каротажа; <br />
@@ -62,7 +56,7 @@ export const GisMethods = () => {
             picture="method2.png"
           />
           <Method
-            methodName="Методы акустического каротажа"
+            methodName={t("descriptions:methodAcoustic")}
             text={
               <>
                 <b>АК</b> - метод акустического каротажа; <br />
@@ -74,7 +68,7 @@ export const GisMethods = () => {
             picture="method3.png"
           />
           <Method
-            methodName="Механические и др. методы каротажа"
+            methodName={t("descriptions:methodMechanics")}
             text={
               <>
                 <b>Термометрия</b> - метод определения температуры по стволу

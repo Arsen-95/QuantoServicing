@@ -1,8 +1,11 @@
-import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import { DownloadFile } from "Components/Common/DownloadFile";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const Policy = () => {
+  const [t] = useTranslation();
+
   return (
     <Box background="#FAFAFA" py="100px">
       <Container>
@@ -16,7 +19,7 @@ export const Policy = () => {
           color="rgba(0, 0, 0, 0.75)"
           mb="35px"
         >
-          Политика компании
+          {t("headers:policy")}
         </Box>
         <Text
           fontFamily="Museo Sans Cyrl"

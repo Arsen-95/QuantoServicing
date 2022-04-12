@@ -44,10 +44,10 @@ export const NewsPosts = () => {
           </Box>
         </Flex>
         <Flex
-          maxW="1083px"
+          maxW={["280px", "280px", "628px", "710px", "1083px"]}
           margin="0 auto"
           flexWrap="wrap"
-          gap="46px"
+          gap={["30px", "26px", "28px", "46px"]}
           mb="100px"
         >
           <PostItem

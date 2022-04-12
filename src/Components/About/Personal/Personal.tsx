@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import { StatsBox } from "Components/Common/StatsBox";
 import React from "react";
 
@@ -33,12 +33,7 @@ export const Personal = () => {
           Компания Quanto Servicing предоставляет информацию по количеству
           персонала:
         </Box>
-        <Flex
-          // templateColumns="repeat(3, 2fr)"
-          justifyContent="center"
-          columnGap="74px"
-          gridAutoColumns="164px"
-        >
+        <Flex justifyContent="center" columnGap="74px" gridAutoColumns="164px">
           <StatsBox
             flexBasis="164px"
             height="150px"

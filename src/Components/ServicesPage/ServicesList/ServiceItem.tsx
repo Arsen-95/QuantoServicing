@@ -2,15 +2,18 @@ import { Box, Flex, Link } from "@chakra-ui/react";
 import { ICONS_PATH } from "constants/settings";
 import NextLink from "next/link";
 import React, { FC } from "react";
+import { useTranslation } from "next-i18next";
 
 type ItemProps = {
   name: string;
   picture: string;
-  href?: any;
+  href?: string;
   onClick?: any;
 };
 
 const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
+  const { t } = useTranslation();
+
   return (
     <Flex
       whiteSpace="pre-line"
@@ -30,6 +33,7 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
         textTransform="uppercase"
         color="rgba(0, 0, 0, 0.75)"
         mb="18px"
+        maxW="210px"
       >
         {name}
       </Box>
@@ -50,7 +54,7 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
           transition="all 0.2s"
           onClick={onClick ? onClick : "none"}
         >
-          Открыть
+          {t("common:open")}
         </Link>
       </NextLink>
     </Flex>

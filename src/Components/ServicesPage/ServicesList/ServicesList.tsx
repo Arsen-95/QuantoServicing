@@ -16,10 +16,13 @@ import {
 } from "@chakra-ui/react";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import ServiceItem from "./ServiceItem";
 
 export const ServicesList = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { t } = useTranslation();
 
   return (
     <Box py="100px">
@@ -37,21 +40,21 @@ export const ServicesList = () => {
         >
           <ServiceItem
             href="/gti"
-            name="геолого-технологические исследования"
+            name={t("titles:gti")}
             picture="gtiIcon.svg"
           />
           <ServiceItem
             href="/gis"
-            name="геофизические исследования скважин"
+            name={t("titles:gis")}
             picture="gisIcon.svg"
           />
           <ServiceItem
             href="/pvr"
-            name={`прострелочно-взрывные \nработы`}
+            name={t("titles:pvr")}
             picture="pvrIcon.svg"
           />
           <ServiceItem
-            name="промыслово-геофизические исследования"
+            name={t("titles:pgi")}
             picture="pgiIcon.svg"
             onClick={onOpen}
           />

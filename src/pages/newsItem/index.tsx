@@ -3,6 +3,8 @@ import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { NewsItemContent } from "Components/NewsItem/NewsItemContent";
 import { NewsItemTitle } from "Components/NewsItem/NewsItemTitle";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
 const index = () => {
@@ -23,6 +25,20 @@ const index = () => {
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "", [
+        "headers",
+        "navigation",
+        "titles",
+        "common",
+        "footer",
+      ])),
+    },
+  };
 };
 
 export default index;

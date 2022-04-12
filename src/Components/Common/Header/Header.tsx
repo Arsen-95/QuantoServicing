@@ -1,15 +1,18 @@
 import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { ICONS_PATH } from "../../../constants/settings";
 import { Burger } from "../Burger";
 import { BurgerMenu } from "../BurgerMenu";
 import { Navigation } from "../Navigation";
 
-export const Header = ({ pt }: any) => {
-  const [menu, setMenu] = useState(false);
+type HeaderProps = {
+  pt: string | string[];
+};
 
+export const Header: FC<HeaderProps> = ({ pt }) => {
+  const [menu, setMenu] = useState(false);
   const { pathname } = useRouter();
   const color = pathname === "/newsItem" ? "#000" : "#FFF";
 

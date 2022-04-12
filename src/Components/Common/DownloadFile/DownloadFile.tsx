@@ -1,4 +1,4 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import { ICONS_PATH } from "constants/settings";
 import React, { FC } from "react";
 

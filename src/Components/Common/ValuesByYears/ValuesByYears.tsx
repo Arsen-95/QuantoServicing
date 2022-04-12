@@ -1,13 +1,26 @@
 import { Box, Container, Flex, Grid } from "@chakra-ui/react";
 import { Years } from "Components/Common/Year/Years";
 import React, { FC, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { StatsBox } from "../StatsBox";
 
-export const ValuesByYears: FC<any> = ({ data, yearsData, bg = "#FFF" }) => {
+type ValueByYearProps = {
+  data: Record<number, { text: string; num: string; plus?: boolean }[]>;
+  yearsData: number[];
+  bg?: string;
+};
+
+export const ValuesByYears: FC<ValueByYearProps> = ({
+  data,
+  yearsData,
+  bg = "#FFF",
+}) => {
   const [year, setYear] = useState(yearsData[0]);
   const yearChanger = (e: any): any => {
     setYear(e);
   };
+
+  const { t } = useTranslation();
 
   return (
     <Box pt="50px" pb="80px" bg={bg}>
@@ -23,7 +36,7 @@ export const ValuesByYears: FC<any> = ({ data, yearsData, bg = "#FFF" }) => {
           mb="60px"
           maxW="382px"
         >
-          Производственные показатели
+          {t("headers:prodValues")}
         </Box>
         <Flex>
           <Box flexBasis="30%" display="flex">
@@ -36,7 +49,6 @@ export const ValuesByYears: FC<any> = ({ data, yearsData, bg = "#FFF" }) => {
                 padding="8px"
                 text={item?.text}
                 num={item?.num}
-                num2={item?.num2}
                 plus={item?.plus}
                 height="228px"
                 numSize={["36px", "36px", "46px", "64px"]}

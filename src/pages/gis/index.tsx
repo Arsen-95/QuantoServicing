@@ -5,6 +5,8 @@ import { GisMethods } from "Components/Gis/GisMethods";
 import { GisSlider } from "Components/Gis/GisSlider";
 import { GisTitle } from "Components/Gis/GisTitle/GisTitle";
 import { GisValues } from "Components/Gis/GisValues";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
 const index = () => {
@@ -24,6 +26,20 @@ const index = () => {
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }: any) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "headers",
+        "navigation",
+        "titles",
+        "footer",
+        "descriptions",
+      ])),
+    },
+  };
 };
 
 export default index;

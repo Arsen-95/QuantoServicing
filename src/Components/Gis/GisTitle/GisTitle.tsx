@@ -1,17 +1,20 @@
-import { Box, Container } from "@chakra-ui/react";
 import { Title } from "Components/Common/Title";
-import { breadCrumbGis, breadCrumbs } from "constants/breadCrumb";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
+import { useTranslation } from "next-i18next";
+import useBreadCrumbs from "constants/useBreadCrumbs";
 
 export const GisTitle = () => {
+  const { t } = useTranslation();
+  const breadCrumbs = useBreadCrumbs();
+
   return (
     <Title
       background={`url(${IMAGES_PATH}/gisTitle.png) no-repeat `}
       pb="191px"
-      pt="211px"
-      title="геофизические исследования скважин"
-      text="Геофизические - исследования скважин выполняются на месторождениях Республики Узбекистан с 2020 года "
+      pt={["178px", "147px", "147px", "211px"]}
+      title={t("titles:gis")}
+      text={t("titles:gisText")}
       breadCrumb={breadCrumbs["/gis"]}
     />
   );

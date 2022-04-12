@@ -6,7 +6,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useRouter } from "next/router";
 
-const CustomSliderItem: FC<any> = ({ title, text, imageUrl }) => {
+type CustomSliderItemProps = {
+  title: string;
+  text: string;
+  imageUrl: string;
+};
+
+const CustomSliderItem: FC<CustomSliderItemProps> = ({
+  title,
+  text,
+  imageUrl,
+}) => {
   const { pathname } = useRouter();
   const titleSize =
     pathname === "/"

@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid, Table, Td, Tr } from "@chakra-ui/react";
+import { Box, Flex, Grid, Table, Tbody, Td, Tr } from "@chakra-ui/react";
 import React from "react";
 import Company from "./Company";
 import cl from "./table.module.css";
@@ -42,34 +42,36 @@ const Companies = () => {
       </Box>
       <Box display={["none", "block"]}>
         <Table className={cl.border}>
-          <Tr h="120px">
-            <Td>
-              <Company picture="bbgv.svg" alt="bbgv" />
-            </Td>
-            <Td>
-              <Company picture="eriell.svg" alt="ee" />
-            </Td>
-            <Td>
-              <Company picture="sewon.svg" alt="sewon" />
-            </Td>
-            <Td>
-              <Company picture="medhub.svg" alt="medhub" />
-            </Td>
-          </Tr>
-          <Tr h="120px">
-            <Td>
-              <Company picture="krohne.svg" alt="krohne" />
-            </Td>
-            <Td>
-              <Company picture="surhan.svg" alt="surhan" />
-            </Td>
-            <Td>
-              <Company picture="ee.svg" alt="ee" />
-            </Td>
-            <Td>
-              <Company picture="jumo.svg" alt="jumo" />
-            </Td>
-          </Tr>
+          <Tbody>
+            <Tr h="120px">
+              <Td>
+                <Company picture="bbgv.svg" alt="bbgv" />
+              </Td>
+              <Td>
+                <Company picture="eriell.svg" alt="ee" />
+              </Td>
+              <Td>
+                <Company picture="sewon.svg" alt="sewon" />
+              </Td>
+              <Td>
+                <Company picture="medhub.svg" alt="medhub" />
+              </Td>
+            </Tr>
+            <Tr h="120px">
+              <Td>
+                <Company picture="krohne.svg" alt="krohne" />
+              </Td>
+              <Td>
+                <Company picture="surhan.svg" alt="surhan" />
+              </Td>
+              <Td>
+                <Company picture="ee.svg" alt="ee" />
+              </Td>
+              <Td>
+                <Company picture="jumo.svg" alt="jumo" />
+              </Td>
+            </Tr>
+          </Tbody>
         </Table>
       </Box>
     </>

@@ -1,13 +1,15 @@
 import { Figure } from "Components/Common/Figure";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const GisDescription = () => {
+  const { t } = useTranslation();
+
   return (
     <Figure
       backgroundColor="#FAFAFA"
-      title="Геофизические иследования скважин"
-      text={`Подразделение ГИС выполняет геофизические исследования в процессе строительства вертикальных, наклонно-направленных и горизонтальных скважин для определения: \n
-      - Литолого-стратиграфическое расчленение разреза скважины;\n - Выделение коллекторов;\n - Количественное определение фильтрационно-емкостных свойств коллекторов;\n - Определение характера насыщения пластов-коллекторов;\n - Определение положения ГНК, ВНК;\n - Определение качества цементажа и технического состояния обсадных колонн.`}
+      title={t("headers:gis")}
+      text={t("descriptions:gis")}
       picture="gisDescription.svg"
     />
   );

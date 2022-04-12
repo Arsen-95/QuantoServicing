@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Fonts from "../styles/Fonts";
 import "../styles/styles.css";
+import { appWithTranslation } from "next-i18next";
 
 const theme = extendTheme({
   fonts: {
@@ -85,4 +86,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

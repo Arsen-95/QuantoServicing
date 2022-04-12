@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 type ValueProps = {
   text: string;
-  num: number;
+  num: string;
   height: string | {};
   numSize: any;
   textSize: any;
@@ -12,7 +12,6 @@ type ValueProps = {
   textWidth?: string;
   flexBasis?: string;
   plus?: any;
-  num2?: any;
   others?: any;
   visibility?: any;
 };
@@ -27,11 +26,12 @@ export const StatsBox: FC<ValueProps> = ({
   textWidth,
   flexBasis,
   plus = false,
-  num2 = undefined,
-  visibility = "visibility",
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState(false);
+
+  const numbers = num.split("/");
+  const [num1, num2] = numbers;
 
   const handleScroll = useCallback(() => {
     const elem = parentRef.current;
@@ -66,15 +66,15 @@ export const StatsBox: FC<ValueProps> = ({
 
   return (
     <GridItem
-      visibility={num > 0 ? "visible" : "hidden"}
-      opacity={num > 0 ? "1" : "0"}
-      transition="all 0.4s"
       flexBasis={flexBasis && flexBasis}
       ref={parentRef}
       p={padding}
       border="1px solid #D9D9D9"
       h={height}
       position="relative"
+      visibility={+num1 > 0 ? "visible" : "hidden"}
+      opacity={+num1 > 0 ? "1" : "0"}
+      transition="all 1s"
     >
       <Text
         fontFamily="Museo Sans Cyrl"
@@ -103,9 +103,9 @@ export const StatsBox: FC<ValueProps> = ({
           fontSize={numSize}
         >
           <CountUp
-            decimals={num >= 1 ? 0 : 2}
+            decimals={+num1 >= 1 ? 0 : 2}
             duration={2}
-            end={num}
+            end={+num1}
             separator=" "
             suffix={plus ? "+" : ""}
           />
@@ -113,9 +113,9 @@ export const StatsBox: FC<ValueProps> = ({
             <Box as="span">
               /
               <CountUp
-                decimals={num >= 1 ? 0 : 2}
+                decimals={+num2 >= 1 ? 0 : 2}
                 duration={2}
-                end={num2}
+                end={+num2}
                 separator=" "
                 suffix={plus ? "+" : ""}
               />

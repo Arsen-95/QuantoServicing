@@ -1,16 +1,20 @@
 import { Title } from "Components/Common/Title";
-import { breadCrumbPvr, breadCrumbs } from "constants/breadCrumb";
 import { IMAGES_PATH } from "constants/settings";
+import useBreadCrumbs from "constants/useBreadCrumbs";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const PvrTitle = () => {
+  const breadCrumbs = useBreadCrumbs();
+  const { t } = useTranslation();
+
   return (
     <Title
       background={`url(${IMAGES_PATH}/pvrTitle.png)`}
       pb="191px"
       pt="211px"
-      title="прострелочно-взрывные работы"
-      text="Прострелочно - Взрывные работы выполняются на месторождениях Республики Узбекистан с 2021 года "
+      title={t("titles:pvr")}
+      text={t("titles:pvrText")}
       breadCrumb={breadCrumbs["/pvr"]}
     />
   );

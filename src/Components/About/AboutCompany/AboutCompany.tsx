@@ -1,10 +1,12 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
 import { IMAGES_PATH } from "constants/settings";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const AboutCompany = () => {
+  const [t] = useTranslation();
   return (
-    <Box as="section" py="100px" background="#FAFAFA">
+    <Box as="section" py={["50px", "75px", "100px"]} background="#FAFAFA">
       <Container>
         <Box
           as="h5"
@@ -14,10 +16,15 @@ export const AboutCompany = () => {
           lineHeight="99.5%"
           letterSpacing="-0.04em"
           color="#494949"
+          mb={["15px", "0px"]}
         >
-          О компании
+          {t("headers:about")}
         </Box>
-        <Flex alignItems="center" justifyContent="space-between">
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          flexDir={["column", "row"]}
+        >
           <Box
             fontFamily="Museo Sans Cyrl"
             fontStyle="normal"
@@ -29,15 +36,13 @@ export const AboutCompany = () => {
             opacity="0.7"
             maxW="442px"
           >
-            Quanto Servicing - динамично развивающаяся компания на нефтегазовом
-            рынке Республики Узбекистан, предоставляющая геофизические услуги на
-            скважинах во всех нефтегазоносных регионах Республики Узбекистан.
+            {t("descriptions:about")}
           </Box>
           <Box
             minH="200px"
-            minW="65%"
+            minW="66%"
             alignItems="center"
-            background={`url(${IMAGES_PATH}/quantoImage.png) no-repeat 50%`}
+            background={`url(${IMAGES_PATH}/quantoImage.png) no-repeat`}
           ></Box>
         </Flex>
       </Container>

@@ -1,8 +1,11 @@
 import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import { DownloadFile } from "Components/Common/DownloadFile";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 export const PvrDocs = () => {
+  const { t } = useTranslation();
+
   return (
     <Box pt="50px" pb="150px" background="#FAFAFA">
       <Container>
@@ -16,7 +19,7 @@ export const PvrDocs = () => {
           color="rgba(0, 0, 0, 0.75)"
           mb="35px"
         >
-          Документы
+          {t("headers:documents")}
         </Box>
         <Text
           fontWeight="300"

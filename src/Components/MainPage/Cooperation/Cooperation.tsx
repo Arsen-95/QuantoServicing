@@ -10,8 +10,8 @@ import {
 import { Input, InputMask } from "./Input";
 import { useForm, Controller } from "react-hook-form";
 import { cooperationSceme } from "./schema";
-// import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "next-i18next";
 
 type FormDataType = {
   name: string;
@@ -32,9 +32,10 @@ export const Cooperation = () => {
     const message = data?.message;
   };
 
+  const { t } = useTranslation();
+
   return (
     <Box
-      id="contacts"
       pt={["40px", "40px", "40px", "70px"]}
       pb={["0", "0", "40px", "100px"]}
       background="#FAFAFA"
@@ -42,6 +43,11 @@ export const Cooperation = () => {
       bgSize="50% 100%"
       pos="relative"
     >
+      <Box
+        id="contacts"
+        position="relative"
+        top={["-100px", "-100px", "-120px", "-140px"]}
+      ></Box>
       <Container>
         <Flex flexDir={["column", "column", "row"]}>
           <Box
@@ -62,7 +68,7 @@ export const Cooperation = () => {
               whiteSpace="pre-wrap"
               mb={["30px", "30px", "20px", "68px"]}
             >
-              будьте с нами
+              {t("headers:cooperation")}
             </Text>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Box mb="28px">
@@ -73,7 +79,7 @@ export const Cooperation = () => {
                     <Input
                       value={field.value}
                       onChange={field.onChange}
-                      placeholder="Ф.И.О."
+                      placeholder={t("common:fullName")}
                       name="name"
                       formState={formState}
                     />
@@ -158,7 +164,7 @@ export const Cooperation = () => {
                       minH="90px"
                       value={field.value}
                       onChange={field.onChange}
-                      placeholder="Сообщение"
+                      placeholder={t("common:message")}
                       name="message"
                       width={["90%", "80%", "300px", "400px"]}
                       border={
@@ -211,7 +217,7 @@ export const Cooperation = () => {
                 loadingText="Отправка"
                 type="submit"
               >
-                Связаться
+                {t("common:message")}
               </Button>
             </form>
           </Box>

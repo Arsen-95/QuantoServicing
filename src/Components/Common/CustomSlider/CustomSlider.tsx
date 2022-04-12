@@ -43,7 +43,7 @@ export const CustomSlider: FC<any> = ({ sliderData, bg = "#FFF" }) => {
         className="mySwiper"
       >
         {sliderData.map((slider: any) => (
-          <SwiperSlide key={slider.title}>
+          <SwiperSlide key={Math.random()}>
             <CustomSliderItem
               title={slider.title}
               text={slider.text}

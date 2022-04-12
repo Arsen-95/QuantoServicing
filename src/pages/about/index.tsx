@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { Management } from "Components/About/Management";
 import { AboutTitle } from "Components/About/AboutTitle";
 import { AboutCompany } from "Components/About/AboutCompany";
 import { AboutSlider } from "Components/About/AboutSlider";
-import { Personal } from "Components/About/Personal";
 import { Policy } from "Components/About/Policy";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const About: NextPage = () => {
   return (
@@ -26,6 +26,20 @@ const About: NextPage = () => {
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "", [
+        "headers",
+        "navigation",
+        "titles",
+        "footer",
+        "descriptions",
+      ])),
+    },
+  };
 };
 
 export default About;

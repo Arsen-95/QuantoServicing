@@ -1,14 +1,15 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { memo } from "react";
 import { MainLayout } from "Components/Common/MainLayout";
 import { Stats } from "Components/MainPage/Stats";
 import { MainTitle } from "Components/MainPage/MainTitle";
 import { Values } from "Components/MainPage/ValuesByYears";
-import { Enviroment } from "Components/MainPage/Enviroment";
 import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { MainSlider } from "Components/MainPage/Enviroment";
 
 const Home: NextPage = () => {
   return (
@@ -22,13 +23,27 @@ const Home: NextPage = () => {
         <MainTitle />
         <Stats />
         <Values />
-        <Enviroment />
+        <MainSlider />
         <MainNews />
         <Partners />
         <Cooperation />
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "", [
+        "headers",
+        "navigation",
+        "titles",
+        "common",
+        "footer",
+      ])),
+    },
+  };
 };
 
 export default memo(Home);

@@ -1,10 +1,7 @@
 import { CustomSlider } from "Components/Common/CustomSlider";
 import React from "react";
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-
-export const Enviroment = () => {
+export const MainSlider = () => {
   return (
     <CustomSlider
       sliderData={[

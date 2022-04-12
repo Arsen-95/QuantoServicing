@@ -7,15 +7,16 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 type TitleProps = {
-  pt: any;
-  pb: string | {};
+  pt: string | string[];
+  pb: string | string[];
   background: string;
   title: string;
   text?: string;
-  breadCrumb?: any;
+  breadCrumb?: string[][];
+  children?: ReactNode;
 };
 
 export const Title: FC<TitleProps> = ({
@@ -59,7 +60,6 @@ export const Title: FC<TitleProps> = ({
           fontSize={["40px", "50px", "75px"]}
           lineHeight={["41px", "56px", "62px"]}
           maxW={["320px", "420px", "580px", "923px"]}
-          // maxW="90%"
           letterSpacing="-2.50267px"
           fontWeight="900"
           color="#FFF"

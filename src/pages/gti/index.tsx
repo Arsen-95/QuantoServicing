@@ -1,10 +1,11 @@
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { GtiDescription } from "Components/Gti/GtiDescription";
-import { GtiMap } from "Components/Gti/GtiMap";
 import { GtiSlider } from "Components/Gti/GtiSlider";
 import { GtiTitle } from "Components/Gti/GtiTitle";
 import { GtiValues } from "Components/Gti/GtiValues";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
 const index = () => {
@@ -24,6 +25,20 @@ const index = () => {
       </MainLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "", [
+        "headers",
+        "navigation",
+        "titles",
+        "descriptions",
+        "footer",
+      ])),
+    },
+  };
 };
 
 export default index;

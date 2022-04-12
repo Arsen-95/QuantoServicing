@@ -14,6 +14,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useCallback, useLayoutEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { IMAGES_PATH } from "../../../constants/settings";
 import Service from "./Service";
 
@@ -39,6 +40,8 @@ const Services = () => {
     };
   }, []);
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Flex
@@ -49,22 +52,22 @@ const Services = () => {
         pos="relative"
       >
         <Service
-          text="Геолого-технологические исследования"
+          text={t("headers:gti")}
           picture={`${IMAGES_PATH}/service1.png`}
           href="/gti"
         />
         <Service
-          text="Геофизические исследования скважин"
+          text={t("headers:gis")}
           picture={`${IMAGES_PATH}/service2.png`}
           href="/gis"
         />
         <Service
-          text="Прострелочно-взрывные работы"
+          text={t("headers:pvr")}
           picture={`${IMAGES_PATH}/service3.png`}
           href="/pvr"
         />
         <Service
-          text="Промыслово-геофизические исследования"
+          text={t("headers:pgi")}
           picture={`${IMAGES_PATH}/service4.png`}
           href="#"
           onClick={onOpen}

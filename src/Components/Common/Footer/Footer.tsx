@@ -2,12 +2,15 @@ import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import { ICONS_PATH } from "../../../constants/settings";
 import { Navigation } from "../Navigation";
 
 export const Footer = () => {
   const { pathname } = useRouter();
   const color = pathname === "/newsItem" ? "#FFF" : "#FFF";
+
+  const { t } = useTranslation();
 
   return (
     <Box as="footer">
@@ -33,7 +36,7 @@ export const Footer = () => {
                 fontWeight="600"
                 mb="5px"
               >
-                Адрес
+                {t("footer:address")}
               </Box>
               <Box
                 as="address"
@@ -47,7 +50,7 @@ export const Footer = () => {
                 letterSpacing="-0.00240557px"
                 opacity="0.9"
               >
-                {`Узбекистан, Ташкент, \nМирабадский район, ул. Нукус, 29`}
+                {t("footer:firmAddress")}
               </Box>
               <Box
                 fontFamily="Museo Sans Cyrl"
@@ -84,7 +87,7 @@ export const Footer = () => {
                 fontWeight="600"
                 mb="5px"
               >
-                Контактный телефон
+                {t("footer:tel")}
               </Box>
               <Link
                 href="tel:+99878-140-55-00"

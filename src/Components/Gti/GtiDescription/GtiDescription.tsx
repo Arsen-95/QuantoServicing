@@ -1,13 +1,15 @@
 import { Figure } from "Components/Common/Figure";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const GtiDescription = () => {
+  const { t } = useTranslation();
+
   return (
     <Figure
       backgroundColor="#FAFAFA"
-      title="Геолого-технологические исследования"
-      text="Станции ГТИ предназначены для комплексного исследования содержания, состава и свойств пластовых флюидов и горных пород в циркулирующей промывочной жидкости, а также характеристик и параметров технологических процессов на различных этапах строительства скважин.
-      Станции ГТИ оснащены необходимым оборудованием и технологическими датчиками для контроля, фиксации, отображения, анализа и транслирования операций, связанных с работой на буровых установках"
+      title={t("headers:gti")}
+      text={t("descriptions:gti")}
       picture="gtiDescription.png"
     />
   );
