@@ -1,7 +1,8 @@
 import { Box, Container, Flex, Grid } from "@chakra-ui/react";
-import { Years } from "Components/Common/Year/Years";
-import React, { FC, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "next-i18next";
+
+import { Years } from "Components/Common/Year/Years";
 import { StatsBox } from "../StatsBox";
 
 type ValueByYearProps = {
@@ -10,7 +11,7 @@ type ValueByYearProps = {
   bg?: string;
 };
 
-export const ValuesByYears: FC<ValueByYearProps> = ({
+export const ValuesByYears: React.FC<ValueByYearProps> = ({
   data,
   yearsData,
   bg = "#FFF",
@@ -27,7 +28,6 @@ export const ValuesByYears: FC<ValueByYearProps> = ({
       <Container>
         <Box
           as="h5"
-          fontFamily="Blender Pro"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"

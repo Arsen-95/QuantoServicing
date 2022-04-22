@@ -1,6 +1,6 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
+
 import { PostItem } from "Components/Common/PostItem";
-import React from "react";
 import Pagination from "./Pagination";
 
 export const NewsPosts = () => {
@@ -9,7 +9,6 @@ export const NewsPosts = () => {
       <Container>
         <Flex
           fontFamily="Blender Pro"
-          fontStyle="normal"
           fontWeight="900"
           fontSize="14px"
           lineHeight="132%"

@@ -6,11 +6,12 @@ import {
   Container,
   useMediaQuery,
 } from "@chakra-ui/react";
-import React, { useCallback, useEffect, useState } from "react";
-import { Header } from "../Header";
+import { useCallback, useEffect, useState } from "react";
 import NextLink from "next/link";
-import { IMAGES_PATH } from "constants/settings";
 import { useRouter } from "next/router";
+
+import { Header } from "../Header";
+import { IMAGES_PATH } from "constants/settings";
 import useBreadCrumbs from "constants/useBreadCrumbs";
 
 export const StickyHeader = () => {
@@ -99,9 +100,6 @@ export const StickyHeader = () => {
                   >
                     <NextLink href={href} passHref>
                       <BreadcrumbLink
-                        fontFamily="Museo Sans Cyrl"
-                        fontStyle="normal"
-                        fontWeight="400"
                         fontSize="14px"
                         lineHeight="134.5%"
                         letterSpacing="-0.00240557px"

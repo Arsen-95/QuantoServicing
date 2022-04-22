@@ -12,8 +12,8 @@ import {
   PopoverHeader,
   PopoverTrigger,
 } from "@chakra-ui/react";
+
 import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
-import React, { FC } from "react";
 import GridBoxItem from "./GridBoxItem";
 
 type FigureProps = {
@@ -24,7 +24,7 @@ type FigureProps = {
   info?: any;
 };
 
-export const Figure: FC<FigureProps> = ({
+export const Figure: React.FC<FigureProps> = ({
   title,
   text,
   picture,
@@ -42,7 +42,6 @@ export const Figure: FC<FigureProps> = ({
           <Box>
             <Box
               as="h5"
-              fontStyle="normal"
               fontWeight="600"
               fontSize={["20px", "26px", "36px", "40px"]}
               lineHeight="99.5%"
@@ -51,13 +50,11 @@ export const Figure: FC<FigureProps> = ({
               mb="27px"
               maxW="622px"
               whiteSpace="pre-line"
-              fontFamily="Blender Pro"
             >
               {title}
             </Box>
             <Box
               maxW="568px"
-              fontStyle="normal"
               fontWeight="300"
               fontSize={["16px", "16px", "18px"]}
               lineHeight="1.2"
@@ -103,7 +100,6 @@ export const Figure: FC<FigureProps> = ({
                 <PopoverContent w="max-content">
                   <PopoverArrow />
                   <PopoverHeader
-                    fontStyle="normal"
                     fontWeight="600"
                     fontSize="18px"
                     lineHeight="99.5%"

@@ -1,7 +1,7 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { IMAGES_PATH } from "constants/settings";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
+import { IMAGES_PATH } from "constants/settings";
 
 export const AboutCompany = () => {
   const [t] = useTranslation();
@@ -10,7 +10,6 @@ export const AboutCompany = () => {
       <Container>
         <Box
           as="h5"
-          fontStyle="normal"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"
@@ -26,8 +25,6 @@ export const AboutCompany = () => {
           flexDir={["column", "row"]}
         >
           <Box
-            fontFamily="Museo Sans Cyrl"
-            fontStyle="normal"
             fontWeight="300"
             fontSize="18px"
             lineHeight="22px"

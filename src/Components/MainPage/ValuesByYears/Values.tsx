@@ -1,8 +1,9 @@
 import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { useTranslation } from "next-i18next";
+
 import { StatsBox } from "Components/Common/StatsBox";
 import { Years } from "Components/Common/Year/Years";
-import React, { useState } from "react";
-import { useTranslation } from "next-i18next";
 
 export const Values = () => {
   const { t } = useTranslation();
@@ -85,8 +86,6 @@ export const Values = () => {
           >
             <Box gridColumn={["1", "1/4", "1/4", "2/4"]}>
               <Box
-                fontFamily="Museo Sans Cyrl"
-                fontStyle="normal"
                 fontWeight="600"
                 fontSize={["18px", "20px", "22px", "26px"]}
                 lineHeight="25px"
@@ -97,7 +96,6 @@ export const Values = () => {
                 {t("headers:values")}
               </Box>
               <Text
-                fontFamily="Museo Sans Cyrl"
                 fontWeight="300"
                 fontSize={["12px", "14px", "16px", "18px"]}
                 lineHeight="22px"
@@ -157,7 +155,6 @@ export const Values = () => {
                     opacity={item.num > 0 ? "1" : "0"}
                     transition="all 1s"
                     fontFamily="Blender Pro"
-                    fontStyle="normal"
                     fontWeight="900"
                     fontSize={["38px", "38px", "20px", "22px", "24px"]}
                     lineHeight="29px"

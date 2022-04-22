@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Image } from "@chakra-ui/react";
+
 import { IMAGES_PATH } from "constants/settings";
-import React from "react";
 
 export const GtiMap = () => {
   return (
@@ -22,7 +22,6 @@ export const GtiMap = () => {
         </Flex>
         <Box
           fontStyle="italic"
-          fontWeight="400"
           fontSize="15px"
           lineHeight="18px"
           textAlign="right"

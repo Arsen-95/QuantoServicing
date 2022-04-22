@@ -1,5 +1,6 @@
 import { Box, GridItem, Text } from "@chakra-ui/react";
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
 import CountUp from "react-countup";
 
 type ValueProps = {
@@ -12,11 +13,10 @@ type ValueProps = {
   textWidth?: string;
   flexBasis?: string;
   plus?: any;
-  others?: any;
   visibility?: any;
 };
 
-export const StatsBox: FC<ValueProps> = ({
+export const StatsBox: React.FC<ValueProps> = ({
   text,
   num,
   height,
@@ -74,11 +74,10 @@ export const StatsBox: FC<ValueProps> = ({
       position="relative"
       visibility={+num1 > 0 ? "visible" : "hidden"}
       opacity={+num1 > 0 ? "1" : "0"}
+      display={+num1 > 0 ? "block" : ["none", "none", "block"]}
       transition="all 1s"
     >
       <Text
-        fontFamily="Museo Sans Cyrl"
-        fontStyle="normal"
         fontWeight="300"
         fontSize={textSize}
         lineHeight="120%"

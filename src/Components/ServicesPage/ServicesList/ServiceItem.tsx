@@ -1,8 +1,8 @@
 import { Box, Flex, Link } from "@chakra-ui/react";
-import { ICONS_PATH } from "constants/settings";
 import NextLink from "next/link";
-import React, { FC } from "react";
 import { useTranslation } from "next-i18next";
+
+import { ICONS_PATH } from "constants/settings";
 
 type ItemProps = {
   name: string;
@@ -11,7 +11,7 @@ type ItemProps = {
   onClick?: any;
 };
 
-const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
+const ServiceItem: React.FC<ItemProps> = ({ name, picture, href, onClick }) => {
   const { t } = useTranslation();
 
   return (
@@ -24,9 +24,8 @@ const ServiceItem: FC<ItemProps> = ({ name, picture, href, onClick }) => {
       background={`url(${ICONS_PATH}/${picture}) no-repeat 0 7px`}
     >
       <Box
+        as="h5"
         flex="1"
-        fontFamily="Blender Pro"
-        fontStyle="normal"
         fontWeight="900"
         fontSize="25px"
         lineHeight="30px"

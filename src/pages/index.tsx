@@ -1,5 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { memo } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import { MainLayout } from "Components/Common/MainLayout";
 import { Stats } from "Components/MainPage/Stats";
 import { MainTitle } from "Components/MainPage/MainTitle";
@@ -8,7 +10,6 @@ import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MainSlider } from "Components/MainPage/Enviroment";
 
 const Home: NextPage = () => {

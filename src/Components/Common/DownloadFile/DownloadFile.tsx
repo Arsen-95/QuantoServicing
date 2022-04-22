@@ -1,13 +1,13 @@
 import { Box, Link } from "@chakra-ui/react";
+
 import { ICONS_PATH } from "constants/settings";
-import React, { FC } from "react";
 
 type FileProps = {
   fileName: string;
   fileSize: number;
 };
 
-export const DownloadFile: FC<FileProps> = ({ fileName, fileSize }) => {
+export const DownloadFile: React.FC<FileProps> = ({ fileName, fileSize }) => {
   return (
     <Link
       download
@@ -20,7 +20,6 @@ export const DownloadFile: FC<FileProps> = ({ fileName, fileSize }) => {
       p="20px 73px"
     >
       <Box
-        fontWeight="400"
         fontSize="14px"
         lineHeight="17px"
         letterSpacing="-0.00240557px"

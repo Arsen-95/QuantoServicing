@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, Table, Tbody, Td, Tr } from "@chakra-ui/react";
-import React from "react";
+
 import Company from "./Company";
 import cl from "./table.module.css";
 

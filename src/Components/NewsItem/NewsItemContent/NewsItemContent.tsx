@@ -1,6 +1,6 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+
 import { IMAGES_PATH } from "constants/settings";
-import React from "react";
 
 export const NewsItemContent = () => {
   return (

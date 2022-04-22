@@ -1,6 +1,5 @@
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { IMAGES_PATH } from "constants/settings";
-import React from "react";
 import Manager from "./Manager";
 
 export const Management = () => {
@@ -12,7 +11,6 @@ export const Management = () => {
       <Container>
         <Box
           as="h5"
-          fontStyle="normal"
           fontWeight="600"
           lineHeight="99.5%"
           letterSpacing="-0.04em"

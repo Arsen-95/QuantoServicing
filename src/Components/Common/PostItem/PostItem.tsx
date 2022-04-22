@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { FC } from "react";
+
 import { IMAGES_PATH } from "../../../constants/settings";
 
 type ItemProps = {
@@ -8,7 +8,7 @@ type ItemProps = {
   picture: string;
 };
 
-export const PostItem: FC<ItemProps> = ({ text, picture }) => {
+export const PostItem: React.FC<ItemProps> = ({ text, picture }) => {
   return (
     <NextLink href="/newsItem" passHref>
       <Link _hover={{ textDecor: "none" }}>
@@ -22,7 +22,6 @@ export const PostItem: FC<ItemProps> = ({ text, picture }) => {
         >
           <Text
             color="#FFF"
-            fontFamily="Museo Sans Cyrl"
             fontWeight="300"
             fontSize="14px"
             lineHeight="132%"

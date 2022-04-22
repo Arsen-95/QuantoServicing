@@ -1,8 +1,8 @@
+import { useTranslation } from "next-i18next";
+
+import useBreadCrumbs from "constants/useBreadCrumbs";
 import { Title } from "Components/Common/Title";
 import { IMAGES_PATH } from "constants/settings";
-import React from "react";
-import { useTranslation } from "next-i18next";
-import useBreadCrumbs from "constants/useBreadCrumbs";
 
 export const AboutTitle = () => {
   const [t] = useTranslation();

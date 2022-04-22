@@ -13,14 +13,14 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
+
 import { IMAGES_PATH } from "../../../constants/settings";
 import Service from "./Service";
 
 const Services = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [isSticky, setSticky] = useState(false);
 
   const handleScroll = useCallback(() => {

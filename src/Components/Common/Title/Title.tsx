@@ -1,5 +1,6 @@
 import {
   Box,
+  BoxProps,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -7,26 +8,19 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { FC, ReactNode } from "react";
 
 type TitleProps = {
-  pt: string | string[];
-  pb: string | string[];
-  background: string;
   title: string;
   text?: string;
   breadCrumb?: string[][];
-  children?: ReactNode;
 };
 
-export const Title: FC<TitleProps> = ({
-  pt,
-  pb,
-  background,
+export const Title: React.FC<TitleProps & BoxProps> = ({
   title,
   text,
   breadCrumb,
   children,
+  ...props
 }) => {
   const pulsate = keyframes`
         0% {transform: scale(0.1, 0.1); opacity: 0.0;}
@@ -37,13 +31,11 @@ export const Title: FC<TitleProps> = ({
   return (
     <Box
       as="section"
-      pt={pt}
-      background={background}
-      bgPos="bottom"
-      backgroundSize="cover"
-      pb={pb}
       position="relative"
       h="567px"
+      {...props}
+      bgPos="bottom"
+      backgroundSize="cover"
     >
       <Container>
         <Box
@@ -56,7 +48,6 @@ export const Title: FC<TitleProps> = ({
         <Box
           as="h4"
           textTransform="uppercase"
-          fontFamily="Blender Pro"
           fontSize={["40px", "50px", "75px"]}
           lineHeight={["41px", "56px", "62px"]}
           maxW={["320px", "420px", "580px", "923px"]}
@@ -73,7 +64,6 @@ export const Title: FC<TitleProps> = ({
           lineHeight="22px"
           color="#FFF"
           fontWeight="300"
-          fontFamily="Museo Sans Cyrl"
           mb={children ? ["0px", "0", "90px"] : "0"}
           maxW="78%"
         >
@@ -91,9 +81,6 @@ export const Title: FC<TitleProps> = ({
               >
                 <NextLink href={href} passHref>
                   <BreadcrumbLink
-                    fontFamily="Museo Sans Cyrl"
-                    fontStyle="normal"
-                    fontWeight="400"
                     fontSize="14px"
                     lineHeight="134.5%"
                     letterSpacing="-0.00240557px"

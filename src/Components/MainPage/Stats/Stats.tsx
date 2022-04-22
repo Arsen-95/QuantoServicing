@@ -1,7 +1,7 @@
 import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
-import { StatsBox } from "Components/Common/StatsBox";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
+import { StatsBox } from "Components/Common/StatsBox";
 import { IMAGES_PATH } from "../../../constants/settings";
 
 export const Stats = () => {
@@ -18,7 +18,6 @@ export const Stats = () => {
             <Text
               as="h5"
               textTransform="uppercase"
-              fontFamily="Blender Pro"
               fontSize={["36px", "50px", "60px", "64px", "76px"]}
               letterSpacing="-2.50267px"
               color="#494949"
@@ -34,7 +33,6 @@ export const Stats = () => {
               letterSpacing="-0.00089095px"
               lineHeight="1.2"
               fontWeight="300px"
-              fontFamily="Museo Sans Cyrl"
               mb={["40px", "40px", "40px", "0"]}
             >
               * В период с 2019 по 2022 год

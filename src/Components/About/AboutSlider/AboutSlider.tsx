@@ -1,4 +1,3 @@
-import React from "react";
 import { CustomSlider } from "Components/Common/CustomSlider";
 
 export const AboutSlider = () => {

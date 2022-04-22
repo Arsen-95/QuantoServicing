@@ -1,7 +1,6 @@
 import { Box, Link } from "@chakra-ui/react";
 import { ICONS_PATH } from "constants/settings";
 import NextLink from "next/link";
-import React, { FC } from "react";
 
 type ServiceProps = {
   text: string;
@@ -10,7 +9,7 @@ type ServiceProps = {
   onClick?: any;
 };
 
-const Service: FC<ServiceProps> = ({ text, picture, href, onClick }) => {
+const Service: React.FC<ServiceProps> = ({ text, picture, href, onClick }) => {
   return (
     <NextLink href={href} passHref>
       <Link

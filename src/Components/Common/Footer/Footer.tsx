@@ -1,15 +1,11 @@
 import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
-import NextLink from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
 import { useTranslation } from "next-i18next";
+import NextLink from "next/link";
+
 import { ICONS_PATH } from "../../../constants/settings";
 import { Navigation } from "../Navigation";
 
 export const Footer = () => {
-  const { pathname } = useRouter();
-  const color = pathname === "/newsItem" ? "#FFF" : "#FFF";
-
   const { t } = useTranslation();
 
   return (
@@ -29,7 +25,6 @@ export const Footer = () => {
             </NextLink>
             <Box textAlign={["center", "center", "right"]} color="#FFF">
               <Box
-                fontFamily="Museo Sans Cyrl"
                 fontSize="18px"
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
@@ -44,7 +39,6 @@ export const Footer = () => {
                 mb={"28px"}
                 fontFamily="Arial"
                 fontStyle="italic"
-                fontWeight="400"
                 fontSize="12px"
                 lineHeight="134.5%"
                 letterSpacing="-0.00240557px"
@@ -53,7 +47,6 @@ export const Footer = () => {
                 {t("footer:firmAddress")}
               </Box>
               <Box
-                fontFamily="Museo Sans Cyrl"
                 fontSize="18px"
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
@@ -70,7 +63,6 @@ export const Footer = () => {
                   mb={"28px"}
                   fontFamily="Arial"
                   fontStyle="italic"
-                  fontWeight="400"
                   fontSize="12px"
                   lineHeight="134.5%"
                   letterSpacing="-0.00240557px"
@@ -80,7 +72,6 @@ export const Footer = () => {
                 </Link>
               </Box>
               <Box
-                fontFamily="Museo Sans Cyrl"
                 fontSize="18px"
                 letterSpacing="-0.00240557px"
                 lineHeight="134%"
@@ -95,7 +86,6 @@ export const Footer = () => {
                 whiteSpace="pre-line"
                 fontFamily="Arial"
                 fontStyle="italic"
-                fontWeight="400"
                 fontSize="12px"
                 lineHeight="134.5%"
                 letterSpacing="-0.00240557px"
@@ -115,11 +105,6 @@ export const Footer = () => {
               h="37px"
               w="37px"
               background={`#FFF url(${ICONS_PATH}/arrowTop.svg) no-repeat center`}
-              color="#FFF"
-              letterSpacing="-0.000932056px"
-              fontSize="10"
-              fontFamily="Blender PRo"
-              textTransform="uppercase"
               onClick={() =>
                 scrollTo({
                   top: 0,
@@ -128,13 +113,11 @@ export const Footer = () => {
               }
             ></Box>
             <Box display={["none", "none", "none", "block"]}>
-              <Navigation flexDir="row" lang={false} color={color} />
+              <Navigation flexDir="row" lang={false} color="#FFF" />
             </Box>
             <Flex
               flexDir="column"
               fontFamily="Arial"
-              fontStyle="normal"
-              fontWeight="400"
               fontSize="12px"
               lineHeight="134.5%"
               letterSpacing="-0.00240557px"

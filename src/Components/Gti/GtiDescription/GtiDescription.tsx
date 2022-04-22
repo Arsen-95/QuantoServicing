@@ -1,6 +1,6 @@
-import { Figure } from "Components/Common/Figure";
-import React from "react";
 import { useTranslation } from "react-i18next";
+
+import { Figure } from "Components/Common/Figure";
 
 export const GtiDescription = () => {
   const { t } = useTranslation();

@@ -1,9 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import React, { FC, useEffect } from "react";
-import NavItem from "./NavItem";
 import LocalePicker from "./LocalePicker";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
+
+import NavItem from "./NavItem";
 
 type NavProps = {
   lang: boolean;
@@ -11,35 +10,41 @@ type NavProps = {
   color?: any;
 };
 
-export const Navigation: FC<NavProps> = ({ lang, flexDir, color }) => {
+export const Navigation: React.FC<NavProps> = ({ lang, flexDir, color }) => {
   const { t } = useTranslation();
-  const router = useRouter();
-
-  // let locale: any;
-  // useEffect(() => {
-  //   const locale = localStorage.getItem("lang");
-  // }, []);
-
   return (
     <Box as="nav" display="flex" flexDir={flexDir} alignItems="center">
       <Box display={["none", "none", "none", "block"]}>
-        <NavItem href="/about" text={t("navigation:about")} color={color} />
+        <NavItem
+          href="/about"
+          text={t("navigation:about")}
+          color={color}
+          textTransform="uppercase"
+        />
         <NavItem
           href="/services"
           text={t("navigation:services")}
           color={color}
+          textTransform="uppercase"
         />
         <NavItem
           href="/#partners"
           text={t("navigation:partners")}
           color={color}
+          textTransform="uppercase"
         />
         <NavItem
           href="/#contacts"
           text={t("navigation:contacts")}
           color={color}
+          textTransform="uppercase"
         />
-        <NavItem href="/news" text={t("navigation:news")} color={color} />
+        <NavItem
+          href="/news"
+          text={t("navigation:news")}
+          color={color}
+          textTransform="uppercase"
+        />
         {/* <NavItem
           href="/documents"
           text={t("navigation:documents")}

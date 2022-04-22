@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Text } from "@chakra-ui/react";
-import { DownloadFile } from "Components/Common/DownloadFile";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
+import { DownloadFile } from "Components/Common/DownloadFile";
 
 export const Policy = () => {
   const [t] = useTranslation();
@@ -11,7 +11,6 @@ export const Policy = () => {
       <Container>
         <Box
           as="h5"
-          fontStyle="normal"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"
@@ -22,8 +21,6 @@ export const Policy = () => {
           {t("headers:policy")}
         </Box>
         <Text
-          fontFamily="Museo Sans Cyrl"
-          fontStyle="normal"
           fontWeight="300"
           fontSize="18px"
           lineHeight="22px"

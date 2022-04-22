@@ -8,7 +8,7 @@ import {
   Divider,
   Flex,
 } from "@chakra-ui/react";
-import React, { FC } from "react";
+
 import NavItem from "../Navigation/NavItem";
 
 type MenuProps = {
@@ -16,7 +16,7 @@ type MenuProps = {
   setMenu(menu: boolean): void;
 };
 
-export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
+export const BurgerMenu: React.FC<MenuProps> = ({ menu, setMenu }) => {
   return (
     <>
       {menu && (
@@ -43,7 +43,6 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
               text="О компании"
               fontSize={["26px", "36px"]}
               color="#FFF"
-              uppercase={false}
             />
           </Box>
           <Accordion allowToggle mb={5}>
@@ -70,21 +69,18 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
                     text="Геолого-технологические исследования"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
-                    uppercase={false}
                   />
                   <NavItem
                     href="/gis"
                     text="Геофизические исследования скважин"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
-                    uppercase={false}
                   />
                   <NavItem
                     href="/pvr"
                     text="Прострелочно-взрывные работы"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
-                    uppercase={false}
                   />
                 </Flex>
               </AccordionPanel>
@@ -96,7 +92,6 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
             fontSize={["26px", "36px"]}
             color="#FFF"
             onClick={() => setMenu(!menu)}
-            uppercase={false}
           />
           <Divider my={5} />
           <NavItem
@@ -105,7 +100,6 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
             text="Контакты"
             fontSize={["26px", "36px"]}
             color="#FFF"
-            uppercase={false}
           />
 
           <Divider my={5} />
@@ -114,7 +108,6 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
             text="Новости"
             fontSize={["26px", "36px"]}
             color="#FFF"
-            uppercase={false}
           />
           <Divider my={5} />
           <NavItem
@@ -122,7 +115,6 @@ export const BurgerMenu: FC<MenuProps> = ({ menu, setMenu }) => {
             text="Документация"
             fontSize={["26px", "36px"]}
             color="#FFF"
-            uppercase={false}
           />
         </Box>
       )}

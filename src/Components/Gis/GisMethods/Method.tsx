@@ -8,11 +8,9 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  Text,
-  Tooltip,
 } from "@chakra-ui/react";
+
 import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
-import React, { FC } from "react";
 
 type MethodProps = {
   methodName: string;
@@ -20,7 +18,7 @@ type MethodProps = {
   text?: any;
 };
 
-const Method: FC<MethodProps> = ({ methodName, text, picture }) => {
+const Method: React.FC<MethodProps> = ({ methodName, text, picture }) => {
   return (
     <Flex
       position="relative"
@@ -34,8 +32,6 @@ const Method: FC<MethodProps> = ({ methodName, text, picture }) => {
     >
       <Box
         maxW="63%"
-        fontStyle="normal"
-        fontWeight="400"
         fontSize="18px"
         lineHeight="125%"
         letterSpacing="-0.00240557px"

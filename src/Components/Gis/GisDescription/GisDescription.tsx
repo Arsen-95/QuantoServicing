@@ -1,6 +1,6 @@
-import { Figure } from "Components/Common/Figure";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
+import { Figure } from "Components/Common/Figure";
 
 export const GisDescription = () => {
   const { t } = useTranslation();

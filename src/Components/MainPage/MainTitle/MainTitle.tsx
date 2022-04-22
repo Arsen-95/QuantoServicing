@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
-import { Title } from "Components/Common/Title";
-import React from "react";
-import { IMAGES_PATH } from "../../../constants/settings";
-import Services from "./Services";
 import { useTranslation } from "next-i18next";
+
+import { IMAGES_PATH } from "../../../constants/settings";
+import { Title } from "Components/Common/Title";
+import Services from "./Services";
 
 export const MainTitle = () => {
   const [t] = useTranslation();

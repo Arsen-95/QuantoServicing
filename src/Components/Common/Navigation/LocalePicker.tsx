@@ -8,13 +8,13 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type LocalePickerProps = {
   color: string;
 };
 
-const LocalePicker: FC<LocalePickerProps> = ({ color }) => {
+const LocalePicker: React.FC<LocalePickerProps> = ({ color }) => {
   const [selectedLang, setSelectedLang] = useState<string | null>("РУС");
   const router = useRouter();
   const { locale } = router;
@@ -47,7 +47,6 @@ const LocalePicker: FC<LocalePickerProps> = ({ color }) => {
               lineHeight="1"
               _active={{ background: "none" }}
               _hover={{ background: "none" }}
-              fontFamily="Museo Sans Cyrl"
               fontWeight="500"
               letterSpacing="-0.00185615px"
             >

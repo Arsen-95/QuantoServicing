@@ -1,10 +1,10 @@
-import React, { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./style.module.css";
 import { Mousewheel, Scrollbar } from "swiper";
 import { Box, Flex } from "@chakra-ui/react";
+
 import Year from "./Year";
 
 type YearsProps = {
@@ -12,7 +12,7 @@ type YearsProps = {
   yearsData: any;
 };
 
-export const Years: FC<YearsProps> = ({ onScroll, yearsData }: any) => {
+export const Years: React.FC<YearsProps> = ({ onScroll, yearsData }: any) => {
   const years: number[] = yearsData;
 
   return (

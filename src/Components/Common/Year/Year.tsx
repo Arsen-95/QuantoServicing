@@ -9,7 +9,6 @@ const Year: FC = ({ children }) => {
       <Box
         ref={ref}
         fontFamily="Blender Pro"
-        fontStyle="normal"
         fontWeight="900"
         letterSpacing="-0.00267285px"
         text-transform="uppercase"

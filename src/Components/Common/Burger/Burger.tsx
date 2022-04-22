@@ -1,6 +1,6 @@
-import { CloseIcon } from "@chakra-ui/icons";
 import { Box, Icon, IconButton } from "@chakra-ui/react";
-import React, { FC } from "react";
+
+import { CloseIcon } from "@chakra-ui/icons";
 import { BurgerIcon } from "../Icons/BurgerIcon";
 
 type BurgerProps = {
@@ -8,7 +8,7 @@ type BurgerProps = {
   setMenu(menu: boolean): void;
 };
 
-export const Burger: FC<BurgerProps> = ({ menu, setMenu }) => {
+export const Burger: React.FC<BurgerProps> = ({ menu, setMenu }) => {
   return (
     <>
       {menu === true ? (

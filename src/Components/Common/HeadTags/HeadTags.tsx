@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React, { FC } from "react";
 
 type TagsProps = {
   siteTitle: string;
@@ -7,7 +6,7 @@ type TagsProps = {
   descriptionContent: string;
 };
 
-export const HeadTags: FC<TagsProps> = ({
+export const HeadTags: React.FC<TagsProps> = ({
   siteTitle,
   titleContent,
   descriptionContent,

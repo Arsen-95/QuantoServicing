@@ -1,6 +1,6 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
 import Method from "./Method";
 
 export const GisMethods = () => {

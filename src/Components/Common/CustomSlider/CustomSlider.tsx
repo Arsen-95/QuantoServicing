@@ -1,15 +1,15 @@
 import { Box, Flex } from "@chakra-ui/react";
-import React, { FC, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade, Navigation } from "swiper";
+
 import CustomSliderItem from "./CustomSliderItem";
 import { ICONS_PATH } from "constants/settings";
 
-export const CustomSlider: FC<any> = ({ sliderData, bg = "#FFF" }) => {
+export const CustomSlider: React.FC<any> = ({ sliderData, bg = "#FFF" }) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
 

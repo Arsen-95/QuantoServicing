@@ -1,5 +1,4 @@
 import { ValuesByYears } from "Components/Common/ValuesByYears";
-import React from "react";
 
 export const GisValues = () => {
   const data: Record<number, { text: string; num: string; plus?: boolean }[]> =

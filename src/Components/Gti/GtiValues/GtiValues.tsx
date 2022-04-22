@@ -1,6 +1,4 @@
-import { StatsBox } from "Components/Common/StatsBox";
 import { ValuesByYears } from "Components/Common/ValuesByYears";
-import React from "react";
 
 export const GtiValues = () => {
   const data: Record<number, { text: string; num: string; plus?: boolean }[]> =

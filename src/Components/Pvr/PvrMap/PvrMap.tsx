@@ -1,5 +1,6 @@
-import { Box, Container, Flex, Tooltip } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
+
 import { MapIcon } from "./MapIcon";
 
 export const PvrMap = () => {

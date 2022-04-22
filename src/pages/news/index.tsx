@@ -1,10 +1,10 @@
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { NewsPosts } from "Components/News/NewsPosts";
 import { NewsTitle } from "Components/News/NewsTitle/NewsTitle";
-import { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import React from "react";
 
 const index = () => {
   return (

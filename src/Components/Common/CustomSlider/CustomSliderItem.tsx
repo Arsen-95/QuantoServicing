@@ -1,6 +1,5 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
 import { IMAGES_PATH } from "constants/settings";
-import React, { FC } from "react";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,7 +11,7 @@ type CustomSliderItemProps = {
   imageUrl: string;
 };
 
-const CustomSliderItem: FC<CustomSliderItemProps> = ({
+const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
   title,
   text,
   imageUrl,
@@ -35,8 +34,6 @@ const CustomSliderItem: FC<CustomSliderItemProps> = ({
             >
               <Box
                 as="h5"
-                fontFamily="Blender Pro"
-                fontStyle="normal"
                 fontWeight="600"
                 fontSize={titleSize}
                 lineHeight="99.5%"

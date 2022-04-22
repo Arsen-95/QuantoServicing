@@ -1,5 +1,4 @@
 import { Box, Flex, Link } from "@chakra-ui/react";
-import React, { FC } from "react";
 
 type ManagerProps = {
   name: string;
@@ -8,7 +7,7 @@ type ManagerProps = {
   number: number;
 };
 
-const Manager: FC<ManagerProps> = ({ name, position, email }) => {
+const Manager: React.FC<ManagerProps> = ({ name, position, email }) => {
   return (
     <>
       <Flex py="44px" w="100%" alignItems="center">
@@ -16,7 +15,7 @@ const Manager: FC<ManagerProps> = ({ name, position, email }) => {
           <Box
             fontWeight="300"
             fontSize="18px"
-            lineHeight="13px"
+            lineHeight="14px"
             letterSpacing="-0.00199167px"
             color="#494949"
             mb="10px"
@@ -24,7 +23,6 @@ const Manager: FC<ManagerProps> = ({ name, position, email }) => {
             {position}
           </Box>
           <Box
-            fontStyle="normal"
             fontWeight="600"
             fontSize="26px"
             lineHeight="130%"
@@ -35,10 +33,9 @@ const Manager: FC<ManagerProps> = ({ name, position, email }) => {
             {name.split(" ").join(`\n`)}
           </Box>
           <Box
-            fontStyle="normal"
             fontWeight="300"
             fontSize="18px"
-            lineHeight="13px"
+            lineHeight="14px"
             letterSpacing="-0.00199167px"
             color="#494949"
           >

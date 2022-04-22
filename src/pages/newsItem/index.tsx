@@ -1,11 +1,11 @@
 import { Container, Flex } from "@chakra-ui/react";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { NewsItemContent } from "Components/NewsItem/NewsItemContent";
 import { NewsItemTitle } from "Components/NewsItem/NewsItemTitle";
-import { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import React from "react";
 
 const index = () => {
   return (

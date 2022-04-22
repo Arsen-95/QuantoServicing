@@ -1,11 +1,10 @@
 import { Box } from "@chakra-ui/react";
-import React, { FC } from "react";
 
 type PaginationItemProps = {
   name: string;
 };
 
-const PaginationItem: FC<PaginationItemProps> = ({ name }) => {
+const PaginationItem: React.FC<PaginationItemProps> = ({ name }) => {
   return (
     <Box
       _hover={{
@@ -14,7 +13,6 @@ const PaginationItem: FC<PaginationItemProps> = ({ name }) => {
       }}
       p="10px"
       fontFamily="Blender Pro"
-      fontStyle="normal"
       fontWeight="900"
       fontSize="14px"
       lineHeight="132%"

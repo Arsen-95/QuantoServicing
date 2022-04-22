@@ -1,14 +1,14 @@
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { PvrTitle } from "Components/Pvr/PvrTitle";
 import { PvrDescription } from "Components/Pvr/PvrDescription";
-import React from "react";
 import { PvrValues } from "Components/Pvr/PvrValues";
 import { PvrMap } from "Components/Pvr/PvrMap";
 import { PvrDocs } from "Components/Pvr/PvrDocs";
 import { PvrVariants } from "Components/Pvr/PvrVariants";
-import { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const index = () => {
   return (

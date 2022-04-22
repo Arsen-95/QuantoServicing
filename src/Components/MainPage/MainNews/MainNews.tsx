@@ -14,8 +14,6 @@ export const MainNews = () => {
           textTransform="uppercase"
           color="#494949"
           letterSpacing="-2.50267px"
-          fontFamily="Blender Pro"
-          fontStyle="normal"
           fontWeight="900"
           fontSize={["35px", "50px", "50px", "75px"]}
           lineHeight="62px"

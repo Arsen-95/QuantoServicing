@@ -5,8 +5,6 @@ export const NewsItemTitle = () => {
   return (
     <Box maxW="475px">
       <Box
-        fontStyle="normal"
-        fontWeight="400"
         fontSize="48px"
         lineHeight="50px"
         letterSpacing="-1.50267px"
@@ -27,14 +25,13 @@ export const NewsItemTitle = () => {
           10
         </Box>
         <Box
-          fontStyle="normal"
           fontWeight="250"
           fontSize="18px"
           lineHeight="22px"
           letterSpacing="-0.00267285px"
           color="#111111"
         >
-          September <br /> 2022`
+          September <br /> 2022
         </Box>
       </Flex>
     </Box>

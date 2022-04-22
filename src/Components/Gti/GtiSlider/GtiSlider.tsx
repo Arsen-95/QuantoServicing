@@ -1,5 +1,4 @@
 import { CustomSlider } from "Components/Common/CustomSlider";
-import React from "react";
 
 export const GtiSlider = () => {
   return (

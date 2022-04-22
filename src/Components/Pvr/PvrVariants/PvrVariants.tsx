@@ -9,9 +9,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@chakra-ui/react";
-import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
-import React from "react";
 import { useTranslation } from "next-i18next";
+
+import { ICONS_PATH, IMAGES_PATH } from "constants/settings";
 
 export const PvrVariants = () => {
   const { t } = useTranslation();
@@ -21,7 +21,6 @@ export const PvrVariants = () => {
       <Container>
         <Box
           as="h5"
-          fontStyle="normal"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"
@@ -72,8 +71,6 @@ export const PvrVariants = () => {
         </Box>
         <Flex
           gap="45px"
-          fontStyle="normal"
-          fontWeight="400"
           fontSize="32px"
           lineHeight="124%"
           letterSpacing="-0.00240557px"

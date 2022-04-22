@@ -7,11 +7,12 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { Input, InputMask } from "./Input";
 import { useForm, Controller } from "react-hook-form";
 import { cooperationSceme } from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "next-i18next";
+
+import { Input, InputMask } from "./Input";
 
 type FormDataType = {
   name: string;
@@ -58,7 +59,6 @@ export const Cooperation = () => {
             <Text
               as="h5"
               textTransform="uppercase"
-              fontStyle="normal"
               fontWeight="900"
               fontSize={["35px", "50px", "50px", "75px"]}
               lineHeight="62px"
@@ -200,7 +200,6 @@ export const Cooperation = () => {
                 letterSpacing="-0.00240557px"
                 fontFamily="Arial"
                 fontStyle="italic"
-                fontWeight="400"
                 fontSize="12px"
                 lineHeight="134.5%"
               >
@@ -216,6 +215,7 @@ export const Cooperation = () => {
                 h="54px"
                 loadingText="Отправка"
                 type="submit"
+                fontWeight={400}
               >
                 {t("common:message")}
               </Button>

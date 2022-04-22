@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Box, Flex } from "@chakra-ui/react";
+
 import { ICONS_PATH } from "../../../constants/settings";
 import { PostItem } from "Components/Common/PostItem";
 

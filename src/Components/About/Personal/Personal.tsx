@@ -1,6 +1,6 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
+
 import { StatsBox } from "Components/Common/StatsBox";
-import React from "react";
 
 export const Personal = () => {
   return (
@@ -8,7 +8,6 @@ export const Personal = () => {
       <Container>
         <Box
           as="h5"
-          fontStyle="normal"
           fontWeight="600"
           fontSize="40px"
           lineHeight="99.5%"
@@ -20,8 +19,6 @@ export const Personal = () => {
         </Box>
         <Box
           maxW="400px"
-          fontFamily="Museo Sans Cyrl"
-          fontStyle="normal"
           fontWeight="300"
           fontSize="18px"
           lineHeight="22px"
@@ -37,7 +34,7 @@ export const Personal = () => {
           <StatsBox
             flexBasis="164px"
             height="150px"
-            num={40}
+            num="40"
             numSize="36px"
             padding="6px 8px"
             text="Сотрудников к концу 2019г"
@@ -47,7 +44,7 @@ export const Personal = () => {
           <StatsBox
             flexBasis="164px"
             height="150px"
-            num={56}
+            num="56"
             numSize="36px"
             padding="6px 8px"
             text="Сотрудников к концу 2020г"
@@ -57,7 +54,7 @@ export const Personal = () => {
           <StatsBox
             flexBasis="164px"
             height="150px"
-            num={97}
+            num="97"
             numSize="36px"
             padding="6px 8px"
             text="Сотрудников к концу 2021г"
