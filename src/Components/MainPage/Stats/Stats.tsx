@@ -2,7 +2,6 @@ import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 
 import { StatsBox } from "Components/Common/StatsBox";
-import { IMAGES_PATH } from "../../../constants/settings";
 
 export const Stats = () => {
   const [t] = useTranslation();

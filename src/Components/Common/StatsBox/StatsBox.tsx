@@ -39,11 +39,11 @@ export const StatsBox: React.FC<ValueProps> = ({
     const elem = parentRef.current;
     if (elem) {
       const height = document.body.clientHeight;
-      const top = parentRef.current?.getBoundingClientRect().top;
-      const elementHeight = elem.clientHeight - elem.clientHeight * 0.6;
+      const top = elem?.getBoundingClientRect().top;
+      // const elementHeight = elem.clientHeight * 1;
       const diff = height - Number(top);
 
-      if (diff > 0 && diff >= Number(elementHeight)) {
+      if (diff > 0) {
         setState(true);
       }
     }
