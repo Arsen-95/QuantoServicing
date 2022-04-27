@@ -32,6 +32,7 @@ export const Personal = () => {
         </Box>
         <Flex justifyContent="center" columnGap="74px" gridAutoColumns="164px">
           <StatsBox
+            border="1px solid black"
             flexBasis="164px"
             height="150px"
             num="40"
@@ -42,6 +43,7 @@ export const Personal = () => {
             textWidth="84px"
           />
           <StatsBox
+            border="1px solid black"
             flexBasis="164px"
             height="150px"
             num="56"
@@ -52,6 +54,7 @@ export const Personal = () => {
             textWidth="84px"
           />
           <StatsBox
+            border="1px solid black"
             flexBasis="164px"
             height="150px"
             num="97"
