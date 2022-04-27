@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Fonts from "../styles/Fonts";
 import "../styles/styles.css";
 import { appWithTranslation } from "next-i18next";
-import { theme } from "./app/theme";
+import { theme } from "../Components/app/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
