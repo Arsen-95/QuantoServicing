@@ -17,7 +17,7 @@ export const Tabs: React.FC<Props> = ({ data, event, setEvent }) => {
       lineHeight="132%"
       letterSpacing="-0.0017819px"
       color="#494949"
-      mb="50px"
+      mb={["30px", "30px", "50px"]}
       ml="-10px"
     >
       {data &&
@@ -55,9 +55,11 @@ const TabItem: React.FC<ItemProps> = ({
       }}
       cursor="pointer"
       p="10px"
-      mr="20px"
+      _notLast={{
+        mr: ["10px", "10px", "15px", "20px"],
+      }}
       transition="all 0.3s"
-      fontSize="50px"
+      fontSize={["20px", "26px", "36px", "50px"]}
       lineHeight="99.5%"
       color={event === titleEvent ? "#FFF" : "#6E7085"}
       onClick={() => setEvent(titleEvent)}

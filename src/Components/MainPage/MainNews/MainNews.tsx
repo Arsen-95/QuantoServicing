@@ -33,7 +33,7 @@ export const MainNews = () => {
           lineHeight="62px"
           mb={["20px", "20px", "20px", "50px"]}
         >
-          {t("news")}
+          {t("blog")}
         </Box>
         <Tabs data={tabsList} event={event} setEvent={setEvent} />
         <Posts />
