@@ -48,9 +48,9 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
         <Box
           as="h4"
           textTransform="uppercase"
-          fontSize={["40px", "40px", "60px", "75px"]}
+          fontSize={["38px", "40px", "60px", "75px"]}
           lineHeight={["42px", "56px", "62px"]}
-          maxW={["330px", "500px", "700px", "923px"]}
+          maxW={["300px", "500px", "700px", "923px"]}
           letterSpacing="-2.50267px"
           fontWeight="900"
           mb={text ? "22px" : "0px"}
