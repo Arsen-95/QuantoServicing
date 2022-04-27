@@ -39,7 +39,7 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
     >
       <Container>
         <Box
-          backgroundColor="#E40000"
+          backgroundColor="#2358DE"
           h="14px"
           w="14px"
           animation={`${pulsate} infinite 1s linear`}

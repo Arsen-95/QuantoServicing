@@ -119,7 +119,7 @@ export const Values = () => {
           </Box>
 
           <Grid
-            flexBasis="68.5%"
+            flexBasis={["100%", "68.5%"]}
             templateColumns={[
               "repeat(2, 1fr)",
               "repeat(2, 1fr)",
@@ -171,7 +171,7 @@ export const Values = () => {
                   text={item?.text}
                   num={item?.num}
                   plus={item?.plus}
-                  numSize={["24px", "28px", "30px", "32px", "36px"]}
+                  numSize={["30px", "32px", "32px", "34px", "36px"]}
                   textSize="12px"
                   height={["150px", "150px", "145px", "150px"]}
                 />

@@ -12,7 +12,7 @@ import { cooperationSceme } from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "next-i18next";
 
-import { Input, InputMask } from "./Input";
+import { Input } from "./Input";
 
 type FormDataType = {
   name: string;
@@ -103,11 +103,13 @@ export const Cooperation = () => {
                   control={control}
                   name="tel"
                   render={({ field }) => (
-                    <InputMask
+                    <Input
+                      placeholder="Телефон"
                       onChange={field.onChange}
                       value={field.value}
                       name="tel"
                       formState={formState}
+                      type="tel"
                     />
                   )}
                 />

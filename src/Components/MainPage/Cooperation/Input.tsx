@@ -1,5 +1,4 @@
 import { Input as ChakraInput } from "@chakra-ui/react";
-import ReactInputMask from "react-input-mask";
 
 type Props = {
   value: string;
@@ -35,35 +34,6 @@ export const Input: React.FC<Props> = ({
       background="#23242B"
       placeholder={placeholder}
       onChange={onChange}
-      _placeholder={{
-        color: "#8C949D",
-      }}
-    />
-  );
-};
-
-export const InputMask: React.FC<Omit<Props, "placeholder" | "type">> = ({
-  onChange,
-  value,
-  formState,
-  name,
-}) => {
-  return (
-    <ChakraInput
-      as={ReactInputMask}
-      mask="+\9\9\8\ (99) 999-99-99"
-      placeholder="+998 (__) ___-__-__"
-      value={value}
-      onChange={onChange}
-      borderRadius="0"
-      width={["90%", "80%", "300px", "400px"]}
-      border={
-        formState?.errors?.[name]?.message
-          ? "1.45682px solid red"
-          : "1.45682px solid #494949"
-      }
-      borderColor={formState?.errors?.[name]?.message ? "red" : "#494949"}
-      background="#23242B"
       _placeholder={{
         color: "#8C949D",
       }}
