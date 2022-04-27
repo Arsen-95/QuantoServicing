@@ -18,7 +18,6 @@ export const Burger: React.FC<BurgerProps> = ({ menu, setMenu }) => {
             onClick={() => setMenu(!menu)}
             aria-label="Options"
             icon={<Icon as={CloseIcon} />}
-            color="#FFF"
             pos="relative"
             zIndex={20}
             variant="outline"
@@ -34,7 +33,6 @@ export const Burger: React.FC<BurgerProps> = ({ menu, setMenu }) => {
             onClick={() => setMenu(!menu)}
             aria-label="Options"
             icon={<Icon as={BurgerIcon} />}
-            color="#FFF"
             zIndex={50}
             variant="outline"
             _hover={{

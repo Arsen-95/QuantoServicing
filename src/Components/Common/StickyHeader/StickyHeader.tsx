@@ -39,6 +39,7 @@ export const StickyHeader = () => {
     } else {
       setSticky(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export const StickyHeader = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   return (
     <Box

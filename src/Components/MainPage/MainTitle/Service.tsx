@@ -6,14 +6,12 @@ type ServiceProps = {
   text: string;
   picture: string;
   href: string;
-  onClick?: any;
 };
 
-const Service: React.FC<ServiceProps> = ({ text, picture, href, onClick }) => {
+const Service: React.FC<ServiceProps> = ({ text, picture, href }) => {
   return (
     <NextLink href={href} passHref>
       <Link
-        onClick={onClick}
         pos="relative"
         display="block"
         p={"13px 10px"}

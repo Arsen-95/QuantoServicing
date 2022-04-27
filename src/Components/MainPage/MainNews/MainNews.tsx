@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { Tabs } from "Components/Common/Buttons";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
@@ -27,7 +27,6 @@ export const MainNews = () => {
         <Box
           as="h5"
           textTransform="uppercase"
-          color="#FFF"
           letterSpacing="-2.50267px"
           fontWeight="900"
           fontSize={["35px", "50px", "50px", "75px"]}

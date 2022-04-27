@@ -23,7 +23,7 @@ const Services = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   const { t } = useTranslation();
 
@@ -33,7 +33,7 @@ const Services = () => {
         visibility={isSticky ? "hidden" : "visible"}
         opacity={isSticky ? 0 : 1}
         transition="all 0.2s"
-        zIndex={100}
+        // zIndex={100}
         pos="relative"
       >
         <Service
@@ -55,4 +55,5 @@ const Services = () => {
     </>
   );
 };
+
 export default Services;

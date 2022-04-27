@@ -52,7 +52,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
                 fontSize={["12px", "14px", "16px", "18px"]}
                 lineHeight="142%"
                 letterSpacing="-0.00240557px"
-                color="#8B8B8D"
+                color="#B7B7B7"
                 zIndex="2"
               >
                 {text}
