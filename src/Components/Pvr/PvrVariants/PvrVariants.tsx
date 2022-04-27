@@ -17,57 +17,19 @@ export const PvrVariants = () => {
   const { t } = useTranslation();
 
   return (
-    <Box pt="95px" pb="125px">
+    <Box pt="95px" pb="125px" bg="#23242B">
       <Container>
         <Box
           as="h5"
           fontWeight="600"
-          fontSize="40px"
+          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
-          color="#494949"
-          maxW="400px"
+          maxW="500px"
           mb="60px"
           pos="relative"
         >
           <Box>{t("headers:pvrVariants")}</Box>
-          <Popover trigger="hover">
-            <PopoverTrigger>
-              <Button
-                cursor="pointer"
-                pos="absolute"
-                bottom="-3px"
-                right="15%"
-                h="40px"
-                w="40px !important"
-                background={`url(${ICONS_PATH}/info.svg) no-repeat center`}
-                backgroundSize="23px 23px"
-                _hover={{
-                  background: `url(${ICONS_PATH}/info.svg) no-repeat center 23px 23px`,
-                }}
-                _active={{
-                  background: `url(${ICONS_PATH}/info.svg) no-repeat center 23px 23px`,
-                  border: "none",
-                }}
-                _focus={{
-                  border: "none",
-                }}
-              ></Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <PopoverArrow />
-              <PopoverBody
-                fontFamily="Museo Sans Cyrl"
-                fontWeight="300"
-                fontSize="18px"
-                lineHeight="125%"
-                letterSpacing="-0.00240557px"
-                textAlign="left"
-              >
-                Применяемые диаметры перфораторов: <b>Ø73, Ø89, Ø102</b>
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
         </Box>
         <Flex
           gap="45px"
@@ -75,22 +37,48 @@ export const PvrVariants = () => {
           lineHeight="124%"
           letterSpacing="-0.00240557px"
         >
-          <Box
+          <Flex
+            flexDir="column"
             bg={`url(${IMAGES_PATH}/cabel.png) no-repeat right`}
-            p="117px 15px"
-            border="1px solid #8B8B8B"
+            p="117px 15px 15px"
+            h="330px"
+            border="1px solid #737477"
             flex="1"
           >
-            <Box maxW="210px">Перфорация на кабеле</Box>
-          </Box>
-          <Box
+            <Box maxW="210px" flex="1">
+              Перфорация на кабеле
+            </Box>
+            <Box
+              maxW="273px"
+              fontSize="18px"
+              lineHeight="125%"
+              letterSpacing="-0.00240557px"
+              color="#B7B7B7"
+            >
+              Применяемые диаметры перфораторов: Ø73, Ø89, Ø102
+            </Box>
+          </Flex>
+          <Flex
             bg={`url(${IMAGES_PATH}/pipe.png) no-repeat right`}
-            p="117px 15px"
-            border="1px solid #8B8B8B"
+            flexDir="column"
+            p="117px 15px 15px"
+            h="330px"
+            border="1px solid #737477"
             flex="1"
           >
-            <Box maxW="210px">Перфорация на трубах</Box>
-          </Box>
+            <Box maxW="210px" flex="1">
+              Перфорация на трубах
+            </Box>
+            <Box
+              maxW="273px"
+              fontSize="18px"
+              lineHeight="125%"
+              letterSpacing="-0.00240557px"
+              color="#B7B7B7"
+            >
+              Применяемые диаметры перфораторов: Ø73, Ø89, Ø102
+            </Box>
+          </Flex>
         </Flex>
       </Container>
     </Box>

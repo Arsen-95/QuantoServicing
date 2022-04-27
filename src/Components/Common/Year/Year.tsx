@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import React, { FC, useRef } from "react";
+import { ReactNode, useRef } from "react";
 
-const Year: FC = ({ children }) => {
+const Year: React.FC<ReactNode> = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   return (

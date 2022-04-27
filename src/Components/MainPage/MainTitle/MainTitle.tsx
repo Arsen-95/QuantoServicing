@@ -13,8 +13,7 @@ export const MainTitle = () => {
       title={t("titles:main")}
       background={`url(${IMAGES_PATH}/mainTitle.png) no-repeat`}
       text={t("titles:mainText")}
-      pt="158px"
-      pb={["0px", "140px", "140px", "30px"]}
+      pt={["200px", "200px", "200px", "158px"]}
     >
       <Box display={["none", "none", "none", "block"]}>
         <Services />

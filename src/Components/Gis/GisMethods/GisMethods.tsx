@@ -7,16 +7,15 @@ export const GisMethods = () => {
   const { t } = useTranslation();
 
   return (
-    <Box py="100px">
+    <Box py="100px" bg="#393A47">
       <Container>
         <Box
           as="h5"
-          maxW="282px"
+          maxW="374px"
           fontWeight="600"
-          fontSize="40px"
+          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
-          color="#494949"
           mb="70px"
         >
           {t("headers:gisMethods")}

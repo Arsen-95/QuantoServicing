@@ -7,7 +7,7 @@ export const GtiDescription = () => {
 
   return (
     <Figure
-      backgroundColor="#FAFAFA"
+      backgroundColor="#23242B"
       title={t("headers:gti")}
       text={t("descriptions:gti")}
       picture="gtiDescription.png"

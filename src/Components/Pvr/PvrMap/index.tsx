@@ -1,1 +1,1 @@
-export * from "./PvrMap";
+export { PvrMap } from './PvrMap'

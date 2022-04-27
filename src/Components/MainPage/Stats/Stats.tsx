@@ -8,7 +8,7 @@ export const Stats = () => {
   const [t] = useTranslation();
 
   return (
-    <Box py={["50px", "88px"]}>
+    <Box py={["50px", "88px"]} bg="#23242B">
       <Container>
         <Flex
           justifyContent="space-between"
@@ -20,16 +20,16 @@ export const Stats = () => {
               textTransform="uppercase"
               fontSize={["36px", "50px", "60px", "64px", "76px"]}
               letterSpacing="-2.50267px"
-              color="#494949"
+              color="#FFF"
               lineHeight={["35px", "50px", "62px"]}
-              mb={["20px", "20px", "20px", "72px"]}
+              mb={["20px", "20px", "20px", "44px"]}
               maxW={["220px", "330px", "425px"]}
             >
               {t("headers:results")}
             </Text>
             <Text
               fontSize={["10px", "14px", "16px", "18px"]}
-              color="#494949"
+              color="#B7B7B7"
               letterSpacing="-0.00089095px"
               lineHeight="1.2"
               fontWeight="300px"
@@ -44,6 +44,7 @@ export const Stats = () => {
               templateColumns="repeat(2, 1fr)"
             >
               <StatsBox
+                border="1px solid #6D7084"
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
@@ -52,6 +53,7 @@ export const Stats = () => {
                 padding="14px"
               />
               <StatsBox
+                border="1px solid #6D7084"
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
@@ -60,6 +62,7 @@ export const Stats = () => {
                 padding="15px"
               />
               <StatsBox
+                border="1px solid #6D7084"
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
@@ -68,6 +71,7 @@ export const Stats = () => {
                 padding="15px"
               />
               <StatsBox
+                border="1px solid #6D7084"
                 numSize={["26px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
@@ -76,16 +80,6 @@ export const Stats = () => {
                 padding="15px"
               />
             </Grid>
-            <Box
-              background={`url(${IMAGES_PATH}/map.png) no-repeat center`}
-              backgroundSize="75% 60%"
-              opacity="0.1"
-              position="absolute"
-              top="0"
-              left="0"
-              h="100%"
-              w="100%"
-            ></Box>
           </Box>
         </Flex>
       </Container>

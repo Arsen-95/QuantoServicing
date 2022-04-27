@@ -11,8 +11,7 @@ export const GtiTitle = () => {
   return (
     <Title
       background={`url(${IMAGES_PATH}/gtiTitle.png) no-repeat `}
-      pb="191px"
-      pt={["178px", "147px", "147px", "211px"]}
+      pt="200px"
       title={t("titles:gti")}
       text={t("titles:gtiText")}
       breadCrumb={breadCrumbs["/gti"]}

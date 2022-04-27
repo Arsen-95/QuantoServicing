@@ -10,7 +10,7 @@ import { Partners } from "Components/MainPage/Partners";
 import { Cooperation } from "Components/MainPage/Cooperation";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
-import { MainSlider } from "Components/MainPage/Enviroment";
+import { MainSlider } from "Components/MainPage/MainSlider";
 
 const Home: NextPage = () => {
   return (

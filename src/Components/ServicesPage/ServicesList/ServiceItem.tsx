@@ -30,7 +30,6 @@ const ServiceItem: React.FC<ItemProps> = ({ name, picture, href, onClick }) => {
         fontSize="25px"
         lineHeight="30px"
         textTransform="uppercase"
-        color="rgba(0, 0, 0, 0.75)"
         mb="18px"
         maxW="210px"
       >
@@ -43,11 +42,11 @@ const ServiceItem: React.FC<ItemProps> = ({ name, picture, href, onClick }) => {
           fontSize="14px"
           lineHeight="17px"
           letterSpacing="-0.00133319px"
-          color="#494949"
+          color="#B7B7B7"
           border="1px solid #494949"
           p="10px 25px"
           _hover={{
-            bg: "#365164",
+            bg: "#000",
             color: "#FFF",
           }}
           transition="all 0.2s"

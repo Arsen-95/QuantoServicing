@@ -39,7 +39,7 @@ export const Cooperation = () => {
     <Box
       pt={["40px", "40px", "40px", "70px"]}
       pb={["0", "0", "40px", "100px"]}
-      background="#FAFAFA"
+      background="#393A47"
       backgroundPosition="100%"
       bgSize="50% 100%"
       pos="relative"
@@ -63,7 +63,6 @@ export const Cooperation = () => {
               fontSize={["35px", "50px", "50px", "75px"]}
               lineHeight="62px"
               letterSpacing="-2.50267px"
-              color="#494949"
               maxW="626px"
               whiteSpace="pre-wrap"
               mb={["30px", "30px", "20px", "68px"]}
@@ -154,7 +153,7 @@ export const Cooperation = () => {
                   </Text>
                 )}
               </Box>
-              <Box mb="30px">
+              <Box mb="14px">
                 <Controller
                   control={control}
                   name="message"
@@ -175,7 +174,10 @@ export const Cooperation = () => {
                       borderColor={
                         formState?.errors?.message?.message ? "red" : "#494949"
                       }
-                      background="#FAFAFA"
+                      background="#23242B"
+                      _placeholder={{
+                        color: "#8C949D",
+                      }}
                     />
                   )}
                 />
@@ -196,7 +198,7 @@ export const Cooperation = () => {
               <Text
                 mb="15px"
                 opacity="0.9"
-                color="rgba(29, 29, 29, 0.5)"
+                color="#5E626D"
                 letterSpacing="-0.00240557px"
                 fontFamily="Arial"
                 fontStyle="italic"
@@ -204,20 +206,28 @@ export const Cooperation = () => {
                 lineHeight="134.5%"
               >
                 Я даю согласие на{" "}
-                <Link href="#">обработку персональных данных</Link>
+                <Link color="#848B94" href="#" textDecoration="underline">
+                  обработку персональных данных
+                </Link>
               </Text>
               <Button
+                _hover={{
+                  bg: "#000000",
+                  color: "#FFF",
+                }}
+                transition="all 0.3s"
+                variant="outline"
                 fontSize="20px"
-                background="#365164"
                 borderRadius="0"
-                color="#FFF"
+                color="#8C949D"
                 w="164px"
                 h="54px"
                 loadingText="Отправка"
                 type="submit"
-                fontWeight={400}
+                fontWeight="400"
+                border="1px solid #8C949D"
               >
-                {t("common:message")}
+                {t("common:connect")}
               </Button>
             </form>
           </Box>

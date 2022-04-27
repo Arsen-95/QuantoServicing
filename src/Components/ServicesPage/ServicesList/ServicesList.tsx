@@ -25,7 +25,7 @@ export const ServicesList = () => {
   const { t } = useTranslation();
 
   return (
-    <Box py="100px">
+    <Box py="100px" bg="#23242B">
       <Container>
         <Grid
           justifyItems="center"
@@ -34,8 +34,8 @@ export const ServicesList = () => {
             "repeat(1, 1fr)",
             "repeat(1, 1fr)",
             "repeat(2, 1fr)",
-            "repeat(2, 1fr)",
-            "repeat(4, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(3, 1fr)",
           ]}
         >
           <ServiceItem
@@ -53,13 +53,13 @@ export const ServicesList = () => {
             name={t("titles:pvr")}
             picture="pvrIcon.svg"
           />
-          <ServiceItem
+          {/* <ServiceItem
             name={t("titles:pgi")}
             picture="pgiIcon.svg"
             onClick={onOpen}
-          />
+          /> */}
         </Grid>
-        <Modal onClose={onClose} isOpen={isOpen} isCentered size={"xl"}>
+        {/* <Modal onClose={onClose} isOpen={isOpen} isCentered size={"xl"}>
           <ModalOverlay />
           <ModalContent>
             <Box>
@@ -81,7 +81,7 @@ export const ServicesList = () => {
               <Button onClick={onClose}>Закрыть</Button>
             </ModalFooter>
           </ModalContent>
-        </Modal>
+        </Modal> */}
       </Container>
     </Box>
   );

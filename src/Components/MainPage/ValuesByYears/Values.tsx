@@ -59,7 +59,7 @@ export const Values = () => {
   const yearsData = [2019, 2020, 2021];
 
   return (
-    <Box bgColor="#FAFAFA" py={["50px", "75px"]}>
+    <Box bgColor="#393A47" py={["50px", "75px"]}>
       <Container>
         <Flex mb={["60px", "60px", "35px"]}>
           <Flex flex="1" minW={["150px", "220px", "200px", "200px", "300px"]}>
@@ -73,7 +73,7 @@ export const Values = () => {
           </Flex>
           <Box
             mt="70px"
-            w="100%"
+            flexBasis="68.5%"
             textAlign={["center", "center", "left"]}
             display={["block", "block", "grid"]}
             gridTemplateColumns={[
@@ -90,7 +90,7 @@ export const Values = () => {
                 fontSize={["18px", "20px", "22px", "26px"]}
                 lineHeight="25px"
                 letterSpacing="0.00240557px"
-                color="#494949"
+                color="#FFF"
                 mb="3"
               >
                 {t("headers:values")}
@@ -100,7 +100,7 @@ export const Values = () => {
                 fontSize={["12px", "14px", "16px", "18px"]}
                 lineHeight="22px"
                 letterSpacing="-0.00089095px"
-                color="#494949"
+                color="#B7B7B7"
               >
                 {t("common:valuesText")}
               </Text>
@@ -119,6 +119,7 @@ export const Values = () => {
           </Box>
 
           <Grid
+            flexBasis="68.5%"
             templateColumns={[
               "repeat(2, 1fr)",
               "repeat(2, 1fr)",
@@ -159,12 +160,13 @@ export const Values = () => {
                     fontSize={["38px", "38px", "20px", "22px", "24px"]}
                     lineHeight="29px"
                     letterSpacing="-0.00240557px"
-                    color={["#FFF", "#FFF", "#494949"]}
+                    color={"#FFF"}
                   >
                     {names[index as keyof typeof names]}
                   </Flex>
                 )}
                 <StatsBox
+                  border="1px solid #B7B7B7"
                   padding="8px"
                   text={item?.text}
                   num={item?.num}

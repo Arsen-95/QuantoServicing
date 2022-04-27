@@ -1,47 +1,31 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
+import { useState } from "react";
 
+import { Tabs } from "Components/Common/Buttons";
 import { PostItem } from "Components/Common/PostItem";
 import Pagination from "./Pagination";
+import { useTranslation } from "react-i18next";
 
 export const NewsPosts = () => {
+  const { t } = useTranslation("headers");
+
+  const tabsList = [
+    {
+      title: t("news"),
+      titleEvent: "news",
+    },
+    {
+      title: t("events"),
+      titleEvent: "events",
+    },
+  ];
+
+  const [event, setEvent] = useState("news");
+
   return (
-    <Box background="#FAFAFA" pt="100px" pb="40px">
+    <Box background="#23242B" pt="100px" pb="40px">
       <Container>
-        <Flex
-          fontFamily="Blender Pro"
-          fontWeight="900"
-          fontSize="14px"
-          lineHeight="132%"
-          letterSpacing="-0.0017819px"
-          color="#494949"
-          mb="50px"
-        >
-          <Box
-            _hover={{
-              color: "#FFF",
-              background: "#365164",
-            }}
-            cursor="pointer"
-            p="10px 20px"
-            mr="20px"
-            background="#F2F2F2"
-            transition="all 0.2s"
-          >
-            Новости
-          </Box>
-          <Box
-            _hover={{
-              color: "#FFF",
-              background: "#365164",
-            }}
-            cursor="pointer"
-            p="10px 20px"
-            background="#F2F2F2"
-            transition="all 0.2s"
-          >
-            События
-          </Box>
-        </Flex>
+        <Tabs data={tabsList} event={event} setEvent={setEvent} />
         <Flex
           maxW={["280px", "280px", "628px", "710px", "1083px"]}
           margin="0 auto"

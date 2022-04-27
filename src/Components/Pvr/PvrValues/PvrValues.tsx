@@ -22,5 +22,5 @@ export const PvrValues = () => {
 
   const yearsData = [2021];
 
-  return <ValuesByYears data={data} bg={"#FAFAFA"} yearsData={yearsData} />;
+  return <ValuesByYears data={data} bg="#393A47" yearsData={yearsData} />;
 };

@@ -14,6 +14,7 @@ type ValueProps = {
   flexBasis?: string;
   plus?: any;
   visibility?: any;
+  border: any;
 };
 
 export const StatsBox: React.FC<ValueProps> = ({
@@ -26,6 +27,7 @@ export const StatsBox: React.FC<ValueProps> = ({
   textWidth,
   flexBasis,
   plus = false,
+  border,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState(false);
@@ -69,7 +71,7 @@ export const StatsBox: React.FC<ValueProps> = ({
       flexBasis={flexBasis && flexBasis}
       ref={parentRef}
       p={padding}
-      border="1px solid #D9D9D9"
+      border={border}
       h={height}
       position="relative"
       visibility={+num1 > 0 ? "visible" : "hidden"}
@@ -82,7 +84,7 @@ export const StatsBox: React.FC<ValueProps> = ({
         fontSize={textSize}
         lineHeight="120%"
         letterSpacing="0.00240557px"
-        color="#494949"
+        color="#B7B7B7"
         maxW={textWidth && textWidth}
         whiteSpace="pre-line"
       >
@@ -98,7 +100,7 @@ export const StatsBox: React.FC<ValueProps> = ({
           transform="translate(-50%, -50%)"
           letterSpacing="-3.00267px"
           textTransform="uppercase"
-          color="#8C949D"
+          color="#B7B7B7"
           fontSize={numSize}
         >
           <CountUp

@@ -10,8 +10,7 @@ export const PvrDescription = () => {
         picture="pvrDescription.png"
         title={t("headers:pvr")}
         text={t("descriptions:pvr")}
-        backgroundColor="#FAFAFA"
-        info={true}
+        backgroundColor="#23242B"
       />
     </>
   );

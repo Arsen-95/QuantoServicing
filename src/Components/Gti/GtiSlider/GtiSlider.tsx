@@ -3,7 +3,7 @@ import { CustomSlider } from "Components/Common/CustomSlider";
 export const GtiSlider = () => {
   return (
     <CustomSlider
-      bg="#FAFAFA"
+      bg="#23242B"
       sliderData={[
         {
           title: "Геологические задачи",

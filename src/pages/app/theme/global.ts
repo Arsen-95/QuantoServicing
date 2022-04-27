@@ -2,14 +2,16 @@ export const global = {
   "body, html, #__next": {
     height: "100%",
     cursor: "default",
-    scrollBehavior: "smooth"
+    scrollBehavior: "smooth",
+    color: '#FFF',
+    bg: "#23242B"
   },
   ".years-vertical-slider .swiper-slide.swiper-slide-active": {
     fontSize: "96px",
     lineHeight: "75px",
     height: "120px !important",
     transition: "all 0.3s",
-    color: "#365164 !important",
+    color: "#FFF !important",
   },
   ".swiper-slide": {
     fontSize: "24px",

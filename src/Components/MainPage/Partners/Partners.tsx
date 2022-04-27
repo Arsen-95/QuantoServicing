@@ -7,7 +7,7 @@ export const Partners = () => {
   const { t } = useTranslation("headers");
 
   return (
-    <Box py={["40px", "100px"]}>
+    <Box py={["40px", "100px"]} bg="#23242B">
       <Box
         id="partners"
         position="relative"
@@ -21,7 +21,7 @@ export const Partners = () => {
           lineHeight="62px"
           letterSpacing="-2.50267px"
           textTransform="uppercase"
-          color="#494949"
+          color="#FFF"
           mb={["20px", "20px", "20px", "35px"]}
           maxW="477"
         >
@@ -33,7 +33,7 @@ export const Partners = () => {
           fontSize={["14px", "16px", "16px", "18px"]}
           lineHeight="22px"
           letterSpacing="-0.00089095px"
-          color="#494949"
+          color="#B7B7B7"
           maxW={["257px", "334px", "556px"]}
         >
           Мы являемся гарантом качества в области оказания услуг нефтегазовой

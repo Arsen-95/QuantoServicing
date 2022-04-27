@@ -34,7 +34,7 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
       position="relative"
       h="567px"
       {...props}
-      bgPos="bottom"
+      bgPos="0 99%"
       backgroundSize="cover"
     >
       <Container>
@@ -48,12 +48,11 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
         <Box
           as="h4"
           textTransform="uppercase"
-          fontSize={["40px", "50px", "75px"]}
-          lineHeight={["41px", "56px", "62px"]}
-          maxW={["320px", "420px", "580px", "923px"]}
+          fontSize={["40px", "40px", "60px", "75px"]}
+          lineHeight={["42px", "56px", "62px"]}
+          maxW={["330px", "500px", "700px", "923px"]}
           letterSpacing="-2.50267px"
           fontWeight="900"
-          color="#FFF"
           mb={text ? "22px" : "0px"}
         >
           {title}
@@ -62,10 +61,9 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
           letterSpacing="-0.00185615px"
           fontSize={["14", "14", "16", "18"]}
           lineHeight="22px"
-          color="#FFF"
           fontWeight="300"
           mb={children ? ["0px", "0", "90px"] : "0"}
-          maxW="78%"
+          maxW={["80%", "50%"]}
         >
           {text}
         </Box>

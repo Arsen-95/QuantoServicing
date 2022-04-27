@@ -7,8 +7,8 @@ import { PvrTitle } from "Components/Pvr/PvrTitle";
 import { PvrDescription } from "Components/Pvr/PvrDescription";
 import { PvrValues } from "Components/Pvr/PvrValues";
 import { PvrMap } from "Components/Pvr/PvrMap";
-import { PvrDocs } from "Components/Pvr/PvrDocs";
 import { PvrVariants } from "Components/Pvr/PvrVariants";
+import { PvrSystems } from "Components/Pvr/PvrSystems";
 
 const index = () => {
   return (
@@ -21,10 +21,10 @@ const index = () => {
       <MainLayout>
         <PvrTitle />
         <PvrDescription />
+        <PvrSystems />
         <PvrVariants />
         <PvrValues />
         <PvrMap />
-        <PvrDocs />
       </MainLayout>
     </>
   );

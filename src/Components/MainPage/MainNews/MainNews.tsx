@@ -1,63 +1,42 @@
 import { Box, Button, Container, Flex } from "@chakra-ui/react";
-import React from "react";
+import { Tabs } from "Components/Common/Buttons";
 import { useTranslation } from "next-i18next";
+import { useState } from "react";
+
 import Posts from "./Posts";
 
 export const MainNews = () => {
-  const [t] = useTranslation();
+  const [t] = useTranslation("headers");
+
+  const tabsList = [
+    {
+      title: t("news"),
+      titleEvent: "news",
+    },
+    {
+      title: t("events"),
+      titleEvent: "events",
+    },
+  ];
+
+  const [event, setEvent] = useState("news");
 
   return (
-    <Box bgColor="#FAFAFA" py={["50px", "100px"]} pb={["90px", "100px"]}>
+    <Box bgColor="#393A47" py={["50px", "100px"]} pb={["90px", "100px"]}>
       <Container>
         <Box
           as="h5"
           textTransform="uppercase"
-          color="#494949"
+          color="#FFF"
           letterSpacing="-2.50267px"
           fontWeight="900"
           fontSize={["35px", "50px", "50px", "75px"]}
           lineHeight="62px"
           mb={["20px", "20px", "20px", "50px"]}
         >
-          {t("headers:news")}
+          {t("news")}
         </Box>
-        <Flex mb="42px">
-          <Button
-            textTransform="uppercase"
-            fontSize={["12px", "14px", "14px"]}
-            lineHeight={1}
-            mr="9px"
-            color="#494949"
-            background="#F2F2F2"
-            py="10px"
-            px="20px"
-            borderRadius="none"
-            _hover={{
-              bg: "#365164",
-              color: "#FFF",
-            }}
-            transition="all 0.2s"
-          >
-            Новости
-          </Button>
-          <Button
-            textTransform="uppercase"
-            fontSize={["12px", "14px", "14px"]}
-            lineHeight={1}
-            color="#494949"
-            background="#F2F2F2"
-            py="10px"
-            px="20px"
-            borderRadius="none"
-            _hover={{
-              bg: "#365164",
-              color: "#FFF",
-            }}
-            transition="all 0.2s"
-          >
-            События
-          </Button>
-        </Flex>
+        <Tabs data={tabsList} event={event} setEvent={setEvent} />
         <Posts />
       </Container>
     </Box>

@@ -98,27 +98,31 @@ const Posts = () => {
         transform={["translateX(50%)", "translateX(0)"]}
       >
         <Box
+          as="button"
           mr="9px"
           ref={prevRef}
           h="37px"
           w="37px"
-          background={`#F2F2F2 url(${ICONS_PATH}/arrowLeftBlack.svg) no-repeat center`}
+          background={`url(${ICONS_PATH}/arrowLeftBlack.svg) no-repeat center`}
           _hover={{
             background: `#365164 url(${ICONS_PATH}/arrowLeftWhite.svg) no-repeat center`,
           }}
           cursor="pointer"
-          transition="all 0.2s"
+          transition="all 0.3s"
+          border="1px solid #B7B7B7"
         ></Box>
         <Box
+          as="button"
           _hover={{
             background: `#365164 url(${ICONS_PATH}/arrowRightWhite.svg) no-repeat center`,
           }}
           ref={nextRef}
           h="37px"
           w="37px"
-          background={`#F2F2F2 url(${ICONS_PATH}/arrowRightBlack.svg) no-repeat center`}
+          background={`url(${ICONS_PATH}/arrowRightBlack.svg) no-repeat center`}
           cursor="pointer"
-          transition="all 0.2s"
+          transition="all 0.3s"
+          border="1px solid #B7B7B7"
         ></Box>
       </Flex>
     </Box>

@@ -1,9 +1,10 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { IMAGES_PATH } from "constants/settings";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useRouter } from "next/router";
+
+import { IMAGES_PATH } from "constants/settings";
 
 type CustomSliderItemProps = {
   title: string;
@@ -20,7 +21,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
   const titleSize =
     pathname === "/"
       ? ["34px", "56px", "64px", "75px"]
-      : ["20px", "34px", "40px"];
+      : ["20px", "34px", "50px"];
 
   return (
     <SwiperSlide>
@@ -39,8 +40,9 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
                 lineHeight="99.5%"
                 letterSpacing="-0.04em"
                 mb="35px"
-                color={["#FFF", "#FFF", "#FFF", "#494949"]}
                 zIndex="2"
+                color="#FFF"
+                whiteSpace="pre-line"
               >
                 {title}
               </Box>
@@ -50,7 +52,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
                 fontSize={["12px", "14px", "16px", "18px"]}
                 lineHeight="142%"
                 letterSpacing="-0.00240557px"
-                color={["#FFF", "#FFF", "#FFF", "#494949"]}
+                color="#8B8B8D"
                 zIndex="2"
               >
                 {text}

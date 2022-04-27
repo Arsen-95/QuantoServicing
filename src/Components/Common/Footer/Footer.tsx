@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Image, Link } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import NextLink from "next/link";
 
@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <Box as="footer">
-      <Box background="#365164" pos="relative">
+      <Box bg="#000000" pos="relative">
         <Container>
           <Flex
             justifyContent="space-between"
@@ -20,7 +20,7 @@ export const Footer = () => {
           >
             <NextLink href="/" passHref>
               <Link py="10px" mb={["50px", "50px", "0"]}>
-                <Image src={`${ICONS_PATH}/logo.svg`} alt="Logo" />
+                <Image w="210px" src={`${ICONS_PATH}/logo.svg`} alt="Logo" />
               </Link>
             </NextLink>
             <Box textAlign={["center", "center", "right"]} color="#FFF">
@@ -97,14 +97,20 @@ export const Footer = () => {
           </Flex>
         </Container>
       </Box>
-      <Box background="#494949">
+      <Box background="#282828">
         <Container>
           <Flex py="30px" justifyContent="space-between" alignItems="center">
             <Box
+              as="button"
               cursor="pointer"
               h="37px"
               w="37px"
-              background={`#FFF url(${ICONS_PATH}/arrowTop.svg) no-repeat center`}
+              background={`url(${ICONS_PATH}/arrowTop.svg) no-repeat center`}
+              border="1px solid #B7B7B7"
+              _hover={{
+                bg: `#393A47 url(${ICONS_PATH}/arrowTop.svg) no-repeat center`,
+              }}
+              transition="all 0.3s"
               onClick={() =>
                 scrollTo({
                   top: 0,
@@ -122,7 +128,7 @@ export const Footer = () => {
               lineHeight="134.5%"
               letterSpacing="-0.00240557px"
               textDecorationLine="underline"
-              color="rgba(255, 255, 255, 0.5)"
+              color="#898989"
               opacity="0.9"
             >
               <Flex>

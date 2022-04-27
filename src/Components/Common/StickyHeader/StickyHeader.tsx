@@ -64,7 +64,7 @@ export const StickyHeader = () => {
           : "#FFF"
       }
       bgSize={isLargerThan1400 ? "cover" : "auto"}
-      bgPos="bottom "
+      bgPos="0 99%"
     >
       <Box transition="all 0.3s" opacity={isSticky ? 1 : 0}>
         <Header pt="20px" />

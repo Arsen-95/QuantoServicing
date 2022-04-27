@@ -9,7 +9,7 @@ import { Autoplay, EffectFade, Navigation } from "swiper";
 import CustomSliderItem from "./CustomSliderItem";
 import { ICONS_PATH } from "constants/settings";
 
-export const CustomSlider: React.FC<any> = ({ sliderData, bg = "#FFF" }) => {
+export const CustomSlider: React.FC<any> = ({ sliderData, bg }) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
 
@@ -66,22 +66,36 @@ export const CustomSlider: React.FC<any> = ({ sliderData, bg = "#FFF" }) => {
           ref={prevRef}
           h="37px"
           w="37px"
-          background={`#FFF url(${ICONS_PATH}/arrowLeftBlack.svg) no-repeat center`}
+          background={`url(${ICONS_PATH}/arrowLeftBlack.svg) no-repeat center`}
           cursor="pointer"
-          _hover={{
-            background: `#365164 url(${ICONS_PATH}/arrowLeftWhite.svg) no-repeat center`,
-          }}
+          _hover={
+            bg === "#393A47"
+              ? {
+                  background: `#23242B url(${ICONS_PATH}/arrowLeftWhite.svg) no-repeat center`,
+                }
+              : {
+                  background: `#393A47 url(${ICONS_PATH}/arrowLeftWhite.svg) no-repeat center`,
+                }
+          }
+          transition="all 0.3s"
         ></Box>
         <Box
           border="1px solid #494949"
           ref={nextRef}
           h="37px"
           w="37px"
-          background={`#FFF url(${ICONS_PATH}/arrowRightBlack.svg) no-repeat center`}
+          background={`url(${ICONS_PATH}/arrowRightBlack.svg) no-repeat center`}
           cursor="pointer"
-          _hover={{
-            background: `#365164 url(${ICONS_PATH}/arrowRightWhite.svg) no-repeat center`,
-          }}
+          _hover={
+            bg === "#393A47"
+              ? {
+                  background: `#23242B url(${ICONS_PATH}/arrowRightWhite.svg) no-repeat center`,
+                }
+              : {
+                  background: `#393A47 url(${ICONS_PATH}/arrowRightWhite.svg) no-repeat center`,
+                }
+          }
+          transition="all 0.3s"
         ></Box>
       </Flex>
     </Box>

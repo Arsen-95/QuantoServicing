@@ -11,7 +11,6 @@ export const ServiceTitle = () => {
     <Title
       background={`url(${IMAGES_PATH}/servicesTitle.png) no-repeat`}
       pt="220px"
-      pb="240px"
       title={t("titles:services")}
       text={t("titles:servicesText")}
       breadCrumb={breadCrumbs["/services"]}

@@ -16,7 +16,6 @@ export const DownloadFile: React.FC<FileProps> = ({ fileName, fileSize }) => {
       maxW="410px"
       h="70px"
       background={`url(${ICONS_PATH}/pdfFile.svg) no-repeat 3px 50% #FFF`}
-      fontFamily="Museo Sans Cyrl"
       p="20px 73px"
     >
       <Box

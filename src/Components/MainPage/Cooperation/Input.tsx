@@ -32,9 +32,12 @@ export const Input: React.FC<Props> = ({
           : "1.45682px solid #494949"
       }
       borderColor={formState?.errors?.[name]?.message ? "red" : "#494949"}
-      background="#FAFAFA"
+      background="#23242B"
       placeholder={placeholder}
       onChange={onChange}
+      _placeholder={{
+        color: "#8C949D",
+      }}
     />
   );
 };
@@ -60,7 +63,10 @@ export const InputMask: React.FC<Omit<Props, "placeholder" | "type">> = ({
           : "1.45682px solid #494949"
       }
       borderColor={formState?.errors?.[name]?.message ? "red" : "#494949"}
-      background="#FAFAFA"
+      background="#23242B"
+      _placeholder={{
+        color: "#8C949D",
+      }}
     />
   );
 };

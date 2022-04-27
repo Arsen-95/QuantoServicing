@@ -8,13 +8,13 @@ import { StatsBox } from "../StatsBox";
 type ValueByYearProps = {
   data: Record<number, { text: string; num: string; plus?: boolean }[]>;
   yearsData: number[];
-  bg?: string;
+  bg: string;
 };
 
 export const ValuesByYears: React.FC<ValueByYearProps> = ({
   data,
   yearsData,
-  bg = "#FFF",
+  bg,
 }) => {
   const [year, setYear] = useState(yearsData[0]);
   const yearChanger = (e: any): any => {
@@ -29,12 +29,11 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
         <Box
           as="h5"
           fontWeight="600"
-          fontSize="40px"
+          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
-          color="#494949"
           mb="60px"
-          maxW="382px"
+          maxW="440px"
         >
           {t("headers:prodValues")}
         </Box>
@@ -45,6 +44,7 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
           <Grid flex="1" pt="50px" templateColumns="repeat(3, 1fr)" gap="6%">
             {data[year].map((item: any) => (
               <StatsBox
+                border="1px solid #B7B7B7"
                 key={`${Math.random()}`}
                 padding="8px"
                 text={item?.text}

@@ -2,7 +2,6 @@
 // import { MainLayout } from "Components/Common/MainLayout";
 // import { DocumentsList } from "Components/Documents/DocumentsList";
 // import { DocumentsTitle } from "Components/Documents/DocumentsTitle";
-// import React from "react";
 
 // const index = () => {
 //   return (

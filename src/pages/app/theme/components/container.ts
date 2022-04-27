@@ -10,6 +10,6 @@ export const Container = {
       px: "40px",
     },
     margin: "0 auto",
-    maxW: "1320px",
+    maxW: "1360px",
   },
 };

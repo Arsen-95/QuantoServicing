@@ -3,6 +3,7 @@ import { CustomSlider } from "Components/Common/CustomSlider";
 export const MainSlider = () => {
   return (
     <CustomSlider
+      bg="#23242B"
       sliderData={[
         {
           title: "Охрана окружающей среды",

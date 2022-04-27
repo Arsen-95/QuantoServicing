@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ pt }) => {
           <NextLink href="/" passHref>
             <Link py="5px">
               <Image
-                w="115px"
+                w="161px"
                 src={
                   pathname === "/newsItem"
                     ? `${ICONS_PATH}/logoBlack.svg`

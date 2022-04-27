@@ -24,7 +24,7 @@ const Service: React.FC<ServiceProps> = ({ text, picture, href, onClick }) => {
         fontSize="14px"
         lineHeight="16px"
         _notLast={{
-          mr: "24px",
+          mr: "40px",
         }}
         color="rgba(0, 0, 0, 0.75)"
         letterSpacing="-0.00240557px"
