@@ -11,7 +11,7 @@ export const GisTitle = () => {
   return (
     <Title
       background={`url(${IMAGES_PATH}/gisTitle.png) no-repeat `}
-      pt="200px"
+      pt={["150px", "200px"]}
       title={t("titles:gis")}
       text={t("titles:gisText")}
       breadCrumb={breadCrumbs["/gis"]}
