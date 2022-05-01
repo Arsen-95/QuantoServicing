@@ -30,7 +30,9 @@ export const StatsBox: React.FC<ValueProps> = ({
   plusSize,
 }) => {
   const parentRef = useRef<HTMLDivElement>(null);
+
   const [state, setState] = useState(false);
+  const [plusState, setPlusState] = useState(false);
   const numbers = num.split("/");
 
   const num1 = parseFloat(numbers[0]);
@@ -48,6 +50,9 @@ export const StatsBox: React.FC<ValueProps> = ({
 
       if (diff > 0) {
         setState(true);
+        setTimeout(() => {
+          setPlusState(true);
+        }, 2000);
       }
     }
   }, []);
@@ -115,7 +120,15 @@ export const StatsBox: React.FC<ValueProps> = ({
             separator=" "
           />
           {numbers[0]?.includes("+") && (
-            <Box as="span" fontSize={plusSize} color="#0057FF">
+            <Box
+              as="span"
+              fontSize={plusSize}
+              color="#0057FF"
+              opacity={plusState ? 1 : 0}
+              display={plusState ? "block" : "none"}
+              transform={plusState ? "translateY(0%)" : "translateY(20%)"}
+              transition="all 0.4s"
+            >
               +
             </Box>
           )}
@@ -129,7 +142,13 @@ export const StatsBox: React.FC<ValueProps> = ({
                 separator=" "
               />
               {numbers[1]?.includes("+") && (
-                <Box as="span" fontSize={plusSize} color="#0057FF">
+                <Box
+                  as="span"
+                  fontSize={plusSize}
+                  color="#0057FF"
+                  opacity={plusState ? 1 : 0}
+                  display={plusState ? "block" : "none"}
+                >
                   +
                 </Box>
               )}

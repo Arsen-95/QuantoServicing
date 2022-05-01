@@ -7,8 +7,14 @@ import { GtiDescription } from "Components/Gti/GtiDescription";
 import { GtiSlider } from "Components/Gti/GtiSlider";
 import { GtiTitle } from "Components/Gti/GtiTitle";
 import { GtiValues } from "Components/Gti/GtiValues";
+import { dehydrate, QueryClient, useQuery } from "react-query";
+import { request } from "query/queries";
+import { gtiStats } from "query/path";
+import { useRouter } from "next/router";
 
-const index = () => {
+const Page = () => {
+  const { locale } = useRouter();
+  const { data } = useQuery("gti", () => request(locale, gtiStats));
   return (
     <>
       <HeadTags
@@ -19,7 +25,7 @@ const index = () => {
       <MainLayout>
         <GtiTitle />
         <GtiDescription />
-        <GtiValues />
+        <GtiValues data={data} />
         <GtiSlider />
         {/* <GtiMap /> */}
       </MainLayout>
@@ -28,6 +34,8 @@ const index = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery("gti", () => request(locale, gtiStats));
   return {
     props: {
       ...(await serverSideTranslations(locale || "", [
@@ -37,8 +45,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "descriptions",
         "footer",
       ])),
+      dehydratedState: dehydrate(queryClient),
     },
   };
 };
 
-export default index;
+export default Page;

@@ -18,9 +18,7 @@ import { request } from "query/queries";
 
 const Home: NextPage = () => {
   const { locale } = useRouter();
-  const { data: gti, isSuccess } = useQuery("gti", () =>
-    request(locale, gtiStats)
-  );
+  const { data: gti } = useQuery("gti", () => request(locale, gtiStats));
   const { data: gis } = useQuery("gis", () => request(locale, gisStats));
   const { data: pvr } = useQuery("pvr", () => request(locale, pvrStats));
   const { data: newsPosts } = useQuery("news", () => request(locale, news));
