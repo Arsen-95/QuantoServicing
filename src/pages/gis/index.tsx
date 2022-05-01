@@ -8,8 +8,14 @@ import { GisMethods } from "Components/Gis/GisMethods";
 import { GisSlider } from "Components/Gis/GisSlider";
 import { GisTitle } from "Components/Gis/GisTitle/GisTitle";
 import { GisValues } from "Components/Gis/GisValues";
+import { useRouter } from "next/router";
+import { dehydrate, QueryClient, useQuery } from "react-query";
+import { request } from "query/queries";
+import { gisStats } from "query/path";
 
-const index = () => {
+const Page = () => {
+  const { locale } = useRouter();
+  const { data } = useQuery("gis", () => request(locale, gisStats));
   return (
     <>
       <HeadTags
@@ -21,7 +27,7 @@ const index = () => {
         <GisTitle />
         <GisDescription />
         <GisMethods />
-        <GisValues />
+        <GisValues data={data} />
         <GisSlider />
       </MainLayout>
     </>
@@ -29,6 +35,9 @@ const index = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }: any) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery("gis", () => request(locale, gisStats));
+
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -38,8 +47,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }: any) => {
         "footer",
         "descriptions",
       ])),
+      dehydratedState: dehydrate(queryClient),
     },
   };
 };
 
-export default index;
+export default Page;
