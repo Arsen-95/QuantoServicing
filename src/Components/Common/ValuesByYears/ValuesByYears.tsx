@@ -6,7 +6,7 @@ import { Years } from "Components/Common/Year/Years";
 import { StatsBox } from "../StatsBox";
 
 type ValueByYearProps = {
-  data: Record<number, { text: string; num: string; plus?: boolean }[]>;
+  data: Record<number, { text: string; num: string }[]>;
   yearsData: number[];
   bg: string;
 };
