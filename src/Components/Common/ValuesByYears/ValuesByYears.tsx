@@ -49,7 +49,6 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
                 padding="8px"
                 text={item?.text}
                 num={item?.num}
-                plus={item?.plus}
                 height="228px"
                 numSize={["36px", "36px", "46px", "64px"]}
                 textSize={["12px", "14px", "16px", "18px"]}
