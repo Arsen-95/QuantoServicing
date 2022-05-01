@@ -1,0 +1,11 @@
+export const aboutCompany = 'about_company/';
+export const contactInformation = 'contact_information/';
+export const contactUs = 'contact_us/';
+export const events = 'events/';
+export const news = 'news/';
+export const gisStats = 'gis_stats/';
+export const gtiStats = 'gti_stats/';
+export const pvrStats = 'pvr_stats/';
+export const materials = 'materials/';
+export const popUp = 'message_popup/';
+export const partners = 'partners/';

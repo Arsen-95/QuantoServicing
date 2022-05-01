@@ -5,45 +5,64 @@ import { useTranslation } from "next-i18next";
 import { StatsBox } from "Components/Common/StatsBox";
 import { Years } from "Components/Common/Year/Years";
 
-export const Values = () => {
+export const Values = ({ values }: any) => {
   const { t } = useTranslation();
 
-  const data: Record<number, { text: string; num: string; plus?: boolean }[]> =
-    {
-      2021: [
-        { text: "Кол-во завершенных скважин (шт)", num: "35" },
-        { text: "Наработка (сут)", num: "3540" },
-        { text: "Коэффицент эксплуатации станции (д.е.)", num: "0.79" },
-        { text: "Кол-во отработанных заявок (шт)", num: "345" },
-        { text: "Исследованные интервалы (м)", num: "275000" },
-        { text: "Открытый/закрытый ствол (шт)", num: "292/53" },
-        { text: "Кол-во отработанных заявок (шт)", num: "246" },
-        { text: "Простреленные интервалы (м)", num: "1500", plus: true },
-        { text: "Кол-во простреленных зарядов (шт)", num: "30000", plus: true },
-      ],
-      2020: [
-        { text: "Кол-во завершенных скважин (шт)", num: "42" },
-        { text: "Наработка (сут)", num: "3385" },
-        { text: "Коэффицент эксплуатации станции (д.е.)", num: "0.77" },
-        { text: "Кол-во отработанных заявок (шт)", num: "175" },
-        { text: "Исследованные интервалы (м)", num: "140000" },
-        { text: "Открытый/закрытый ствол (шт)", num: "107/68" },
-        { text: "Кол-во отработанных заявок (шт)", num: "0" },
-        { text: "Исследованные интервалы (м)", num: "0" },
-        { text: "Открытый/закрытый ствол (шт)", num: "0" },
-      ],
-      2019: [
-        { text: "Кол-во завершенных скважин (шт)", num: "27" },
-        { text: "Наработка, сут", num: "2632" },
-        { text: "Коэффицент эксплуатации станции, д.е.", num: "0.6" },
-        { text: "Кол-во отработанных заявок (шт)", num: "10" },
-        { text: "Исследованные интервалы (м)", num: "20000" },
-        { text: "Открытый/закрытый ствол (шт)", num: "2/8" },
-        { text: "Кол-во отработанных заявок (шт)", num: "0" },
-        { text: "Простреленные  интервалы (м)", num: "0" },
-        { text: "Кол-во простреленных зарядов (шт)", num: "0" },
-      ],
-    };
+  // const values: Record<
+  //   number,
+  //   { data_description: string; data: string; plus?: boolean }[]
+  // > = {
+  //   2021: [
+  //     { data_description: "Кол-во завершенных скважин (шт)", data: "35" },
+  //     { data_description: "Наработка (сут)", data: "3540" },
+  //     {
+  //       data_description: "Коэффицент эксплуатации станции (д.е.)",
+  //       data: "0.79",
+  //     },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "345" },
+  //     { data_description: "Исследованные интервалы (м)", data: "275000" },
+  //     { data_description: "Открытый/закрытый ствол (шт)", data: "292/53" },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "246" },
+  //     {
+  //       data_description: "Простреленные интервалы (м)",
+  //       data: "1500",
+  //       plus: true,
+  //     },
+  //     {
+  //       data_description: "Кол-во простреленных зарядов (шт)",
+  //       data: "30000",
+  //       plus: true,
+  //     },
+  //   ],
+  //   2020: [
+  //     { data_description: "Кол-во завершенных скважин (шт)", data: "42" },
+  //     { data_description: "Наработка (сут)", data: "3385" },
+  //     {
+  //       data_description: "Коэффицент эксплуатации станции (д.е.)",
+  //       data: "0.77",
+  //     },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "175" },
+  //     { data_description: "Исследованные интервалы (м)", data: "140000" },
+  //     { data_description: "Открытый/закрытый ствол (шт)", data: "107/68" },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "0" },
+  //     { data_description: "Исследованные интервалы (м)", data: "0" },
+  //     { data_description: "Открытый/закрытый ствол (шт)", data: "0" },
+  //   ],
+  //   2019: [
+  //     { data_description: "Кол-во завершенных скважин (шт)", data: "27" },
+  //     { data_description: "Наработка, сут", data: "2632" },
+  //     {
+  //       data_description: "Коэффицент эксплуатации станции, д.е.",
+  //       data: "0.6",
+  //     },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "10" },
+  //     { data_description: "Исследованные интервалы (м)", data: "20000" },
+  //     { data_description: "Открытый/закрытый ствол (шт)", data: "2/8" },
+  //     { data_description: "Кол-во отработанных заявок (шт)", data: "0" },
+  //     { data_description: "Простреленные  интервалы (м)", data: "0" },
+  //     { data_description: "Кол-во простреленных зарядов (шт)", data: "0" },
+  //   ],
+  // };
 
   const names = {
     0: "ГТИ",
@@ -108,27 +127,34 @@ export const Values = () => {
           </Box>
         </Flex>
 
-        <Flex justifyContent="center">
+        <Flex>
           <Box
             flex="1"
             display={["none", "none", "flex"]}
-            minH="100%"
             minW={["auto", "200px", "200px", "200px", "300px"]}
+            overflow="hidden"
           >
             <Years onScroll={yearChanger} yearsData={yearsData} />
           </Box>
 
           <Grid
-            flexBasis={["100%", "68.5%"]}
+            m="0 auto"
+            flexBasis={["100%", "75%", "68.5%"]}
             templateColumns={[
               "repeat(2, 1fr)",
               "repeat(2, 1fr)",
               "repeat(3, 1fr)",
               "repeat(4, 1fr)",
             ]}
+            templateRows={[
+              "repeat(3, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(3, 1fr)",
+            ]}
             gap={["5", "8", "8", "10", "20"]}
           >
-            {data[year].map((item: any, index) => (
+            {values[year].map((item: any, index: any) => (
               <>
                 {index % 3 === 0 && (
                   <Flex
@@ -152,8 +178,6 @@ export const Values = () => {
                       "none",
                     ]}
                     gridColumn={["1", "1", "1/4", "1"]}
-                    visibility={item.num > 0 ? "visible" : "hidden"}
-                    opacity={item.num > 0 ? "1" : "0"}
                     transition="all 1s"
                     fontFamily="Blender Pro"
                     fontWeight="900"
@@ -168,12 +192,12 @@ export const Values = () => {
                 <StatsBox
                   border="1px solid #B7B7B7"
                   padding="8px"
-                  text={item?.text}
-                  num={item?.num}
-                  plus={item?.plus}
-                  numSize={["30px", "32px", "32px", "34px", "36px"]}
+                  text={item?.data_description}
+                  num={item?.data}
+                  numSize={["30", "32", "32", "34", "36"]}
                   textSize="12px"
                   height={["150px", "150px", "145px", "150px"]}
+                  plusSize={["18", "20", "24", "26"]}
                 />
               </>
             ))}

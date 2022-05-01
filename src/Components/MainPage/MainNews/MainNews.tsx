@@ -1,11 +1,16 @@
 import { Box, Container } from "@chakra-ui/react";
-import { Tabs } from "Components/Common/Buttons";
 import { useTranslation } from "next-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import { Tabs } from "Components/Common/Buttons";
 import Posts from "./Posts";
 
-export const MainNews = () => {
+type Props = {
+  news: any;
+  events: any;
+};
+
+export const MainNews: React.FC<Props> = ({ news, events }) => {
   const [t] = useTranslation("headers");
 
   const tabsList = [
@@ -18,8 +23,19 @@ export const MainNews = () => {
       titleEvent: "events",
     },
   ];
+  const [eventType, setEventType] = useState("news");
+  const [posts, setPosts] = useState(news);
+  console.log(eventType);
 
-  const [event, setEvent] = useState("news");
+  useEffect(() => {
+    if (eventType === "news") {
+      setPosts(news);
+    } else {
+      setPosts(events);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [eventType]);
+  console.log(posts);
 
   return (
     <Box bgColor="#393A47" py={["50px", "100px"]} pb={["90px", "100px"]}>
@@ -35,8 +51,12 @@ export const MainNews = () => {
         >
           {t("blog")}
         </Box>
-        <Tabs data={tabsList} event={event} setEvent={setEvent} />
-        <Posts />
+        <Tabs
+          data={tabsList}
+          eventType={eventType}
+          setEventType={setEventType}
+        />
+        <Posts posts={posts} />
       </Container>
     </Box>
   );

@@ -2,13 +2,11 @@ import { Box, Flex } from "@chakra-ui/react";
 
 type Props = {
   data: any;
-  event: string;
-  setEvent(e: string): void;
+  eventType: any;
+  setEventType: any;
 };
 
-export const Tabs: React.FC<Props> = ({ data, event, setEvent }) => {
-  console.log(data);
-
+export const Tabs: React.FC<Props> = ({ data, eventType, setEventType }) => {
   return (
     <Flex
       fontFamily="Blender Pro"
@@ -20,34 +18,32 @@ export const Tabs: React.FC<Props> = ({ data, event, setEvent }) => {
       mb={["30px", "30px", "50px"]}
       ml="-10px"
     >
-      {data &&
-        data.map((item: any) => (
-          <TabItem
-            event={event}
-            setEvent={setEvent}
-            title={item.title}
-            titleEvent={item.titleEvent}
-            key={item.title}
-          />
-        ))}
+      {data.map((item: any) => (
+        <TabItem
+          eventType={eventType}
+          setEventType={setEventType}
+          title={item.title}
+          titleEvent={item.titleEvent}
+          key={item.title}
+        />
+      ))}
     </Flex>
   );
 };
 
 type ItemProps = {
   title: string;
-  event: string;
+  eventType: any;
   titleEvent: string;
-  setEvent(e: string): void;
+  setEventType: any;
 };
 
 const TabItem: React.FC<ItemProps> = ({
   title,
-  event,
-  setEvent,
+  eventType,
+  setEventType,
   titleEvent,
 }) => {
-  console.log(event, titleEvent);
   return (
     <Box
       _hover={{
@@ -61,8 +57,8 @@ const TabItem: React.FC<ItemProps> = ({
       transition="all 0.3s"
       fontSize={["20px", "26px", "36px", "50px"]}
       lineHeight="99.5%"
-      color={event === titleEvent ? "#FFF" : "#6E7085"}
-      onClick={() => setEvent(titleEvent)}
+      color={eventType === titleEvent ? "#FFF" : "#6E7085"}
+      onClick={() => setEventType(titleEvent)}
     >
       {title}
     </Box>

@@ -67,14 +67,14 @@ export const StickyHeader = () => {
       bgSize={isLargerThan1400 ? "cover" : "auto"}
       bgPos="0 99%"
     >
-      <Box transition="all 0.3s" opacity={isSticky ? 1 : 0}>
+      <Box transition="all 0.2s" opacity={isSticky ? 1 : 0}>
         <Header pt="20px" />
       </Box>
 
       {breadCrumbs[pathname as keyof typeof breadCrumbs] && (
         <Box
           pos="absolute"
-          top={"82px"}
+          top="77px"
           w="100%"
           background={
             isSticky
@@ -84,9 +84,9 @@ export const StickyHeader = () => {
         >
           <Container
             m="auto"
-            transition="0.3s background"
+            transition="0.2s background"
             opacity={isSticky ? 1 : 0}
-            h="50px"
+            h="55px"
             pt="15px"
           >
             <Breadcrumb>

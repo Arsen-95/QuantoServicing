@@ -4,52 +4,60 @@ import NextLink from "next/link";
 import { IMAGES_PATH } from "../../../constants/settings";
 
 type ItemProps = {
-  text: string;
-  picture: string;
+  post: any;
 };
 
-export const PostItem: React.FC<ItemProps> = ({ text, picture }) => {
+export const PostItem: React.FC<ItemProps> = ({ post }) => {
+  const arr = post.description.split(" ");
+  const words = arr.length;
+  let time = words / 150;
+  if (time < 1) {
+    time = 1;
+  }
+
   return (
     <NextLink href="/newsItem" passHref>
       <Link _hover={{ textDecor: "none" }}>
-        <Flex
+        <Box
           cursor="pointer"
           flexDirection="column"
-          p={["14px", "20px 20px 40px 20px"]}
-          background={`url(${IMAGES_PATH}/${picture}) no-repeat`}
-          maxW={["280px", "280px", "300px", "330px"]}
+          p={["14px", "30px 20px 40px 30px"]}
+          background={`url(${post.image}) no-repeat`}
+          w={["280px", "280px", "300px", "330px"]}
           h={["320px", "330px", "400px", "450px"]}
+          pos="relative"
         >
           <Text
+            as="h5"
+            fontWeight="900"
+            fontSize="30px"
+            lineHeight="100%"
+            letterSpacing="-0.0017819px"
             color="#FFF"
-            fontWeight="300"
-            fontSize="14px"
-            lineHeight="132%"
-            flex="1 0 auto"
+            mb="30px"
           >
-            {text}
+            {post.title}
           </Text>
-          <Flex justifyContent="space-between" alignItems="flex-end">
-            <Box
-              fontSize={["40px", "72px", "72px", "72px"]}
-              lineHeight="62px"
-              fontFamily="Arial"
-              color="#FFF"
-              letterSpacing="-0.06em"
-            >
-              18
-            </Box>
-            <Box
-              fontFamily="Arial"
-              fontSize="18px"
-              lineHeight="113%"
-              color="#FFF"
-              whiteSpace="pre-line"
-            >
-              {`FEB \n2022`}
-            </Box>
+          <Flex
+            color="#B0B0B0"
+            fontSize="18px"
+            lineHeight="132%"
+            letterSpacing="-0.0017819px"
+            justifyContent="space-between"
+          >
+            <Box>12 декабря</Box>
+            <Box>{time} минут для чтения</Box>
           </Flex>
-        </Flex>
+          <Box
+            h="230px"
+            background="#393939"
+            mixBlendMode="overlay"
+            pos="absolute"
+            top="0px"
+            left="0px"
+            right="0px"
+          ></Box>
+        </Box>
       </Link>
     </NextLink>
   );

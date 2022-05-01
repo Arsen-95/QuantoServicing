@@ -24,10 +24,14 @@ const LocalePicker: React.FC<LocalePickerProps> = ({ color }) => {
   };
 
   useEffect(() => {
-    if (locale === "uz") {
+    if (locale === "uz-cyrl") {
       setSelectedLang("УЗБ");
-    } else {
+    } else if (locale === "uz-latn") {
+      setSelectedLang("UZB");
+    } else if (locale === "ru") {
       setSelectedLang("РУС");
+    } else if (locale === "en") {
+      setSelectedLang("ENG");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -61,11 +65,25 @@ const LocalePicker: React.FC<LocalePickerProps> = ({ color }) => {
                 РУС
               </MenuItem>
               <MenuItem
-                value="uz"
+                value="uz-cyrl"
                 color="#000"
-                onClick={() => changeLanguage("uz")}
+                onClick={() => changeLanguage("uz-cyrl")}
               >
                 УЗБ
+              </MenuItem>
+              <MenuItem
+                value="uz-latn"
+                color="#000"
+                onClick={() => changeLanguage("uz-latn")}
+              >
+                UZB
+              </MenuItem>
+              <MenuItem
+                value="en"
+                color="#000"
+                onClick={() => changeLanguage("en")}
+              >
+                ENG
               </MenuItem>
             </MenuList>
           </>

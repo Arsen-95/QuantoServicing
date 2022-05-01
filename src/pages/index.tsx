@@ -1,7 +1,10 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { memo } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { dehydrate, QueryClient, useQuery } from "react-query";
+import { useRouter } from "next/router";
 
+import { events, gisStats, gtiStats, news, pvrStats } from "query/path";
 import { MainLayout } from "Components/Common/MainLayout";
 import { Stats } from "Components/MainPage/Stats";
 import { MainTitle } from "Components/MainPage/MainTitle";
@@ -11,8 +14,31 @@ import { Cooperation } from "Components/MainPage/Cooperation";
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
 import { MainSlider } from "Components/MainPage/MainSlider";
+import { request } from "query/queries";
 
 const Home: NextPage = () => {
+  const { locale } = useRouter();
+  const { data: gti } = useQuery("gti", () => request(locale, gtiStats));
+  const { data: gis } = useQuery("gis", () => request(locale, gisStats));
+  const { data: pvr } = useQuery("pvr", () => request(locale, pvrStats));
+  const { data: newsPosts } = useQuery("news", () => request(locale, news));
+  const { data: eventsPosts } = useQuery("events", () =>
+    request(locale, events)
+  );
+
+  const values = [gti, gis, pvr];
+  const valuesData: any = {};
+  values.map((value) => {
+    const keys = Object.keys(value);
+    return keys.map((key) => {
+      if (key in valuesData) {
+        valuesData[key] = [...valuesData[key], ...value[key]];
+      } else {
+        valuesData[key] = value[key];
+      }
+    });
+  }, {});
+
   return (
     <>
       <HeadTags
@@ -23,9 +49,9 @@ const Home: NextPage = () => {
       <MainLayout>
         <MainTitle />
         <Stats />
-        <Values />
+        <Values values={valuesData} />
         <MainSlider />
-        <MainNews />
+        <MainNews news={newsPosts} events={eventsPosts} />
         <Partners />
         <Cooperation />
       </MainLayout>
@@ -33,16 +59,23 @@ const Home: NextPage = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery("gis", () => request(locale, gisStats));
+  await queryClient.prefetchQuery("gti", () => request(locale, gtiStats));
+  await queryClient.prefetchQuery("pvr", () => request(locale, pvrStats));
+  await queryClient.prefetchQuery("news", () => request(locale, news));
+  await queryClient.prefetchQuery("events", () => request(locale, events));
   return {
     props: {
-      ...(await serverSideTranslations(locale || "", [
+      ...(await serverSideTranslations(locale || "ru", [
         "headers",
         "navigation",
         "titles",
         "common",
         "footer",
       ])),
+      dehydratedState: dehydrate(queryClient),
     },
   };
 };

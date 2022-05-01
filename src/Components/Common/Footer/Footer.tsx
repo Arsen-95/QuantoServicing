@@ -1,11 +1,11 @@
-import { Box, Button, Container, Flex, Image, Link } from "@chakra-ui/react";
+import { Box, Container, Flex, Image, Link } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import NextLink from "next/link";
 
 import { ICONS_PATH } from "../../../constants/settings";
 import { Navigation } from "../Navigation";
 
-export const Footer = () => {
+export const Footer = ({ data }: any) => {
   const { t } = useTranslation();
 
   return (
@@ -43,8 +43,9 @@ export const Footer = () => {
                 lineHeight="134.5%"
                 letterSpacing="-0.00240557px"
                 opacity="0.9"
+                maxW="200px"
               >
-                {t("footer:firmAddress")}
+                {data && data[0].address}
               </Box>
               <Box
                 fontSize="18px"
@@ -68,7 +69,7 @@ export const Footer = () => {
                   letterSpacing="-0.00240557px"
                   opacity="0.9"
                 >
-                  info@quantoservicing.com
+                  {data && data[0].email}
                 </Link>
               </Box>
               <Box
@@ -91,7 +92,7 @@ export const Footer = () => {
                 letterSpacing="-0.00240557px"
                 opacity="0.9"
               >
-                +99878-140-55-00
+                {data && data[0].phone}
               </Link>
             </Box>
           </Flex>

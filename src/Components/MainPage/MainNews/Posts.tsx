@@ -8,7 +8,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { ICONS_PATH } from "../../../constants/settings";
 import { PostItem } from "Components/Common/PostItem";
 
-const Posts = () => {
+const Posts = ({ posts }: any) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
 
@@ -23,8 +23,8 @@ const Posts = () => {
   return (
     <Box pos="relative">
       <Swiper
-        loop
-        freeMode={true}
+        // loop
+        // freeMode={true}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -36,11 +36,11 @@ const Posts = () => {
             slidesPerView: 3,
           },
           1150: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
         }}
         spaceBetween={10}
-        centeredSlides={true}
+        // centeredSlides={true}
         navigation={{
           prevEl: prev,
           nextEl: next,
@@ -48,48 +48,11 @@ const Posts = () => {
         modules={[FreeMode, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post1.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post2.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post3.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post1.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post2.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post3.png"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostItem
-            text="Социальное обеспечение работника, включая социальное страхование, – это одно из основных обязательств, которое берет на себя работодатель. "
-            picture="post2.png"
-          />
-        </SwiperSlide>
+        {posts.map((post: any) => (
+          <SwiperSlide key={post.id}>
+            <PostItem post={post} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Flex
         pos="absolute"

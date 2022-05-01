@@ -44,39 +44,43 @@ export const Stats = () => {
             >
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
-                num="438"
+                num="438+"
                 height={["150px", "210px", "280px", "230px", "294px"]}
-                padding="14px"
+                padding="15px"
+                plusSize={["30", "40", "70", "50px", "70px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
                 num="359"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
+                plusSize={["30", "40", "70", "50px", "70px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
                 num="246"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
+                plusSize={["30", "40", "70", "50px", "70px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["26px", "60px", "96px", "70px", "96px"]}
+                numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
                 num="540"
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
+                plusSize={["30", "40", "70", "50px", "70px"]}
               />
             </Grid>
           </Box>

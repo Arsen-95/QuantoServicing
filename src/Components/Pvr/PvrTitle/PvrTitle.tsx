@@ -10,7 +10,7 @@ export const PvrTitle = () => {
 
   return (
     <Title
-      background={`url(${IMAGES_PATH}/pvrTitle.png)`}
+      background={`url(${IMAGES_PATH}/pvrTitle.png) no-repeat`}
       pt={["150px", "150px", "200px"]}
       title={t("titles:pvr")}
       text={t("titles:pvrText")}
