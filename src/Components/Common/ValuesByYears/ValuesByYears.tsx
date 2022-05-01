@@ -6,7 +6,7 @@ import { Years } from "Components/Common/Year/Years";
 import { StatsBox } from "../StatsBox";
 
 type ValueByYearProps = {
-  data: Record<number, { text: string; num: string }[]>;
+  data: any;
   yearsData: number[];
   bg: string;
 };
@@ -41,17 +41,18 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
           <Box flexBasis="30%" display="flex">
             <Years onScroll={yearChanger} yearsData={yearsData} />
           </Box>
-          <Grid flex="1" pt="50px" templateColumns="repeat(3, 1fr)" gap="6%">
+          <Grid flex="1" pt="50px" templateColumns="repeat(3, 1fr)" gap="4%">
             {data[year].map((item: any) => (
               <StatsBox
                 border="1px solid #B7B7B7"
                 key={`${Math.random()}`}
                 padding="8px"
-                text={item?.text}
-                num={item?.num}
-                height="228px"
-                numSize={["36px", "36px", "46px", "64px"]}
-                textSize={["12px", "14px", "16px", "18px"]}
+                text={item?.data_description}
+                num={item?.data}
+                height={["200px", "200px", "194px", "200px", "228px"]}
+                numSize={["36px", "28px", "36px", "50px"]}
+                textSize={["12px", "14px", "16px", "16px", "18px"]}
+                plusSize={["46px", "46px", "30px", "38px"]}
               />
             ))}
           </Grid>

@@ -25,7 +25,6 @@ export const MainNews: React.FC<Props> = ({ news, events }) => {
   ];
   const [eventType, setEventType] = useState("news");
   const [posts, setPosts] = useState(news);
-  console.log(eventType);
 
   useEffect(() => {
     if (eventType === "news") {
@@ -35,7 +34,6 @@ export const MainNews: React.FC<Props> = ({ news, events }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [eventType]);
-  console.log(posts);
 
   return (
     <Box bgColor="#393A47" py={["50px", "100px"]} pb={["90px", "100px"]}>

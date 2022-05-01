@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
@@ -9,8 +11,13 @@ import { PvrValues } from "Components/Pvr/PvrValues";
 import { PvrMap } from "Components/Pvr/PvrMap";
 import { PvrVariants } from "Components/Pvr/PvrVariants";
 import { PvrSystems } from "Components/Pvr/PvrSystems";
+import { request } from "query/queries";
+import { pvrStats } from "query/path";
 
-const index = () => {
+const Page = () => {
+  const { locale } = useRouter();
+  const { data } = useQuery("pvr", () => request(locale, pvrStats));
+
   return (
     <>
       <HeadTags
@@ -23,14 +30,16 @@ const index = () => {
         <PvrDescription />
         <PvrSystems />
         <PvrVariants />
-        <PvrValues />
+        <PvrValues data={data} />
         <PvrMap />
       </MainLayout>
     </>
   );
 };
 
-export const serverSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery("pvr", () => request(locale, pvrStats));
   return {
     props: {
       ...(await serverSideTranslations(locale || "", [
@@ -40,8 +49,9 @@ export const serverSideProps: GetServerSideProps = async ({ locale }) => {
         "footer",
         "descriptions",
       ])),
+      dehydratedState: dehydrate(queryClient),
     },
   };
 };
 
-export default index;
+export default Page;

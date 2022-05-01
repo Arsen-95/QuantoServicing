@@ -1,6 +1,6 @@
 import { ValuesByYears } from "Components/Common/ValuesByYears";
 
-export const PvrValues = () => {
+export const PvrValues = ({ data: tra }: any) => {
   const data: Record<number, { text: string; num: string }[]> = {
     2021: [
       { text: "Кол-во отработанных заявок (шт)", num: "246" },
@@ -19,7 +19,9 @@ export const PvrValues = () => {
     ],
   };
 
+  tra[2021].map((i: any) => console.log(i));
+
   const yearsData = [2021];
 
-  return <ValuesByYears data={data} bg="#393A47" yearsData={yearsData} />;
+  return <ValuesByYears data={tra} bg="#393A47" yearsData={yearsData} />;
 };
