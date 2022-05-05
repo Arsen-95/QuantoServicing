@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, CheckboxGroup, Container } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 

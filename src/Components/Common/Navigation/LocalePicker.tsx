@@ -10,11 +10,7 @@ import {
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-type LocalePickerProps = {
-  color: string;
-};
-
-const LocalePicker: React.FC<LocalePickerProps> = ({ color }) => {
+const LocalePicker: React.FC = () => {
   const [selectedLang, setSelectedLang] = useState<string | null>("РУС");
   const router = useRouter();
   const { locale } = router;
@@ -45,7 +41,6 @@ const LocalePicker: React.FC<LocalePickerProps> = ({ color }) => {
               as={Button}
               w="75px"
               rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-              color={color}
               background="transparent"
               fontSize={14}
               lineHeight="1"

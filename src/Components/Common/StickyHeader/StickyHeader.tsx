@@ -53,7 +53,7 @@ export const StickyHeader = () => {
   return (
     <Box
       visibility={isSticky ? "visible" : "hidden"}
-      h={breadCrumbs[pathname as keyof typeof breadCrumbs] ? "132px" : "80px"}
+      h={breadCrumbs[pathname as keyof typeof breadCrumbs] ? "132px" : "82px"}
       pos="fixed"
       right="0"
       left="0"
@@ -65,7 +65,7 @@ export const StickyHeader = () => {
           : "#FFF"
       }
       bgSize={isLargerThan1400 ? "cover" : "auto"}
-      bgPos="0 99%"
+      bgPos="0 100%"
     >
       <Box transition="all 0.2s" opacity={isSticky ? 1 : 0}>
         <Header pt="20px" />

@@ -3,8 +3,27 @@ import { useTranslation } from "next-i18next";
 
 import { StatsBox } from "Components/Common/StatsBox";
 
-export const Stats = () => {
+type Props = {
+  gti: any;
+  gis: any;
+  pvr: any;
+};
+
+export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
   const [t] = useTranslation();
+
+  const foo = (service: any) => {
+    let sum = 0;
+    const keys = Object.keys(service);
+    const result = keys.map((key: any) => {
+      service[key].map((i: any) => {
+        if (i.position === "0") {
+          sum += parseFloat(i.data);
+        }
+      });
+    });
+    return sum;
+  };
 
   return (
     <Box py={["50px", "88px"]} bg="#23242B">
@@ -47,7 +66,7 @@ export const Stats = () => {
                 numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
-                num="438+"
+                num={`${foo(gis) + foo(gti) + foo(pvr)}+`}
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
                 plusSize={["30", "40", "70", "50px", "70px"]}
@@ -57,7 +76,7 @@ export const Stats = () => {
                 numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
-                num="359"
+                num={`${foo(gti)}+`}
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
                 plusSize={["30", "40", "70", "50px", "70px"]}
@@ -67,7 +86,7 @@ export const Stats = () => {
                 numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
-                num="246"
+                num={`${foo(pvr)}+`}
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
                 plusSize={["30", "40", "70", "50px", "70px"]}
@@ -77,7 +96,7 @@ export const Stats = () => {
                 numSize={["40px", "60px", "96px", "70px", "96px"]}
                 textSize={["8px", "12px", "16px", "16px", "18px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
-                num="540"
+                num={`${foo(gis)}+`}
                 height={["150px", "210px", "280px", "230px", "294px"]}
                 padding="15px"
                 plusSize={["30", "40", "70", "50px", "70px"]}

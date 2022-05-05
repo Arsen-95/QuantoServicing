@@ -7,6 +7,7 @@ import { AboutCompany } from "Components/About/AboutCompany";
 import { AboutSlider } from "Components/About/AboutSlider";
 import { Policy } from "Components/About/Policy";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Equipment } from "Components/About/Equipment";
 
 const About: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const About: NextPage = () => {
       <MainLayout>
         <AboutTitle />
         <AboutCompany />
+        <Equipment />
         {/* <Management /> */}
         <AboutSlider />
         {/* <Personal /> */}

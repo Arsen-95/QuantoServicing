@@ -24,7 +24,7 @@ export const PvrMap = () => {
           </Box>
         </Flex>
         <Box>
-          <Image src={`${IMAGES_PATH}/pvrMap.png`} alt="map" />
+          <Image margin="0 auto" src={`${IMAGES_PATH}/pvrMap.png`} alt="map" />
         </Box>
       </Container>
     </Box>

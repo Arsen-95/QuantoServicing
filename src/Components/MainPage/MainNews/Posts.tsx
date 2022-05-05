@@ -29,17 +29,14 @@ const Posts = ({ posts }: any) => {
           320: {
             slidesPerView: 1,
           },
-          420: {
+          700: {
             slidesPerView: 2,
           },
-          700: {
-            slidesPerView: 3,
-          },
-          1150: {
+          1000: {
             slidesPerView: 3,
           },
         }}
-        spaceBetween={10}
+        spaceBetween={50}
         // centeredSlides={true}
         navigation={{
           prevEl: prev,
@@ -49,7 +46,7 @@ const Posts = ({ posts }: any) => {
         className="mySwiper"
       >
         {posts.map((post: any) => (
-          <SwiperSlide key={post.id}>
+          <SwiperSlide className="centered__slide" key={post.id}>
             <PostItem post={post} />
           </SwiperSlide>
         ))}

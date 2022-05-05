@@ -14,20 +14,20 @@ const Companies = () => {
           justifyItems="center"
         >
           <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
+            <Company picture="gazli.svg" alt="gazli" />
+          </Flex>
+          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
+            <Company picture="geofizika.svg" alt="geofizika" />
+          </Flex>
+          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
+            <Company picture="seg.svg" alt="seg" />
+          </Flex>
+          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
             <Company picture="bbgv.svg" alt="bbgv" />
-          </Flex>
-          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
-            <Company picture="eriell.svg" alt="ee" />
-          </Flex>
-          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
-            <Company picture="sewon.svg" alt="sewon" />
-          </Flex>
-          <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
-            <Company picture="medhub.svg" alt="medhub" />
           </Flex>
 
           <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
-            <Company picture="krohne.svg" alt="krohne" />
+            <Company picture="eriell.svg" alt="eriell" />
           </Flex>
           <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
             <Company picture="surhan.svg" alt="surhan" />
@@ -36,7 +36,7 @@ const Companies = () => {
             <Company picture="ee.svg" alt="krohne" />
           </Flex>
           <Flex px="18px" minH="120px" border="0.546876px solid #D9D9D9">
-            <Company picture="jumo.svg" alt="krohne" />
+            <Company picture="grdc.svg" alt="grdc" />
           </Flex>
         </Grid>
       </Box>
@@ -45,21 +45,21 @@ const Companies = () => {
           <Tbody>
             <Tr h="120px">
               <Td>
+                <Company picture="gazli.svg" alt="gazli" />
+              </Td>
+              <Td>
+                <Company picture="geofizika.svg" alt="geofizika" />
+              </Td>
+              <Td>
+                <Company picture="seg.svg" alt="seg" />
+              </Td>
+              <Td>
                 <Company picture="bbgv.svg" alt="bbgv" />
-              </Td>
-              <Td>
-                <Company picture="eriell.svg" alt="ee" />
-              </Td>
-              <Td>
-                <Company picture="sewon.svg" alt="sewon" />
-              </Td>
-              <Td>
-                <Company picture="medhub.svg" alt="medhub" />
               </Td>
             </Tr>
             <Tr h="120px">
               <Td>
-                <Company picture="krohne.svg" alt="krohne" />
+                <Company picture="eriell.svg" alt="eriell" />
               </Td>
               <Td>
                 <Company picture="surhan.svg" alt="surhan" />
@@ -68,7 +68,7 @@ const Companies = () => {
                 <Company picture="ee.svg" alt="ee" />
               </Td>
               <Td>
-                <Company picture="jumo.svg" alt="jumo" />
+                <Company picture="grdc.svg" alt="grdc" />
               </Td>
             </Tr>
           </Tbody>

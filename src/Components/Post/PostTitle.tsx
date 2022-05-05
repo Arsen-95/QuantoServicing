@@ -1,17 +1,22 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 
-export const NewsItemTitle = () => {
+type Props = {
+  title: string;
+};
+
+export const PostTitle: React.FC<Props> = ({ title }) => {
   return (
-    <Box maxW="475px">
+    <Box maxW="523px">
       <Box
-        fontSize="48px"
-        lineHeight="50px"
-        letterSpacing="-1.50267px"
-        color="#111111"
+        as="h5"
+        fontWeight="900"
+        fontSize="60px"
+        lineHeight="100%"
+        letterSpacing="-0.0017819px"
         mb="15px"
       >
-        Mayor of the city Alexei Romanov met with Artem Vlasov
+        {/* {title} */}
       </Box>
       <Flex alignItems="center">
         <Box
@@ -19,7 +24,7 @@ export const NewsItemTitle = () => {
           fontSize="64px"
           lineHeight="80%"
           letterSpacing="-0.00267285px"
-          color="#111111"
+          color="#B7B7B7"
           mr="10px"
         >
           10
@@ -29,7 +34,7 @@ export const NewsItemTitle = () => {
           fontSize="18px"
           lineHeight="22px"
           letterSpacing="-0.00267285px"
-          color="#111111"
+          color="#B7B7B7"
         >
           September <br /> 2022
         </Box>
