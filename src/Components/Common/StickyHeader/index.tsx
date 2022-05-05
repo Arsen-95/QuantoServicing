@@ -1,1 +1,1 @@
-export * from "./StickyHeader";
+export { StickyHeader } from "./StickyHeader";

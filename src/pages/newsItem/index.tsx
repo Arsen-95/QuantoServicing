@@ -4,8 +4,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
-import { NewsItemContent } from "Components/NewsItem/NewsItemContent";
-import { NewsItemTitle } from "Components/NewsItem/NewsItemTitle";
+import { NewsItemContent } from "Components/Post/NewsItemContent";
+import { NewsItemTitle } from "Components/Post/NewsItemTitle";
 
 const index = () => {
   return (

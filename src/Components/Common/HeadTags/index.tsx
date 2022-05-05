@@ -1,1 +1,1 @@
-export * from "./HeadTags";
+export { HeadTags } from "./HeadTags";

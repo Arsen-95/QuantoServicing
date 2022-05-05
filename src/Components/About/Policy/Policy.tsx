@@ -7,7 +7,7 @@ export const Policy = () => {
   const [t] = useTranslation();
 
   return (
-    <Box background="#FAFAFA" py="100px">
+    <Box bg="#2F303B" py="100px">
       <Container>
         <Box
           as="h5"
@@ -15,7 +15,6 @@ export const Policy = () => {
           fontSize="40px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
-          color="rgba(0, 0, 0, 0.75)"
           mb="35px"
         >
           {t("headers:policy")}
@@ -25,7 +24,7 @@ export const Policy = () => {
           fontSize="18px"
           lineHeight="22px"
           letterSpacing="-0.00240557px"
-          color="#000000"
+          color="#B7B7B7"
           opacity="0.7"
           mb="50px"
           maxW="434px"
@@ -43,9 +42,12 @@ export const Policy = () => {
             "repeat(3, 1fr)",
           ]}
         >
-          <DownloadFile fileName="Кадровая политика" fileSize={10.5} />
-          <DownloadFile fileName="Политика безопасности" fileSize={10.5} />
-          <DownloadFile fileName="Техническая политика" fileSize={10.5} />
+          <DownloadFile bg="#393A47" fileName="ПБиОСС" fileSize={10.5} />
+          <DownloadFile
+            bg="#393A47"
+            fileName="Кадровая политика"
+            fileSize={10.5}
+          />
         </Grid>
       </Container>
     </Box>

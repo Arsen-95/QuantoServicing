@@ -43,6 +43,7 @@ export const BurgerMenu: React.FC<MenuProps> = ({ menu, setMenu }) => {
               text="О компании"
               fontSize={["26px", "36px"]}
               color="#FFF"
+              onClick={() => setMenu(!menu)}
             />
           </Box>
           <Accordion allowToggle mb={5}>
@@ -69,18 +70,21 @@ export const BurgerMenu: React.FC<MenuProps> = ({ menu, setMenu }) => {
                     text="Геолого-технологические исследования"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
+                    onClick={() => setMenu(!menu)}
                   />
                   <NavItem
                     href="/gis"
                     text="Геофизические исследования скважин"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
+                    onClick={() => setMenu(!menu)}
                   />
                   <NavItem
                     href="/pvr"
                     text="Прострелочно-взрывные работы"
                     fontSize={["22px", "28px"]}
                     color="#FFF"
+                    onClick={() => setMenu(!menu)}
                   />
                 </Flex>
               </AccordionPanel>
@@ -108,6 +112,7 @@ export const BurgerMenu: React.FC<MenuProps> = ({ menu, setMenu }) => {
             text="Новости"
             fontSize={["26px", "36px"]}
             color="#FFF"
+            onClick={() => setMenu(!menu)}
           />
           <Divider my={5} />
           <NavItem

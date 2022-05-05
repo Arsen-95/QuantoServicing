@@ -6,7 +6,11 @@ import { IMAGES_PATH } from "constants/settings";
 export const AboutCompany = () => {
   const [t] = useTranslation();
   return (
-    <Box as="section" py={["50px", "75px", "100px"]} background="#FAFAFA">
+    <Box
+      as="section"
+      py={["50px", "75px", "100px"]}
+      background={`url(${IMAGES_PATH}/steel.png)`}
+    >
       <Container>
         <Box
           as="h5"

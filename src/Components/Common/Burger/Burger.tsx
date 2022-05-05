@@ -11,36 +11,19 @@ type BurgerProps = {
 export const Burger: React.FC<BurgerProps> = ({ menu, setMenu }) => {
   return (
     <>
-      {menu === true ? (
-        <Box display={["block", "block", "block", "none"]}>
-          <IconButton
-            border="none"
-            onClick={() => setMenu(!menu)}
-            aria-label="Options"
-            icon={<Icon as={CloseIcon} />}
-            pos="relative"
-            zIndex={20}
-            variant="outline"
-            _hover={{
-              background: "none",
-            }}
-          />
-        </Box>
-      ) : (
-        <Box display={["block", "block", "block", "none"]}>
-          <IconButton
-            border="none"
-            onClick={() => setMenu(!menu)}
-            aria-label="Options"
-            icon={<Icon as={BurgerIcon} />}
-            zIndex={50}
-            variant="outline"
-            _hover={{
-              background: "none",
-            }}
-          />
-        </Box>
-      )}
+      <Box display={["block", "block", "block", "none"]}>
+        <IconButton
+          border="none"
+          onClick={() => setMenu(!menu)}
+          aria-label="Options"
+          icon={<Icon as={!menu === true ? BurgerIcon : CloseIcon} />}
+          zIndex={50}
+          variant="outline"
+          _hover={{
+            background: "none",
+          }}
+        />
+      </Box>
     </>
   );
 };

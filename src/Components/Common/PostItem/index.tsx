@@ -1,1 +1,1 @@
-export * from "./PostItem";
+export { PostItem } from "./PostItem";

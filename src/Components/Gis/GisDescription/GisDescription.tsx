@@ -10,7 +10,7 @@ export const GisDescription = () => {
       backgroundColor="#23242B"
       title={t("headers:gis")}
       text={t("descriptions:gis")}
-      picture="gisDescription.svg"
+      picture="gisDescription.png"
     />
   );
 };

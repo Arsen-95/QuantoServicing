@@ -2,40 +2,40 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 const useBreadCrumbs = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("navigation");
 
   const breadCrumbs = useMemo(
     () => ({
       "/about": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:about")}`, "/about"],
+        [`${t("main")}`, "/"],
+        [`${t("about")}`, "/about"],
       ],
       "/gti": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:services")}`, "/services"],
-        [`${t("titles:gti")}`, "/gti"],
+        [`${t("main")}`, "/"],
+        [`${t("services")}`, "/services"],
+        [`${t("gti")}`, "/gti"],
       ],
       "/gis": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:services")}`, "/services"],
-        [`${t("titles:gis")}`, "/gis"],
+        [`${t("main")}`, "/"],
+        [`${t("services")}`, "/services"],
+        [`${t("gis")}`, "/gis"],
       ],
       "/pvr": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:services")}`, "/services"],
-        [`${t("titles:pvr")}`, "/pvr"],
+        [`${t("main")}`, "/"],
+        [`${t("services")}`, "/services"],
+        [`${t("pvr")}`, "/pvr"],
       ],
       "/news": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:news")}`, "/news"],
+        [`${t("main")}`, "/"],
+        [`${t("news")}`, "/news"],
       ],
       "/documents": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:documents")}`, "/documents"],
+        [`${t("main")}`, "/"],
+        [`${t("documents")}`, "/documents"],
       ],
       "/services": [
-        [`${t("titles:mainPage")}`, "/"],
-        [`${t("titles:services")}`, "/services"],
+        [`${t("main")}`, "/"],
+        [`${t("services")}`, "/services"],
       ],
     }),
     [t]

@@ -14,8 +14,6 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ pt }) => {
   const [menu, setMenu] = useState(false);
-  const { pathname } = useRouter();
-  const color = pathname === "/newsItem" ? "#000" : "#FFF";
 
   useEffect(() => {
     const body: any = document.querySelector("body");
@@ -32,19 +30,11 @@ export const Header: React.FC<HeaderProps> = ({ pt }) => {
         <Flex justifyContent="space-between" alignItems="center">
           <NextLink href="/" passHref>
             <Link py="5px">
-              <Image
-                w="161px"
-                src={
-                  pathname === "/newsItem"
-                    ? `${ICONS_PATH}/logoBlack.svg`
-                    : `${ICONS_PATH}/logo.svg`
-                }
-                alt="Logo"
-              />
+              <Image w="161px" src={`${ICONS_PATH}/logo.svg`} alt="Logo" />
             </Link>
           </NextLink>
           <Box display="flex">
-            <Navigation flexDir="row" lang={true} color={color} />
+            <Navigation flexDir="row" lang={true} />
             <Burger menu={menu} setMenu={setMenu} />
           </Box>
         </Flex>

@@ -49,5 +49,9 @@ export const global = {
   },
   h5: {
     fontFamily: "Blender Pro",
+  },
+  ".centered__slide": {
+    display: "flex !important",
+    justifyContent: "center !important",
   }
 }
