@@ -1,1 +1,1 @@
-export * from "./GisValues";
+export { GisValues } from "./GisValues";
