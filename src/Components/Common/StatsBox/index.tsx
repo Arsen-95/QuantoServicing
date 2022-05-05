@@ -1,1 +1,1 @@
-export * from "./StatsBox";
+export { StatsBox } from "./StatsBox";
