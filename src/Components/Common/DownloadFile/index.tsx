@@ -1,1 +1,1 @@
-export * from "./DownloadFile";
+export { DownloadFile } from "./DownloadFile";

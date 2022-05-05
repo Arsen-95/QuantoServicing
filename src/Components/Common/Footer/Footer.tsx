@@ -120,7 +120,7 @@ export const Footer = ({ data }: any) => {
               }
             ></Box>
             <Box display={["none", "none", "none", "block"]}>
-              <Navigation flexDir="row" lang={false} color="#FFF" />
+              <Navigation flexDir="row" lang={false} />
             </Box>
             <Flex
               flexDir="column"
