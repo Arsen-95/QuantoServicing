@@ -1,15 +1,15 @@
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
+import { GetServerSideProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
+import { dehydrate, QueryClient, useQuery } from "react-query";
+
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
 import { OtherPosts } from "Components/Post/OtherPosts";
 import { PostContent } from "Components/Post/PostContent";
 import { PostTitle } from "Components/Post/PostTitle";
-import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
-import { events, news } from "query/path";
 import { request } from "query/queries";
-import { dehydrate, QueryClient, useQuery } from "react-query";
 
 const Page = () => {
   const { query, locale } = useRouter();
