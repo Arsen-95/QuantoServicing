@@ -33,7 +33,6 @@ const Services = () => {
         visibility={isSticky ? "hidden" : "visible"}
         opacity={isSticky ? 0 : 1}
         transition="all 0.2s"
-        // zIndex={100}
         pos="relative"
       >
         <Service

@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { PostItem } from "Components/Common/PostItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper";
+import { FreeMode, Mousewheel, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -18,12 +18,11 @@ export const OtherPosts = ({ posts, eventType }: any) => {
         Другие публикации
       </Text>
       <Swiper
+        loop
         direction="vertical"
-        // loop
-        freeMode={true}
-        spaceBetween={20}
-        // centeredSlides={true}
-        modules={[FreeMode]}
+        mousewheel={true}
+        spaceBetween={300}
+        modules={[FreeMode, Mousewheel]}
         className="mySwiper"
         style={{
           height: "700px",
@@ -31,7 +30,7 @@ export const OtherPosts = ({ posts, eventType }: any) => {
         slidesPerView={2}
       >
         {posts?.map((post: any) => (
-          <SwiperSlide key={post.id}>
+          <SwiperSlide key={post.id} className="asd">
             <PostItem post={post} eventType={eventType} />
           </SwiperSlide>
         ))}

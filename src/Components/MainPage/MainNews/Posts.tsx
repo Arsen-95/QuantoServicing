@@ -24,7 +24,7 @@ const Posts = ({ posts, eventType }: any) => {
     <Box pos="relative">
       <Swiper
         // loop
-        // freeMode={true}
+        freeMode={true}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -36,8 +36,6 @@ const Posts = ({ posts, eventType }: any) => {
             slidesPerView: 3,
           },
         }}
-        spaceBetween={50}
-        // centeredSlides={true}
         navigation={{
           prevEl: prev,
           nextEl: next,

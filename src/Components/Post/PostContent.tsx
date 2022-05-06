@@ -10,7 +10,7 @@ type Props = {
 export const PostContent: React.FC<Props> = ({ text }) => {
   const ref = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    ref!.current!.innerHTML = text;
+    ref.current!.innerHTML = text;
   });
 
   return (

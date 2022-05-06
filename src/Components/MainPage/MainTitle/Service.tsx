@@ -35,15 +35,15 @@ const Service: React.FC<ServiceProps> = ({ text, picture, href }) => {
       >
         <Box>{text}</Box>
         <Box
-          h="15px"
-          w="15px"
+          h="16px"
+          w="16px"
           bottom="22px"
           right="13px"
           pos="absolute"
           borderRadius="50%"
           background={`url(${ICONS_PATH}/buttonArrowRight.svg) 55% 50% no-repeat #365164`}
           _groupHover={{
-            background: `url(${ICONS_PATH}/buttonArrowRight.svg) 55% 50% no-repeat red`,
+            background: `url(${ICONS_PATH}/buttonArrowRight.svg) 55% 50% no-repeat #0057FF`,
           }}
           transition="all 0.3s"
         ></Box>

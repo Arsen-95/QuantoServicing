@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   post: any;
@@ -10,6 +11,8 @@ export const PostTitle: React.FC<Props> = ({ post }) => {
   const month = dayjs(post.date_created).format("MMM");
   const year = dayjs(post.date_created).format("YYYY");
   const day = dayjs(post.date_created).format("DD");
+
+  const { t } = useTranslation("months");
 
   return (
     <Box maxW="523px">
@@ -41,7 +44,7 @@ export const PostTitle: React.FC<Props> = ({ post }) => {
           letterSpacing="-0.00267285px"
           color="#B7B7B7"
         >
-          {month} <br /> {year}
+          {t(month)} <br /> {year}
         </Box>
       </Flex>
     </Box>

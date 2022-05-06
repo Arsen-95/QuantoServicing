@@ -22,7 +22,7 @@ export const Years: React.FC<YearsProps> = ({ onScroll, yearsData }: any) => {
         centeredSlides={true}
         slidesPerView={5}
         mousewheel={true}
-        modules={[Mousewheel, Mousewheel]}
+        modules={[Mousewheel]}
         className="years-vertical-slider"
         style={{ height: "350px", overflow: "hidden" }}
         onSlideChange={(a) => {
