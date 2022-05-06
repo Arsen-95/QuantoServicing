@@ -4,7 +4,7 @@ import { IMAGES_PATH } from "constants/settings";
 
 export const Equipment = () => {
   return (
-    <Box py="100px">
+    <Box py="100px" bg="#393A47">
       <Container>
         <Box as="h5" fontSize={["20px", "26px", "36px", "50px"]} mb="40px">
           Оборудование
@@ -102,7 +102,7 @@ const Item: React.FC<ItemProps> = ({ title, children, picture }) => {
       h={["350px", "500px", "570px", "620px", "650px"]}
       border="1px solid #D9D9D9"
       p={["20px 5px 0", "30px 10px 0", "60px 12px 0"]}
-      bg={`url(${IMAGES_PATH}/${picture}) no-repeat`}
+      bg={`url(${IMAGES_PATH}/${picture})  no-repeat`}
       bgSize={["50%", "60%", "60%", "70%"]}
       bgPos="bottom 20px right"
     >

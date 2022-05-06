@@ -14,8 +14,11 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 const Page = () => {
   const { query, locale } = useRouter();
 
-  const { data } = useQuery("post", () =>
-    request(locale, `${news}${query.id}`)
+  const { data: post } = useQuery("post", () =>
+    request(locale, `${query.eventType}/${query.id}/`)
+  );
+  const { data: posts } = useQuery("posts", () =>
+    request(locale, `${query.eventType}/`)
   );
 
   return (
@@ -26,13 +29,15 @@ const Page = () => {
         descriptionContent="Quanto oil and gas"
       />
       <MainLayout>
-        <Container pt="176px">
-          <Flex flexDir="column">
-            <PostTitle title={data.title} />
-            <OtherPosts posts={[]} />
-          </Flex>
-          <PostContent text={data.description} />
-        </Container>
+        <Box bg="#23242B" pt="176px" pb="90px">
+          <Container display="flex" gap="100px">
+            <Box>
+              <PostTitle title={post.title} />
+              <OtherPosts posts={posts} eventType={query.eventType} />
+            </Box>
+            <PostContent Texta={post.description} />
+          </Container>
+        </Box>
       </MainLayout>
     </>
   );
@@ -41,19 +46,15 @@ const Page = () => {
 export const getServerSideProps: GetServerSideProps = async ({
   locale,
   query,
-  resolvedUrl,
 }) => {
   const queryClient = new QueryClient();
-  if (resolvedUrl.includes("news")) {
-    await queryClient.prefetchQuery("post", () =>
-      request(locale, `${news}${query.id}`)
-    );
-  }
-  if (resolvedUrl.includes("events")) {
-    await queryClient.prefetchQuery("posts", () =>
-      request(locale, `${events}${query.id}`)
-    );
-  }
+  await queryClient.prefetchQuery("post", () =>
+    request(locale, `${query.eventType}/${query.id}/`)
+  );
+  await queryClient.prefetchQuery("posts", () =>
+    request(locale, `${query.eventType}/`)
+  );
+
   return {
     props: {
       ...(await serverSideTranslations(locale || "", [

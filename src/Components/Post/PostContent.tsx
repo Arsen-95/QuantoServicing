@@ -1,31 +1,39 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 
 import { IMAGES_PATH } from "constants/settings";
-import { string } from "yup";
+import { useEffect, useRef } from "react";
 
 type Props = {
-  text: string;
+  Texta: string;
 };
 
-export const PostContent: React.FC<Props> = ({ text }) => {
+export const PostContent: React.FC<Props> = ({ Texta }) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    ref!.current!.innerHTML = Texta;
+  });
+
   return (
     <Box>
-      <Box mb="50px" maxW="670px">
-        <Image src={`${IMAGES_PATH}/gtiSlide3.png`} alt="news photo" />
+      <Box mb="50px">
+        <Image
+          src={`${IMAGES_PATH}/gtiSlide3.png`}
+          alt="news photo"
+          objectFit="cover"
+        />
       </Box>
       <Text
-        maxW="670px"
-        whiteSpace="pre-wrap"
-        fontWeight="300"
         fontSize="18px"
         lineHeight="150%"
         letterSpacing="-0.00267285px"
-        color="#111111"
+        color="#B7B7B7"
         opacity="0.76"
-        mb="100px"
-      >
-        {/* {text} */}
-      </Text>
+        ref={ref}
+      ></Text>
     </Box>
   );
+};
+
+const Element = ({ children }: any) => {
+  return <Box>{children}</Box>;
 };

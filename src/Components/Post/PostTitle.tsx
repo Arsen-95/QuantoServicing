@@ -16,9 +16,9 @@ export const PostTitle: React.FC<Props> = ({ title }) => {
         letterSpacing="-0.0017819px"
         mb="15px"
       >
-        {/* {title} */}
+        {title}
       </Box>
-      <Flex alignItems="center">
+      <Flex alignItems="center" mb="150px">
         <Box
           fontWeight="300"
           fontSize="64px"

@@ -54,7 +54,7 @@ export const MainNews: React.FC<Props> = ({ news, events }) => {
           eventType={eventType}
           setEventType={setEventType}
         />
-        <Posts posts={posts} />
+        <Posts posts={posts} eventType={eventType} />
       </Container>
     </Box>
   );
