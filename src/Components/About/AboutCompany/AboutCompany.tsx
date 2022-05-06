@@ -8,44 +8,43 @@ export const AboutCompany = () => {
   return (
     <Box
       as="section"
-      py={["50px", "75px", "100px"]}
-      background={`url(${IMAGES_PATH}/steel.png)`}
+      py={["50px", "75px", "60px"]}
+      background={`url(${IMAGES_PATH}/aboutBg.png) no-repeat`}
+      bgSize="cover"
     >
-      <Container>
-        <Box
-          as="h5"
-          fontWeight="600"
-          fontSize="40px"
-          lineHeight="99.5%"
-          letterSpacing="-0.04em"
-          color="#494949"
-          mb={["15px", "0px"]}
-        >
-          {t("headers:about")}
-        </Box>
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          flexDir={["column", "row"]}
-        >
+      <Container
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Box>
+          <Box
+            as="h5"
+            fontWeight="600"
+            fontSize="50px"
+            lineHeight="99.5%"
+            letterSpacing="-0.04em"
+            mb={["15px", "0px"]}
+          >
+            {t("headers:about")}
+          </Box>
           <Box
             fontWeight="300"
             fontSize="18px"
             lineHeight="22px"
             letterSpacing="-0.00185615px"
-            color="#000000"
             opacity="0.7"
             maxW="442px"
           >
             {t("descriptions:about")}
           </Box>
-          <Box
-            minH="200px"
-            minW="66%"
-            alignItems="center"
-            background={`url(${IMAGES_PATH}/quantoImage.png) no-repeat`}
-          ></Box>
-        </Flex>
+        </Box>
+        <Box
+          h="141px"
+          w="664px"
+          alignItems="center"
+          background={`url(${IMAGES_PATH}/quantoImage.png) no-repeat right`}
+        ></Box>
       </Container>
     </Box>
   );

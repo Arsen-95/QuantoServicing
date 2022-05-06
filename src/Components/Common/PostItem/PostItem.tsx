@@ -5,12 +5,13 @@ import { IMAGES_PATH } from "../../../constants/settings";
 
 type ItemProps = {
   post: any;
+  eventType: string;
 };
 
-export const PostItem: React.FC<ItemProps> = ({ post }) => {
+export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
   const arr = post.description.split(" ");
   const words = arr.length;
-  let time = words / 150;
+  let time = Math.round(words / 150);
   if (time < 1) {
     time = 1;
   }
@@ -26,7 +27,7 @@ export const PostItem: React.FC<ItemProps> = ({ post }) => {
   }
 
   return (
-    <NextLink href={`/post/${post.id}`} passHref>
+    <NextLink href={`/post/${eventType}/${post.id}`} passHref>
       <Link _hover={{ textDecor: "none" }} _focus={{ border: "none" }}>
         <Box
           cursor="pointer"

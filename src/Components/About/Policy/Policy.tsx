@@ -12,7 +12,7 @@ export const Policy = () => {
         <Box
           as="h5"
           fontWeight="600"
-          fontSize="40px"
+          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
           mb="35px"

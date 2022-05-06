@@ -8,7 +8,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { ICONS_PATH } from "../../../constants/settings";
 import { PostItem } from "Components/Common/PostItem";
 
-const Posts = ({ posts }: any) => {
+const Posts = ({ posts, eventType }: any) => {
   const prevRef = useRef<any>(null);
   const nextRef = useRef<any>(null);
 
@@ -47,7 +47,7 @@ const Posts = ({ posts }: any) => {
       >
         {posts.map((post: any) => (
           <SwiperSlide className="centered__slide" key={post.id}>
-            <PostItem post={post} />
+            <PostItem post={post} eventType={eventType} />
           </SwiperSlide>
         ))}
       </Swiper>

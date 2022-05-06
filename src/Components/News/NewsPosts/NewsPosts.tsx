@@ -53,7 +53,7 @@ export const NewsPosts: React.FC<Props> = ({ news, events }) => {
           mb="100px"
         >
           {posts.map((post: any) => (
-            <PostItem post={post} key={post.id} />
+            <PostItem post={post} key={post.id} eventType={eventType} />
           ))}
         </Flex>
         <Pagination />
