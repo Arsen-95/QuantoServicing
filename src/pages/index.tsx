@@ -15,7 +15,6 @@ import { HeadTags } from "Components/Common/HeadTags";
 import { MainNews } from "Components/MainPage/MainNews";
 import { MainSlider } from "Components/MainPage/MainSlider";
 import { request } from "query/queries";
-import { group } from "console";
 
 const Home: NextPage = () => {
   const { locale, query } = useRouter();
@@ -26,10 +25,6 @@ const Home: NextPage = () => {
   const { data: eventsPosts } = useQuery("events", () =>
     request(locale, events)
   );
-
-  const { data } = useQuery("post", () => request(locale, `${news}2/`));
-
-  console.log(data);
 
   const values = [gti, gis, pvr];
   const valuesData: any = {};

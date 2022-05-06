@@ -1,5 +1,7 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 import { IMAGES_PATH } from "../../../constants/settings";
 
@@ -15,6 +17,11 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
   if (time < 1) {
     time = 1;
   }
+  dayjs.locale("de");
+  const month = dayjs(post.date_created).format("MMM");
+  const day = dayjs(post.date_created).format("DD");
+
+  const { locale } = useRouter();
 
   const minutes = ["минута", "минуты", "минут"];
   function num_word(value: number, words: string[]) {
@@ -63,7 +70,7 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
               letterSpacing="-0.0017819px"
               justifyContent="space-between"
             >
-              <Box>12 декабря</Box>
+              <Box>{day + " " + month} </Box>
               <Box textAlign="right">
                 {time} {num_word(time, minutes)} для чтения
               </Box>

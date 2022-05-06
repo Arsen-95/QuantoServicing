@@ -1,11 +1,16 @@
 import { Box, Flex } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import React from "react";
 
 type Props = {
-  title: string;
+  post: any;
 };
 
-export const PostTitle: React.FC<Props> = ({ title }) => {
+export const PostTitle: React.FC<Props> = ({ post }) => {
+  const month = dayjs(post.date_created).format("MMM");
+  const year = dayjs(post.date_created).format("YYYY");
+  const day = dayjs(post.date_created).format("DD");
+
   return (
     <Box maxW="523px">
       <Box
@@ -16,7 +21,7 @@ export const PostTitle: React.FC<Props> = ({ title }) => {
         letterSpacing="-0.0017819px"
         mb="15px"
       >
-        {title}
+        {post.title}
       </Box>
       <Flex alignItems="center" mb="150px">
         <Box
@@ -27,7 +32,7 @@ export const PostTitle: React.FC<Props> = ({ title }) => {
           color="#B7B7B7"
           mr="10px"
         >
-          10
+          {day}
         </Box>
         <Box
           fontWeight="250"
@@ -36,7 +41,7 @@ export const PostTitle: React.FC<Props> = ({ title }) => {
           letterSpacing="-0.00267285px"
           color="#B7B7B7"
         >
-          September <br /> 2022
+          {month} <br /> {year}
         </Box>
       </Flex>
     </Box>
