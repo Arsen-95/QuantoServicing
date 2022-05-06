@@ -62,7 +62,7 @@ export const StickyHeader = () => {
       bg={
         images[pathname as keyof typeof images]
           ? `url(${images[pathname as keyof typeof images]}) no-repeat`
-          : "#FFF"
+          : "#393A47"
       }
       bgSize={isLargerThan1400 ? "cover" : "auto"}
       bgPos="0 100%"

@@ -10,6 +10,7 @@ import { OtherPosts } from "Components/Post/OtherPosts";
 import { PostContent } from "Components/Post/PostContent";
 import { PostTitle } from "Components/Post/PostTitle";
 import { request } from "query/queries";
+import dayjs from "dayjs";
 
 const Page = () => {
   const { query, locale } = useRouter();
@@ -30,12 +31,12 @@ const Page = () => {
       />
       <MainLayout>
         <Box bg="#23242B" pt="176px" pb="90px">
-          <Container display="flex" gap="100px">
+          <Container display="flex" gap="147px">
             <Box>
-              <PostTitle title={post.title} />
+              <PostTitle post={post} />
               <OtherPosts posts={posts} eventType={query.eventType} />
             </Box>
-            <PostContent Texta={post.description} />
+            <PostContent text={post.description} />
           </Container>
         </Box>
       </MainLayout>

@@ -1,23 +1,23 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-
-import { IMAGES_PATH } from "constants/settings";
 import { useEffect, useRef } from "react";
 
+import { IMAGES_PATH } from "constants/settings";
+
 type Props = {
-  Texta: string;
+  text: string;
 };
 
-export const PostContent: React.FC<Props> = ({ Texta }) => {
+export const PostContent: React.FC<Props> = ({ text }) => {
   const ref = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    ref!.current!.innerHTML = Texta;
+    ref!.current!.innerHTML = text;
   });
 
   return (
     <Box>
       <Box mb="50px">
         <Image
-          src={`${IMAGES_PATH}/gtiSlide3.png`}
+          src={`${IMAGES_PATH}/pipeline.png`}
           alt="news photo"
           objectFit="cover"
         />
@@ -32,8 +32,4 @@ export const PostContent: React.FC<Props> = ({ Texta }) => {
       ></Text>
     </Box>
   );
-};
-
-const Element = ({ children }: any) => {
-  return <Box>{children}</Box>;
 };

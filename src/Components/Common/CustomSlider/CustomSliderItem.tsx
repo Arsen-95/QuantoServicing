@@ -71,7 +71,6 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
                 `url(${IMAGES_PATH}/${imageUrl}) no-repeat`,
               ]}
               backgroundSize="cover !important"
-              backgroundPosition="center"
             ></Box>
           </Flex>
         </Container>
