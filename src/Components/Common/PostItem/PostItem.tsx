@@ -1,7 +1,9 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import dayjs from "dayjs";
+import { t } from "i18next";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 import { IMAGES_PATH } from "../../../constants/settings";
 
@@ -11,13 +13,14 @@ type ItemProps = {
 };
 
 export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
+  const { t } = useTranslation("months");
+
   const arr = post.description.split(" ");
   const words = arr.length;
   let time = Math.round(words / 150);
   if (time < 1) {
     time = 1;
   }
-  dayjs.locale("de");
   const month = dayjs(post.date_created).format("MMM");
   const day = dayjs(post.date_created).format("DD");
 
@@ -70,7 +73,7 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
               letterSpacing="-0.0017819px"
               justifyContent="space-between"
             >
-              <Box>{day + " " + month} </Box>
+              <Box>{day + " " + t(month)} </Box>
               <Box textAlign="right">
                 {time} {num_word(time, minutes)} для чтения
               </Box>

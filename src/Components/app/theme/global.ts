@@ -53,5 +53,9 @@ export const global = {
   ".centered__slide": {
     display: "flex !important",
     justifyContent: "center !important",
+  },
+  ".asd": {
+    display: "flex !important",
+
   }
 }

@@ -4,6 +4,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
 
+require("dayjs/locale/ru");
+
 import { events, gisStats, gtiStats, news, pvrStats } from "query/path";
 import { MainLayout } from "Components/Common/MainLayout";
 import { Stats } from "Components/MainPage/Stats";
@@ -25,6 +27,9 @@ const Home: NextPage = () => {
   const { data: eventsPosts } = useQuery("events", () =>
     request(locale, events)
   );
+  const dayjs = require("dayjs");
+
+  dayjs.locale("ru");
 
   const values = [gti, gis, pvr];
   const valuesData: any = {};

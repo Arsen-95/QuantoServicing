@@ -10,7 +10,6 @@ import { OtherPosts } from "Components/Post/OtherPosts";
 import { PostContent } from "Components/Post/PostContent";
 import { PostTitle } from "Components/Post/PostTitle";
 import { request } from "query/queries";
-import dayjs from "dayjs";
 
 const Page = () => {
   const { query, locale } = useRouter();
@@ -64,6 +63,7 @@ export const getServerSideProps: GetServerSideProps = async ({
         "titles",
         "common",
         "footer",
+        "months",
       ])),
       dehydratedState: dehydrate(queryClient),
     },

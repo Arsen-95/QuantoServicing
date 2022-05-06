@@ -46,6 +46,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         "titles",
         "common",
         "footer",
+        "months",
       ])),
       dehydratedState: dehydrate(queryClient),
     },
