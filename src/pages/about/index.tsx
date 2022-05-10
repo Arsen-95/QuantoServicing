@@ -1,12 +1,12 @@
 import type { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import { HeadTags } from "Components/Common/HeadTags";
 import { MainLayout } from "Components/Common/MainLayout";
-import { Management } from "Components/About/Management";
 import { AboutTitle } from "Components/About/AboutTitle";
 import { AboutCompany } from "Components/About/AboutCompany";
 import { AboutSlider } from "Components/About/AboutSlider";
 import { Policy } from "Components/About/Policy";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Equipment } from "Components/About/Equipment";
 
 const About: NextPage = () => {
@@ -21,9 +21,7 @@ const About: NextPage = () => {
         <AboutTitle />
         <AboutCompany />
         <Equipment />
-        {/* <Management /> */}
         <AboutSlider />
-        {/* <Personal /> */}
         <Policy />
       </MainLayout>
     </>

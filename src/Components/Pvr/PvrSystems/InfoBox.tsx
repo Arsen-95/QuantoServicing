@@ -10,11 +10,15 @@ export const InfoBox: React.FC<InfoBoxProps> = ({ text, value }) => {
     <GridItem
       border="1px solid #B7B7B7"
       pos="relative"
-      h="110px"
-      p="6px 8px"
+      h={["70px", "100px", "110px"]}
+      p={["6px 4px", "6px 8px"]}
       color="#B7B7B7"
     >
-      <Text fontSize="12px" lineHeight="99.5%" letterSpacing="-0.04em">
+      <Text
+        fontSize={["6px", "8px", "10px"]}
+        lineHeight="99.5%"
+        letterSpacing="-0.04em"
+      >
         {text}
       </Text>
       <Box
@@ -22,7 +26,7 @@ export const InfoBox: React.FC<InfoBoxProps> = ({ text, value }) => {
         top="50%"
         left="50%"
         transform="translate(-50%, -50%)"
-        fontSize="20px"
+        fontSize={["8px", "14px", "20px", "14px", "18px"]}
       >
         {value}
       </Box>

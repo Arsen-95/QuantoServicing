@@ -16,30 +16,33 @@ export const Figure: React.FC<FigureProps> = ({
   backgroundColor,
 }) => {
   return (
-    <Box background={backgroundColor} pt="80px" pb="50px">
+    <Box background={backgroundColor} as="section">
       <Container minH="100%">
         <Flex
           pos="relative"
           justifyContent="space-between"
-          flexDir={["column", "column", "row"]}
+          alignItems="center"
+          flexDir={["column", "column", "column", "row"]}
         >
-          <Box>
+          <Box
+            flexBasis={["auto", "auto", "auto", "44%"]}
+            mb={["30px", "40px", "50px"]}
+          >
             <Box
               as="h5"
               fontWeight="600"
-              fontSize={["20px", "26px", "36px", "50px"]}
               lineHeight="99.5%"
               letterSpacing="-0.04em"
-              mb="27px"
+              mb={["25px", "25px", "30px", "30px", "44px"]}
               maxW="622px"
               whiteSpace="pre-line"
             >
               {title}
             </Box>
             <Box
-              maxW="568px"
+              maxW={["auto", "auto", "auto", "568px"]}
               fontWeight="300"
-              fontSize={["16px", "16px", "18px"]}
+              fontSize={["14px", "16px", "18px"]}
               lineHeight="1.2"
               letterSpacing="-0.00240557px"
               color="#B7B7B7"
@@ -49,12 +52,7 @@ export const Figure: React.FC<FigureProps> = ({
               {text}
             </Box>
           </Box>
-          <Box
-            minH="100%"
-            w="500px"
-            m={["0 auto", "0 auto", "0"]}
-            pos="relative"
-          >
+          <Box flexBasis="40%">
             <Image src={`${IMAGES_PATH}/${picture}`} alt="picture draw" />
           </Box>
         </Flex>

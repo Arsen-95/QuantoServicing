@@ -20,8 +20,8 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
   const { pathname } = useRouter();
   const titleSize =
     pathname === "/"
-      ? ["34px", "56px", "64px", "75px"]
-      : ["20px", "34px", "50px"];
+      ? ["34px", "44px", "56px", "64px", "74px"]
+      : ["20px", "30px", "30px", "40px", "50px"];
 
   return (
     <SwiperSlide>
@@ -29,7 +29,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
         <Container h="100%">
           <Flex height="100%">
             <Flex
-              flexBasis={["90%", "90%", "70%", "40%"]}
+              flexBasis={["90%", "90%", "45%", "40%"]}
               flexDir="column"
               justifyContent="center"
             >
@@ -52,7 +52,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
                 fontSize={["12px", "14px", "16px", "18px"]}
                 lineHeight="142%"
                 letterSpacing="-0.00240557px"
-                color="#B7B7B7"
+                color={["#FFF", "#FFF", "#B7B7B7"]}
                 zIndex="2"
               >
                 {text}
@@ -62,7 +62,7 @@ const CustomSliderItem: React.FC<CustomSliderItemProps> = ({
               position="absolute"
               right="0"
               bottom="0"
-              width={["100%", "100%", "100%", "50%"]}
+              width={["100%", "100%", "50%", "50%"]}
               minH="100%"
               background={[
                 `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #C4C4C4 url(${IMAGES_PATH}/${imageUrl}) no-repeat`,

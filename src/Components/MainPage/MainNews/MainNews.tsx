@@ -36,14 +36,19 @@ export const MainNews: React.FC<Props> = ({ news, events }) => {
   }, [eventType]);
 
   return (
-    <Box bgColor="#393A47" py={["50px", "100px"]} pb={["90px", "100px"]}>
+    <Box
+      bgColor="#393A47"
+      py={["50px", "70px", "70px", "70px", "80px"]}
+      pb={["90px", "70px", "auto"]}
+      as="section"
+    >
       <Container>
         <Box
           as="h5"
           textTransform="uppercase"
           letterSpacing="-2.50267px"
           fontWeight="900"
-          fontSize={["35px", "50px", "50px", "75px"]}
+          fontSize={["34px", "50px", "54px", "64px", "76px"]}
           lineHeight="62px"
           mb={["20px", "20px", "20px", "50px"]}
         >

@@ -19,7 +19,14 @@ export const global = {
     color: "#8C949D",
     transition: "all 0.7s !important",
   },
-
+  "@media (max-width: 1279px)": {
+    'h5': {
+      fontSize: '36px'
+    },
+    'section': {
+      py: '70px',
+    }
+  },
   "@media (max-width: 991px)": {
     ".years-vertical-slider .swiper-slide.swiper-slide-active": {
       fontSize: "60px",
@@ -30,6 +37,12 @@ export const global = {
       color: "#8C949D",
       transition: "all 0.7s !important",
     },
+    'h5': {
+      fontSize: '36px'
+    },
+    'section': {
+      py: '70px',
+    }
   },
   "@media (max-width: 767px)": {
     ".years-vertical-slider .swiper-slide.swiper-slide-active": {
@@ -43,6 +56,29 @@ export const global = {
       color: "#8C949D",
       transition: "all 0.7s !important",
     },
+    'h5': {
+      fontSize: '26px'
+    },
+    'section': {
+      py: '70px'
+    }
+  },
+  "@media (max-width: 479px)": {
+    'h5': {
+      fontSize: '22px',
+    },
+    'section': {
+      py: '50px'
+    }
+
+  },
+  "@media (min-width: 1280px)": {
+    'h5': {
+      fontSize: '50px',
+    },
+    'section': {
+      py: '80px',
+    }
   },
   h4: {
     fontFamily: "Blender Pro",

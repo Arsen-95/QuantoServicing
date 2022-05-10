@@ -7,7 +7,7 @@ export const Partners = () => {
   const { t } = useTranslation("headers");
 
   return (
-    <Box py={["40px", "100px"]} bg="#23242B">
+    <Box bg="#23242B" as="section">
       <Box
         id="partners"
         position="relative"
@@ -17,7 +17,7 @@ export const Partners = () => {
         <Box
           as="h5"
           fontWeight="900"
-          fontSize={["35px", "50px", "50px", "75px"]}
+          fontSize={["34px", "50px", "54px", "64px", "76px"]}
           lineHeight="62px"
           letterSpacing="-2.50267px"
           textTransform="uppercase"

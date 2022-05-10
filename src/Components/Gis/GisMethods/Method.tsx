@@ -11,7 +11,6 @@ type MethodProps = {
 const Method: React.FC<MethodProps> = ({ methodName, text, picture }) => {
   return (
     <Box
-      flexBasis="24%"
       border="0.827943px solid #D9D9D9"
       alignItems="center"
       px="15px"
@@ -19,14 +18,15 @@ const Method: React.FC<MethodProps> = ({ methodName, text, picture }) => {
       minH="210px"
     >
       <Box
-        h="200px"
+        h={["100px", "180px", "180px", "200px"]}
         display="flex"
         alignItems="center"
-        bg={`url(${IMAGES_PATH}/${picture}) no-repeat center right`}
+        bg={[`none`, `url(${IMAGES_PATH}/${picture}) no-repeat right`]}
+        bgSize={["25%", "25%", "20%", "25%", "30%"]}
       >
         <Box
-          maxW="63%"
-          fontSize="18px"
+          maxW={["100%", "72%", "72%", "75%", "70%"]}
+          fontSize={["12px", "14px", "20px", "16px", "18px"]}
           lineHeight="125%"
           letterSpacing="-0.00240557px"
         >
@@ -35,7 +35,7 @@ const Method: React.FC<MethodProps> = ({ methodName, text, picture }) => {
       </Box>
       <Text
         fontWeight="300"
-        fontSize="18px"
+        fontSize={["10px", "12px", "16px", "14px", "16px"]}
         lineHeight="150%"
         letterSpacing="-0.00236129px"
         textAlign="left"

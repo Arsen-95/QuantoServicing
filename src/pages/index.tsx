@@ -4,8 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
 
-require("dayjs/locale/ru");
-
 import { events, gisStats, gtiStats, news, pvrStats } from "query/path";
 import { MainLayout } from "Components/Common/MainLayout";
 import { Stats } from "Components/MainPage/Stats";
@@ -19,7 +17,7 @@ import { MainSlider } from "Components/MainPage/MainSlider";
 import { request } from "query/queries";
 
 const Home: NextPage = () => {
-  const { locale, query } = useRouter();
+  const { locale } = useRouter();
   const { data: gti } = useQuery("gti", () => request(locale, gtiStats));
   const { data: gis } = useQuery("gis", () => request(locale, gisStats));
   const { data: pvr } = useQuery("pvr", () => request(locale, pvrStats));
@@ -27,9 +25,6 @@ const Home: NextPage = () => {
   const { data: eventsPosts } = useQuery("events", () =>
     request(locale, events)
   );
-  const dayjs = require("dayjs");
-
-  dayjs.locale("ru");
 
   const values = [gti, gis, pvr];
   const valuesData: any = {};
@@ -79,6 +74,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         "titles",
         "common",
         "footer",
+        "months",
       ])),
       dehydratedState: dehydrate(queryClient),
     },

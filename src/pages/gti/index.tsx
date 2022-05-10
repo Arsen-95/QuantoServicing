@@ -27,7 +27,6 @@ const Page = () => {
         <GtiDescription />
         <GtiValues data={data} />
         <GtiSlider />
-        {/* <GtiMap /> */}
       </MainLayout>
     </>
   );
