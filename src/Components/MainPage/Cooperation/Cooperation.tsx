@@ -6,43 +6,66 @@ import {
   Link,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { useForm, Controller } from "react-hook-form";
 import { cooperationSceme } from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 import { Input } from "./Input";
+import { postRequest } from "query/queries";
+import { contactUs } from "query/path";
 
 type FormDataType = {
   name: string;
-  tel: string;
   email: string;
+  phone: string;
   message: string;
 };
 
 export const Cooperation = () => {
-  const { control, formState, handleSubmit } = useForm<FormDataType>({
+  const { control, formState, reset, handleSubmit } = useForm<FormDataType>({
     resolver: yupResolver(cooperationSceme),
   });
 
-  const onSubmit = (data: FormDataType) => {
-    const phone = data?.tel?.replace(/_|-/g, "") || "";
-    const name = data?.name;
-    const email = data?.email;
-    const message = data?.message;
-  };
-
   const { t } = useTranslation();
+  const { locale } = useRouter();
+  const toast = useToast();
+
+  const onSubmit = (data: FormDataType) => {
+    postRequest(locale, contactUs, data)
+      .then(() => {
+        toast({
+          title:
+            "Thanks for submitting your application. Our team will get back to you soon.",
+          status: "success",
+        });
+        reset({
+          phone: "",
+          email: "",
+          message: "",
+          name: "",
+        });
+      })
+      .catch(() => {
+        toast({
+          title: "Something went wrong",
+          status: "info",
+        });
+      });
+  };
 
   return (
     <Box
-      pt={["40px", "40px", "40px", "70px"]}
-      pb={["0", "0", "40px", "100px"]}
+      pt={["50px", "70px", "70px", "70px", "80px"]}
+      pb={["0", "0", "70px", "70px", "80px"]}
       background="#393A47"
       backgroundPosition="100%"
       bgSize="50% 100%"
       pos="relative"
+      as="section"
     >
       <Box
         id="contacts"
@@ -51,16 +74,12 @@ export const Cooperation = () => {
       ></Box>
       <Container>
         <Flex flexDir={["column", "column", "row"]}>
-          <Box
-            flex="1 1 auto"
-            mb={["50px", "50px", "0"]}
-            textAlign={["center", "center", "left"]}
-          >
+          <Box flex="1 1 auto" mb={["50px", "50px", "0"]}>
             <Text
               as="h5"
               textTransform="uppercase"
               fontWeight="900"
-              fontSize={["35px", "50px", "50px", "75px"]}
+              fontSize={["34px", "50px", "54px", "64px", "76px"]}
               lineHeight="62px"
               letterSpacing="-2.50267px"
               maxW="626px"
@@ -101,7 +120,7 @@ export const Cooperation = () => {
               <Box mb="28px">
                 <Controller
                   control={control}
-                  name="tel"
+                  name="phone"
                   render={({ field }) => (
                     <Input
                       placeholder="Телефон"
@@ -113,7 +132,7 @@ export const Cooperation = () => {
                     />
                   )}
                 />
-                {formState?.errors?.tel?.message && (
+                {formState?.errors?.phone?.message && (
                   <Text
                     mx={["auto", "auto", "0"]}
                     width={["90%", "80%", "300px", "400px"]}
@@ -123,7 +142,7 @@ export const Cooperation = () => {
                     color="red.500"
                     fontWeight="bold"
                   >
-                    {formState.errors.tel?.message}
+                    {formState.errors.phone?.message}
                   </Text>
                 )}
               </Box>

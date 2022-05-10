@@ -19,22 +19,16 @@ type Props = {
 
 export const Popup: React.FC<Props> = ({ isOpen, onClose }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent p="0">
         <ModalBody bg="#393A47" p="0">
-          <Flex height="680px" w="1000px">
-            <Box
-              bg={`url(${IMAGES_PATH}/popup.png) no-repeat`}
-              flexBasis="45%"
-              minH="100%"
-            ></Box>
-            <Box flexBasis="55%" p="150px 90px 0 50px" bg="#393A47">
+          <Box height="600px">
+            <Box flexBasis="55%" p="100px 50px 0 50px" bg="#393A47">
               <Text
                 as="h5"
                 fontWeight="900"
-                fontSize="30px"
-                lineHeight="48px"
+                fontSize={["24px", "26px", "28px", "28px", "30px"]}
                 mb="56px"
               >
                 Отправьте данные для получения документа
@@ -45,7 +39,8 @@ export const Popup: React.FC<Props> = ({ isOpen, onClose }) => {
               <Box
                 as="button"
                 border="1px solid #B7B7B7"
-                p="14.5px 189px"
+                w="100%"
+                py="14px"
                 color="#B7B7B7"
                 _hover={{
                   bg: "#23242B",
@@ -57,7 +52,7 @@ export const Popup: React.FC<Props> = ({ isOpen, onClose }) => {
                 Отправить
               </Box>
             </Box>
-          </Flex>
+          </Box>
         </ModalBody>
       </ModalContent>
     </Modal>
@@ -75,6 +70,9 @@ const MyInput = ({ placeholder }: any) => {
         color: "#8C949D",
       }}
       mb="20px"
+      _last={{
+        mb: "40px",
+      }}
     />
   );
 };

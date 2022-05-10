@@ -15,7 +15,7 @@ export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
   const foo = (service: any) => {
     let sum = 0;
     const keys = Object.keys(service);
-    const result = keys.map((key: any) => {
+    keys.map((key: any) => {
       service[key].map((i: any) => {
         if (i.position === "0") {
           sum += parseFloat(i.data);
@@ -26,7 +26,7 @@ export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
   };
 
   return (
-    <Box py={["50px", "88px"]} bg="#23242B">
+    <Box bg="#23242B" as="section">
       <Container>
         <Flex
           justifyContent="space-between"
@@ -36,7 +36,7 @@ export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
             <Text
               as="h5"
               textTransform="uppercase"
-              fontSize={["36px", "50px", "60px", "64px", "76px"]}
+              fontSize={["34px", "50px", "54px", "64px", "76px"]}
               letterSpacing="-2.50267px"
               color="#FFF"
               lineHeight={["35px", "50px", "62px"]}

@@ -7,21 +7,20 @@ export const Policy = () => {
   const [t] = useTranslation();
 
   return (
-    <Box bg="#2F303B" py="100px">
+    <Box bg="#2F303B" as="section">
       <Container>
         <Box
           as="h5"
           fontWeight="600"
-          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
-          mb="35px"
+          mb={["25px", "25px", "30px", "30px", "44px"]}
         >
           {t("headers:policy")}
         </Box>
         <Text
           fontWeight="300"
-          fontSize="18px"
+          fontSize={["14px", "14px", "16px", "18px", "18px"]}
           lineHeight="22px"
           letterSpacing="-0.00240557px"
           color="#B7B7B7"

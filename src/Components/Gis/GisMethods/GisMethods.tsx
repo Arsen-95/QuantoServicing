@@ -1,4 +1,4 @@
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 
 import Method from "./Method";
@@ -7,20 +7,27 @@ export const GisMethods = () => {
   const { t } = useTranslation();
 
   return (
-    <Box py="100px" bg="#393A47">
+    <Box bg="#393A47" as="section">
       <Container>
         <Box
           as="h5"
           maxW="374px"
           fontWeight="600"
-          fontSize="50px"
           lineHeight="99.5%"
           letterSpacing="-0.04em"
           mb="70px"
         >
           {t("headers:gisMethods")}
         </Box>
-        <Flex justifyContent="space-between">
+        <Grid
+          gridTemplateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={["5px", "15px", "15px", "15px"]}
+        >
           <Method
             methodName={t("descriptions:methodEl")}
             text={
@@ -36,7 +43,7 @@ export const GisMethods = () => {
                 жидкости в скважине
               </>
             }
-            picture="method1.png"
+            picture="method1.svg"
           />
           <Method
             methodName={t("descriptions:methodRadio")}
@@ -52,7 +59,7 @@ export const GisMethods = () => {
                 <b>ГГКц</b> - метод гамма-гамма цементометрия
               </>
             }
-            picture="method2.png"
+            picture="method2.svg"
           />
           <Method
             methodName={t("descriptions:methodAcoustic")}
@@ -64,7 +71,7 @@ export const GisMethods = () => {
                 качества цементирования
               </>
             }
-            picture="method3.png"
+            picture="method3.svg"
           />
           <Method
             methodName={t("descriptions:methodMechanics")}
@@ -80,9 +87,9 @@ export const GisMethods = () => {
                 локатора перфорационных отверстий
               </>
             }
-            picture="method4.png"
+            picture="method4.svg"
           />
-        </Flex>
+        </Grid>
       </Container>
     </Box>
   );

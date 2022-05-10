@@ -8,62 +8,6 @@ import { Years } from "Components/Common/Year/Years";
 export const Values = ({ values }: any) => {
   const { t } = useTranslation();
 
-  // const values: Record<
-  //   number,
-  //   { data_description: string; data: string; plus?: boolean }[]
-  // > = {
-  //   2021: [
-  //     { data_description: "Кол-во завершенных скважин (шт)", data: "35" },
-  //     { data_description: "Наработка (сут)", data: "3540" },
-  //     {
-  //       data_description: "Коэффицент эксплуатации станции (д.е.)",
-  //       data: "0.79",
-  //     },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "345" },
-  //     { data_description: "Исследованные интервалы (м)", data: "275000" },
-  //     { data_description: "Открытый/закрытый ствол (шт)", data: "292/53" },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "246" },
-  //     {
-  //       data_description: "Простреленные интервалы (м)",
-  //       data: "1500",
-  //       plus: true,
-  //     },
-  //     {
-  //       data_description: "Кол-во простреленных зарядов (шт)",
-  //       data: "30000",
-  //       plus: true,
-  //     },
-  //   ],
-  //   2020: [
-  //     { data_description: "Кол-во завершенных скважин (шт)", data: "42" },
-  //     { data_description: "Наработка (сут)", data: "3385" },
-  //     {
-  //       data_description: "Коэффицент эксплуатации станции (д.е.)",
-  //       data: "0.77",
-  //     },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "175" },
-  //     { data_description: "Исследованные интервалы (м)", data: "140000" },
-  //     { data_description: "Открытый/закрытый ствол (шт)", data: "107/68" },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "0" },
-  //     { data_description: "Исследованные интервалы (м)", data: "0" },
-  //     { data_description: "Открытый/закрытый ствол (шт)", data: "0" },
-  //   ],
-  //   2019: [
-  //     { data_description: "Кол-во завершенных скважин (шт)", data: "27" },
-  //     { data_description: "Наработка, сут", data: "2632" },
-  //     {
-  //       data_description: "Коэффицент эксплуатации станции, д.е.",
-  //       data: "0.6",
-  //     },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "10" },
-  //     { data_description: "Исследованные интервалы (м)", data: "20000" },
-  //     { data_description: "Открытый/закрытый ствол (шт)", data: "2/8" },
-  //     { data_description: "Кол-во отработанных заявок (шт)", data: "0" },
-  //     { data_description: "Простреленные  интервалы (м)", data: "0" },
-  //     { data_description: "Кол-во простреленных зарядов (шт)", data: "0" },
-  //   ],
-  // };
-
   const names = {
     0: "ГТИ",
     3: "ГИС",
@@ -78,20 +22,28 @@ export const Values = ({ values }: any) => {
   const yearsData = [2019, 2020, 2021];
 
   return (
-    <Box bgColor="#393A47" py={["50px", "75px"]}>
+    <Box
+      bgColor="#393A47"
+      py={["30px", "30px", "50px", "75px"]}
+      overflow="hidden"
+    >
       <Container>
         <Flex mb={["60px", "60px", "35px"]}>
-          <Flex flex="1" minW={["150px", "220px", "200px", "200px", "300px"]}>
+          <Flex
+            flex="1"
+            minW={["150px", "220px", "200px", "200px", "300px"]}
+            alignItems="center"
+          >
             <Box
               display={["block", "block", "none"]}
-              mt="-40px"
               pl={["0", "20"]}
+              h={["156px", "165px"]}
+              overflow="hidden"
             >
               <Years onScroll={yearChanger} yearsData={yearsData} />
             </Box>
           </Flex>
           <Box
-            mt="70px"
             flexBasis="68.5%"
             textAlign={["center", "center", "left"]}
             display={["block", "block", "grid"]}
@@ -130,6 +82,7 @@ export const Values = ({ values }: any) => {
         <Flex>
           <Box
             flex="1"
+            h="300px"
             display={["none", "none", "flex"]}
             minW={["auto", "200px", "200px", "200px", "300px"]}
             overflow="hidden"
@@ -195,7 +148,7 @@ export const Values = ({ values }: any) => {
                   text={item?.data_description}
                   num={item?.data}
                   numSize={["30", "32", "32", "34", "36"]}
-                  textSize="12px"
+                  textSize={["10px", "12px"]}
                   height={["150px", "150px", "145px", "150px"]}
                   plusSize={["18", "20", "24", "26"]}
                 />

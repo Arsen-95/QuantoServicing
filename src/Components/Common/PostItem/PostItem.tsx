@@ -24,8 +24,6 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
   const month = dayjs(post.date_created).format("MMM");
   const day = dayjs(post.date_created).format("DD");
 
-  const { locale } = useRouter();
-
   const minutes = ["минута", "минуты", "минут"];
   function num_word(value: number, words: string[]) {
     value = Math.abs(value) % 100;

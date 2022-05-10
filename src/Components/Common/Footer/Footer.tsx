@@ -15,7 +15,7 @@ export const Footer = ({ data }: any) => {
           <Flex
             justifyContent="space-between"
             alignItems="center"
-            py={["70px", "70px", "100px"]}
+            py={["60px", "70px", "70", "70px", "80px"]}
             flexDir={["column", "column", "row"]}
           >
             <NextLink href="/" passHref>

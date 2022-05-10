@@ -56,9 +56,9 @@ export const CustomSlider: React.FC<any> = ({ sliderData, bg }) => {
       <Flex
         pos="absolute"
         bottom="30px"
-        left="40%"
+        left={["0", "", "38%", "40%"]}
         zIndex={10}
-        display={["none", "none", "none", "flex"]}
+        display={["none", "none", "flex", "flex"]}
       >
         <Box
           border="1px solid #494949"

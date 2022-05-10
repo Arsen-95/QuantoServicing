@@ -27,7 +27,7 @@ const ServiceItem: React.FC<ItemProps> = ({ name, picture, href, onClick }) => {
         as="h5"
         flex="1"
         fontWeight="900"
-        fontSize="25px"
+        fontSize={["20px", "20px", "25px"]}
         lineHeight="30px"
         textTransform="uppercase"
         mb="18px"

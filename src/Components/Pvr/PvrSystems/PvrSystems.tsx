@@ -4,10 +4,14 @@ import { System } from "./System";
 
 export const PvrSystems = () => {
   return (
-    <Box bg="#393A47" py="70px">
+    <Box bg="#393A47" py={["50px", "70px", "70", "70px", "80px"]}>
       <Container>
-        <Flex gap="30px" mb="40px">
-          <System picture="system1.png" text={"Перфосистема – \nСКОРПИОН"}>
+        <Flex
+          gap="15px"
+          mb="40px"
+          flexDir={["column", "column", "column", "row"]}
+        >
+          <System picture="system1.png" text={"Перфосистема – СКОРПИОН"}>
             <InfoBox text="Диаметр перфосистемы" value="Ø73" />
             <InfoBox text="Тип заряда" value="ГП" />
             <InfoBox text="Вид заряда" value="Гексоген" />
@@ -34,7 +38,7 @@ export const PvrSystems = () => {
             <InfoBox text="Глубина пробития по API 19B, мм" value="1 130" />
           </System>
 
-          <System picture="system2.png" text={`Перфосистема – \nОРИОН`}>
+          <System picture="system2.png" text={`Перфосистема – ОРИОН`}>
             <InfoBox text="Диаметр перфосистемы" value="Ø73" />
             <InfoBox text="Тип заряда" value="СГП" />
             <InfoBox text="Вид заряда" value="Октоген" />
