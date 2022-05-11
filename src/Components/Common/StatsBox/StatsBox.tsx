@@ -125,9 +125,8 @@ export const StatsBox: React.FC<ValueProps> = ({
               fontSize={plusSize}
               color="#0057FF"
               opacity={plusState ? 1 : 0}
-              display={plusState ? "block" : "none"}
               transform={plusState ? "translateY(0%)" : "translateY(20%)"}
-              transition="all 0.4s"
+              transition="all 0.5s"
             >
               +
             </Box>
@@ -147,7 +146,8 @@ export const StatsBox: React.FC<ValueProps> = ({
                   fontSize={plusSize}
                   color="#0057FF"
                   opacity={plusState ? 1 : 0}
-                  display={plusState ? "block" : "none"}
+                  transform={plusState ? "translateY(0%)" : "translateY(20%)"}
+                  transition="all 0.5s"
                 >
                   +
                 </Box>
