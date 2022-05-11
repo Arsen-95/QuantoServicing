@@ -22,6 +22,24 @@ const Page = () => {
   );
 
   return (
+    // <>
+    //   <HeadTags
+    //     siteTitle="Новости нефтегазовой сферы Quanto"
+    //     titleContent="Quanto Servicing"
+    //     descriptionContent="Quanto oil and gas"
+    //   />
+    //   <MainLayout>
+    //     <Box bg="#23242B" pt="176px" pb="90px">
+    //       <Container display="flex" gap="147px">
+    //         <Box>
+    //           <PostTitle post={post} />
+    //           <OtherPosts posts={posts} eventType={query.eventType} />
+    //         </Box>
+    //         <PostContent text={post.description} />
+    //       </Container>
+    //     </Box>
+    //   </MainLayout>
+    // </>
     <>
       <HeadTags
         siteTitle="Новости нефтегазовой сферы Quanto"
@@ -30,12 +48,13 @@ const Page = () => {
       />
       <MainLayout>
         <Box bg="#23242B" pt="176px" pb="90px">
-          <Container display="flex" gap="147px">
-            <Box>
-              <PostTitle post={post} />
-              <OtherPosts posts={posts} eventType={query.eventType} />
-            </Box>
-            <PostContent text={post.description} />
+          <Container>
+            <PostContent
+              post={post}
+              eventType={query.eventType}
+              posts={posts}
+            />
+            {/* <OtherPosts posts={posts} eventType={query.eventType} /> */}
           </Container>
         </Box>
       </MainLayout>

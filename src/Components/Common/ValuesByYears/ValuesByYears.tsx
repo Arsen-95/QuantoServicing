@@ -67,7 +67,7 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
                 height={["156px", "200px", "150px", "200px", "228px"]}
                 numSize={["36px", "46px", "30px", "50px", "64px"]}
                 textSize={["12px", "px", "12px", "16px", "18px"]}
-                plusSize={["46px", "46px", "30px", "38px"]}
+                plusSize={["24px", "30px", "22px", "38px"]}
               />
             ))}
           </Grid>

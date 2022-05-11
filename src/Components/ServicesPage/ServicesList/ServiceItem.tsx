@@ -37,7 +37,8 @@ const ServiceItem: React.FC<ItemProps> = ({ name, picture, href, onClick }) => {
       </Box>
       <NextLink href={href ? href : "#"} passHref>
         <Link
-          maxW="112px"
+          textAlign="center"
+          maxW="80%"
           fontWeight="600"
           fontSize="14px"
           lineHeight="17px"
