@@ -28,16 +28,30 @@ const Home: NextPage = () => {
 
   const values = [gti, gis, pvr];
   const valuesData: any = {};
+  // values.map((value) => {
+  //   const keys = Object.keys(value);
+  //   return keys.map((key) => {
+  //     if (key in valuesData) {
+  //       valuesData[key] = [...valuesData[key], ...value[key]];
+  //     } else {
+  //       valuesData[key] = value[key];
+  //     }
+  //   });
+  // }, {});
+
   values.map((value) => {
-    const keys = Object.keys(value);
-    return keys.map((key) => {
-      if (key in valuesData) {
-        valuesData[key] = [...valuesData[key], ...value[key]];
+    const keys = [2019, 2020, 2021];
+    return value.map((item: any) => {
+      let year = item.related_year;
+      if (year in valuesData) {
+        valuesData[year] = [...valuesData[year], ...item.statistics];
       } else {
-        valuesData[key] = value[key];
+        valuesData[year] = item.statistics;
       }
     });
-  }, {});
+  });
+
+  console.log(valuesData);
 
   return (
     <>

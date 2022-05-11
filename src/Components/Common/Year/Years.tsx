@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./style.module.css";
-import { Mousewheel, Scrollbar } from "swiper";
+import { Mousewheel } from "swiper";
 import { Box, Flex } from "@chakra-ui/react";
 
 import Year from "./Year";
