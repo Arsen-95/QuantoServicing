@@ -55,7 +55,7 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
             <Text
               as="h5"
               fontWeight="900"
-              fontSize="30px"
+              fontSize={["22px", "24px", "26px", "28px", "30px"]}
               lineHeight="100%"
               letterSpacing="-0.0017819px"
               color="#FFF"

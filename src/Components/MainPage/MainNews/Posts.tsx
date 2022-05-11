@@ -23,7 +23,6 @@ const Posts = ({ posts, eventType }: any) => {
   return (
     <Box pos="relative">
       <Swiper
-        freeMode={true}
         breakpoints={{
           320: {
             slidesPerView: 1,

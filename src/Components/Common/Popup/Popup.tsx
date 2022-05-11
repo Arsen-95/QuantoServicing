@@ -22,6 +22,7 @@ export const Popup: React.FC<Props> = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
       <ModalOverlay />
       <ModalContent p="0">
+        <ModalCloseButton />
         <ModalBody bg="#393A47" p="0">
           <Box height="600px">
             <Box flexBasis="55%" p="100px 50px 0 50px" bg="#393A47">

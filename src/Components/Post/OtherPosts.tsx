@@ -1,9 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
-import { PostItem } from "Components/Common/PostItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Mousewheel, Scrollbar } from "swiper";
+import { FreeMode, Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+
+import { PostItem } from "Components/Common/PostItem";
 
 export const OtherPosts = ({ posts, eventType }: any) => {
   return (
@@ -11,7 +12,7 @@ export const OtherPosts = ({ posts, eventType }: any) => {
       <Text
         as="h5"
         fontWeight="900"
-        fontSize="40px"
+        fontSize={["20px", "26px", "30px", "36px", "40px"]}
         lineHeight="99.5%"
         mb="40px"
       >
