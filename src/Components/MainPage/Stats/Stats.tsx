@@ -12,13 +12,25 @@ type Props = {
 export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
   const [t] = useTranslation();
 
+  // const foo = (service: any) => {
+  //   let sum = 0;
+  //   const keys = Object.keys(service);
+  //   keys.map((key: any) => {
+  //     service[key].map((i: any) => {
+  //       if (i.position === "0") {
+  //         sum += parseFloat(i.data);
+  //       }
+  //     });
+  //   });
+  //   return sum;
+  // };
+
   const foo = (service: any) => {
     let sum = 0;
-    const keys = Object.keys(service);
-    keys.map((key: any) => {
-      service[key].map((i: any) => {
-        if (i.position === "0") {
-          sum += parseFloat(i.data);
+    service.map((item: any) => {
+      item.statistics.map((stat: any) => {
+        if (stat.position === "0") {
+          sum += parseFloat(stat.data);
         }
       });
     });

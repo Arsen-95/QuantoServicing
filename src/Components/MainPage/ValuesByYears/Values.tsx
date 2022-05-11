@@ -145,7 +145,7 @@ export const Values = ({ values }: any) => {
                 <StatsBox
                   border="1px solid #B7B7B7"
                   padding="8px"
-                  text={item?.data_description}
+                  text={item?.description}
                   num={item?.data}
                   numSize={["30", "32", "32", "34", "36"]}
                   textSize={["10px", "12px"]}

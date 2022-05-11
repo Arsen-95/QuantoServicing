@@ -57,19 +57,23 @@ export const ValuesByYears: React.FC<ValueByYearProps> = ({
             >
               <Years onScroll={yearChanger} yearsData={yearsData} />
             </Flex>
-            {data[year].map((item: any) => (
-              <StatsBox
-                border="1px solid #B7B7B7"
-                key={`${Math.random()}`}
-                padding="8px"
-                text={item?.data_description}
-                num={item?.data}
-                height={["156px", "200px", "150px", "200px", "228px"]}
-                numSize={["36px", "46px", "30px", "50px", "64px"]}
-                textSize={["12px", "px", "12px", "16px", "18px"]}
-                plusSize={["24px", "30px", "22px", "38px"]}
-              />
-            ))}
+            {data.map((item: any) => {
+              return item.related_year === year
+                ? item.statistics.map((stat: any) => (
+                    <StatsBox
+                      border="1px solid #B7B7B7"
+                      key={`${Math.random()}`}
+                      padding="8px"
+                      text={stat?.description}
+                      num={stat?.data}
+                      height={["156px", "200px", "150px", "200px", "228px"]}
+                      numSize={["36px", "46px", "30px", "50px", "64px"]}
+                      textSize={["12px", "px", "12px", "16px", "18px"]}
+                      plusSize={["24px", "30px", "22px", "38px"]}
+                    />
+                  ))
+                : null;
+            })}
           </Grid>
         </Flex>
       </Container>
