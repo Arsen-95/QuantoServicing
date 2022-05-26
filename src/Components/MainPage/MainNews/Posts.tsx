@@ -30,7 +30,7 @@ const Posts = ({ posts, eventType }: any) => {
           700: {
             slidesPerView: 2,
           },
-          1000: {
+          1100: {
             slidesPerView: 3,
           },
         }}

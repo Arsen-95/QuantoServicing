@@ -53,43 +53,29 @@ export const StickyHeader = () => {
   return (
     <Box
       visibility={isSticky ? "visible" : "hidden"}
-      h={breadCrumbs[pathname as keyof typeof breadCrumbs] ? "132px" : "82px"}
+      h={breadCrumbs[pathname as keyof typeof breadCrumbs] ? "134px" : "78px"}
       pos="fixed"
       right="0"
       left="0"
       zIndex="200"
       top="0"
-      bg={
-        images[pathname as keyof typeof images]
-          ? `url(${images[pathname as keyof typeof images]}) no-repeat`
-          : "#393A47"
-      }
-      bgSize={isLargerThan1400 ? "cover" : "auto"}
-      bgPos="0 100%"
+      // bg={
+      //   images[pathname as keyof typeof images]
+      //     ? `url(${images[pathname as keyof typeof images]}) no-repeat`
+      //     : "#393A47"
+      // }
+      bg="#292929"
+      // bgSize={isLargerThan1400 ? "cover" : "auto"}
+      // bgPos="0 100%"
     >
       <Box opacity={isSticky ? 1 : 0}>
-        <Header pt="20px" />
+        <Header />
       </Box>
 
       {breadCrumbs[pathname as keyof typeof breadCrumbs] && (
-        <Box
-          pos="absolute"
-          top="77px"
-          w="100%"
-          background={
-            isSticky
-              ? "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"
-              : "none"
-          }
-        >
-          <Container
-            m="auto"
-            transition="0.2s background"
-            opacity={isSticky ? 1 : 0}
-            h="55px"
-            pt="15px"
-          >
-            <Breadcrumb>
+        <Box pos="absolute" top="77px" w="100%">
+          <Container m="auto" opacity={isSticky ? 1 : 0} h="54px" pt="15px">
+            <Breadcrumb zIndex="200" pos="relative">
               {breadCrumbs[pathname as keyof typeof breadCrumbs]?.map(
                 ([page, href]: any) => (
                   <BreadcrumbItem

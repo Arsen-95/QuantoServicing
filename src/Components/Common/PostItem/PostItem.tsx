@@ -1,8 +1,6 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { t } from "i18next";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
 import { IMAGES_PATH } from "../../../constants/settings";
@@ -46,7 +44,7 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
           pos="relative"
         >
           <Flex
-            h="230px"
+            h={["180px", "190px", "200px", "230px", "230px"]}
             background="#393939"
             mixBlendMode="hard-light"
             p={["14px", "30px 20px 40px 30px"]}
@@ -55,7 +53,7 @@ export const PostItem: React.FC<ItemProps> = ({ post, eventType }) => {
             <Text
               as="h5"
               fontWeight="900"
-              fontSize={["22px", "24px", "26px", "28px", "30px"]}
+              fontSize={["22px", "22px", "22px", "24px", "26px"]}
               lineHeight="100%"
               letterSpacing="-0.0017819px"
               color="#FFF"

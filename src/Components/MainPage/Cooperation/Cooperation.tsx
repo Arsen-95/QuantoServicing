@@ -1,4 +1,9 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
   Button,
   Container,
@@ -17,12 +22,14 @@ import { useRouter } from "next/router";
 import { Input } from "./Input";
 import { postRequest } from "query/queries";
 import { contactUs } from "query/path";
+import { ServiceMenu } from "./Service-menu";
 
 type FormDataType = {
   name: string;
   email: string;
   phone: string;
   message: string;
+  service: string[];
 };
 
 export const Cooperation = () => {
@@ -35,6 +42,7 @@ export const Cooperation = () => {
   const toast = useToast();
 
   const onSubmit = (data: FormDataType) => {
+    console.log(data);
     postRequest(locale, contactUs, data)
       .then(() => {
         toast({
@@ -47,6 +55,7 @@ export const Cooperation = () => {
           email: "",
           message: "",
           name: "",
+          service: [],
         });
       })
       .catch(() => {
@@ -89,7 +98,7 @@ export const Cooperation = () => {
               {t("headers:cooperation")}
             </Text>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Box mb="28px">
+              <Box mb="20px">
                 <Controller
                   control={control}
                   name="name"
@@ -117,7 +126,7 @@ export const Cooperation = () => {
                   </Text>
                 )}
               </Box>
-              <Box mb="28px">
+              <Box mb="20px">
                 <Controller
                   control={control}
                   name="phone"
@@ -146,7 +155,7 @@ export const Cooperation = () => {
                   </Text>
                 )}
               </Box>
-              <Box mb="28px">
+              <Box mb="20px">
                 <Controller
                   control={control}
                   name="email"
@@ -174,6 +183,14 @@ export const Cooperation = () => {
                   </Text>
                 )}
               </Box>
+              <Controller
+                control={control}
+                name="service"
+                render={({ field }) => (
+                  <ServiceMenu value={field.value} onChange={field.onChange} />
+                )}
+              />
+
               <Box mb="14px">
                 <Controller
                   control={control}
