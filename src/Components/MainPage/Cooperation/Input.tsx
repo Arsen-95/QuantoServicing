@@ -23,7 +23,7 @@ export const Input: React.FC<Props> = ({
       value={value}
       type={type}
       borderRadius="0"
-      height={["46px"]}
+      height="46px"
       width={["90%", "80%", "300px", "400px"]}
       border={
         formState?.errors?.[name]?.message

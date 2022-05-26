@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     request(locale, events)
   );
 
-  const values = [gti, gis, pvr];
+  const values = [gti || [], gis || [], pvr || []];
   const valuesData: any = {};
   // values.map((value) => {
   //   const keys = Object.keys(value);
@@ -50,8 +50,6 @@ const Home: NextPage = () => {
       }
     });
   });
-
-  console.log(valuesData);
 
   return (
     <>

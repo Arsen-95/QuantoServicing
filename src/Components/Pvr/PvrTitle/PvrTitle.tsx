@@ -11,7 +11,7 @@ export const PvrTitle = () => {
   return (
     <Title
       background={`url(${IMAGES_PATH}/pvrTitle.png) no-repeat`}
-      pt={["150px", "150px", "200px"]}
+      pt="150px"
       title={t("titles:pvr")}
       text={t("titles:pvrText")}
       breadCrumb={breadCrumbs["/pvr"]}

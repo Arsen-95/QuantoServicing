@@ -25,7 +25,7 @@ export const MainLayout: React.FC = memo(({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Flex flexDir={"column"} minHeight="100%">
-        <Header pt="36px" />
+        <Header />
         <StickyHeader />
         <Box as="main" flex="1 0 auto" h={"100%"}>
           {children}

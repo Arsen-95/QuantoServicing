@@ -65,53 +65,58 @@ export const Stats: React.FC<Props> = ({ gti, gis, pvr }) => {
               fontWeight="300px"
               mb={["40px", "40px", "40px", "0"]}
             >
-              * В период с 2019 по 2022 год
+              {t("common:period")}
             </Text>
           </Box>
-          <Box justifySelf="right" position="relative" flex="1 1 50%">
+          <Box
+            justifySelf="right"
+            position="relative"
+            flex="1 1"
+            flexBasis={["auto", "auto", "auto", "50%", "35%"]}
+          >
             <Grid
               gap={["2", "2", "4", "6", "8"]}
               templateColumns="repeat(2, 1fr)"
             >
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["40px", "60px", "96px", "70px", "96px"]}
-                textSize={["8px", "12px", "16px", "16px", "18px"]}
+                numSize={["40px", "60px", "96px", "70px", "80px"]}
+                textSize={["8px", "12px", "16px", "16px", "16px"]}
                 text={`Кол-во заявок по услугам \nза всю историю (шт)`}
                 num={`${foo(gis) + foo(gti) + foo(pvr)}+`}
-                height={["150px", "210px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "242px"]}
                 padding="15px"
-                plusSize={["30", "40", "70", "50px", "70px"]}
+                plusSize={["30", "40", "70", "50px", "60px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["40px", "60px", "96px", "70px", "96px"]}
-                textSize={["8px", "12px", "16px", "16px", "18px"]}
+                numSize={["40px", "60px", "96px", "70px", "80px"]}
+                textSize={["8px", "12px", "16px", "16px", "16px"]}
                 text={`Общее кол-во заявок \nпо ГТИ (шт)`}
                 num={`${foo(gti)}+`}
-                height={["150px", "210px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "242px"]}
                 padding="15px"
-                plusSize={["30", "40", "70", "50px", "70px"]}
+                plusSize={["30", "40", "70", "50px", "60px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["40px", "60px", "96px", "70px", "96px"]}
-                textSize={["8px", "12px", "16px", "16px", "18px"]}
+                numSize={["40px", "60px", "96px", "70px", "80px"]}
+                textSize={["8px", "12px", "16px", "16px", "16px"]}
                 text={`Общее кол-во заявок \nпо ПВР (шт)`}
                 num={`${foo(pvr)}+`}
-                height={["150px", "210px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "242px"]}
                 padding="15px"
-                plusSize={["30", "40", "70", "50px", "70px"]}
+                plusSize={["30", "40", "70", "50px", "60px"]}
               />
               <StatsBox
                 border="1px solid #6D7084"
-                numSize={["40px", "60px", "96px", "70px", "96px"]}
-                textSize={["8px", "12px", "16px", "16px", "18px"]}
+                numSize={["40px", "60px", "96px", "70px", "80px"]}
+                textSize={["8px", "12px", "16px", "16px", "16px"]}
                 text={`Общее кол-во заявок \nпо ГИС (шт)`}
                 num={`${foo(gis)}+`}
-                height={["150px", "210px", "280px", "230px", "294px"]}
+                height={["150px", "210px", "280px", "230px", "242px"]}
                 padding="15px"
-                plusSize={["30", "40", "70", "50px", "70px"]}
+                plusSize={["30", "40", "70", "50px", "60px"]}
               />
             </Grid>
           </Box>

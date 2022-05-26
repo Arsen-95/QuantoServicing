@@ -18,16 +18,17 @@ export const Years: React.FC<YearsProps> = ({ onScroll, yearsData }: any) => {
   return (
     <Flex
       alignItems="center"
-      height={["156px", "200px", "150px", "200px", "228px"]}
-      overflow="hidden"
+      // height={["156px", "200px", "150px", "200px", "228px"]}
+      // overflow="hidden"
     >
       <Swiper
         direction={"vertical"}
-        slidesPerView={1}
+        slideToClickedSlide={true}
+        // slidesPerView={1}
         mousewheel={true}
         modules={[Mousewheel]}
         className="years-vertical-slider"
-        style={{ height: "150px", overflow: "hidden" }}
+        style={{ height: "150px" }}
         onSlideChange={(a) => {
           onScroll(years[a.realIndex]);
         }}

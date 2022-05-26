@@ -36,6 +36,8 @@ export const Title: React.FC<TitleProps & BoxProps> = ({
       {...props}
       bgPos="0 99%"
       backgroundSize="cover"
+      // pt="78px"
+      mt="78px"
     >
       <Container>
         <Box
