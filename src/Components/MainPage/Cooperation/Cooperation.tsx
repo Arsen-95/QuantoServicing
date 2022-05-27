@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useForm, Controller } from "react-hook-form";
-import { cooperationSceme } from "./schema";
+import { CooperationSceme } from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -34,12 +34,14 @@ type FormDataType = {
 
 export const Cooperation = () => {
   const { control, formState, reset, handleSubmit } = useForm<FormDataType>({
-    resolver: yupResolver(cooperationSceme),
+    resolver: yupResolver(CooperationSceme()),
   });
 
   const { t } = useTranslation();
   const { locale } = useRouter();
   const toast = useToast();
+
+  console.log(formState.errors);
 
   const onSubmit = (data: FormDataType) => {
     console.log(data);
@@ -135,7 +137,7 @@ export const Cooperation = () => {
                       placeholder="Телефон"
                       onChange={field.onChange}
                       value={field.value}
-                      name="tel"
+                      name="phone"
                       formState={formState}
                       type="tel"
                     />
