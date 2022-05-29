@@ -26,7 +26,7 @@ export const ServiceMenu = ({ value, onChange }: any) => {
               w="100%"
               h="100%"
               bg="#23242B"
-              color="#8C949D"
+              color={value?.length > 0 ? "#FFF" : "#8C949D"}
               borderRadius="0"
               textAlign="left"
               fontWeight="300"
