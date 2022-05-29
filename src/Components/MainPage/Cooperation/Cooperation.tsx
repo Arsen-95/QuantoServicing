@@ -41,10 +41,7 @@ export const Cooperation = () => {
   const { locale } = useRouter();
   const toast = useToast();
 
-  console.log(formState.errors);
-
   const onSubmit = (data: FormDataType) => {
-    console.log(data);
     postRequest(locale, contactUs, data)
       .then(() => {
         toast({
